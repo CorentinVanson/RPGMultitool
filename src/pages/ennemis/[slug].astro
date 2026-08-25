@@ -1,0 +1,35 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection, render } from 'astro:content';
+
+export const prerender = true;
+
+export async function getStaticPaths() {
+  const enemies = await getCollection('enemies');
+  return enemies.map((e) => ({ params: { slug: e.id }, props: { e } }));
+}
+
+const { e } = Astro.props;
+const { Content } = await render(e);
+const { stats } = e.data;
+---
+<Layout title={e.data.name}>
+  <p><a href="/ennemis">&larr; Retour au bestiaire</a></p>
+  {e.data.image && <img src={e.data.image} alt={e.data.name} style="width:200px; border-radius: 6px;" />}
+  <h1>{e.data.name}</h1>
+  <p><em>{e.data.type}</em></p>
+  <table>
+    <tr><td><strong>Danger (CR)</strong></td><td>{e.data.cr}</td></tr>
+    <tr><td><strong>CA</strong></td><td>{e.data.ac}</td></tr>
+    <tr><td><strong>PV</strong></td><td>{e.data.hp}</td></tr>
+    <tr><td><strong>Vitesse</strong></td><td>{e.data.speed}</td></tr>
+  </table>
+  <table>
+    <tr><th>FOR</th><th>DEX</th><th>CON</th><th>INT</th><th>SAG</th><th>CHA</th></tr>
+    <tr>
+      <td>{stats.for}</td><td>{stats.dex}</td><td>{stats.con}</td>
+      <td>{stats.int}</td><td>{stats.sag}</td><td>{stats.cha}</td>
+    </tr>
+  </table>
+  <Content />
+</Layout>

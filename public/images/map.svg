@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" width="900" height="600" font-family="Georgia, serif">
+  <!-- Fond : terres fertiles au nord, désert au sud -->
+  <rect width="900" height="600" fill="#e8dcc0"/>
+  <rect x="0" y="0" width="900" height="330" fill="#cddba0"/>
+  <rect x="0" y="330" width="900" height="270" fill="#e3c98a"/>
+
+  <!-- Mer au nord-ouest -->
+  <path d="M0,0 L260,0 L180,90 L0,140 Z" fill="#7fa8c9"/>
+  <text x="60" y="60" font-size="16" fill="#274a63">Mer</text>
+
+  <!-- Rivière (affluent du Bastione) -->
+  <path d="M180,90 C260,150 300,220 340,300 C370,360 380,420 360,470" stroke="#5f8fb8" stroke-width="8" fill="none"/>
+
+  <!-- Montagnes (Castri, nord) -->
+  <polygon points="380,20 410,70 350,70" fill="#8a8a78"/>
+  <polygon points="430,10 465,65 395,65" fill="#8a8a78"/>
+  <polygon points="480,25 510,70 450,70" fill="#8a8a78"/>
+  <text x="430" y="95" font-size="14" fill="#4a4a3a" text-anchor="middle">Les Castri</text>
+
+  <!-- Fossa Verde (est, hors-carte suggérée) -->
+  <rect x="700" y="150" width="200" height="300" fill="#5f7a4a" opacity="0.55"/>
+  <text x="800" y="140" font-size="16" fill="#3a4a2a" text-anchor="middle">Fossa Verde</text>
+
+  <!-- Riarsa (désert, sud) -->
+  <text x="450" y="560" font-size="20" fill="#7a5a2a" text-anchor="middle">LA RIARSA</text>
+
+  <!-- Route principale -->
+  <path d="M300,260 L340,300 L330,380 L360,470" stroke="#7a5a2a" stroke-width="3" stroke-dasharray="6,6" fill="none"/>
+
+  <!-- Gratigna -->
+  <circle cx="300" cy="260" r="14" fill="#6a2a3a" stroke="#2b1d14" stroke-width="2"/>
+  <text x="300" y="235" font-size="18" fill="#3a2418" text-anchor="middle">Gratigna</text>
+
+  <!-- Celside -->
+  <circle cx="150" cy="220" r="12" fill="#5a4a2a" stroke="#2b1d14" stroke-width="2"/>
+  <text x="150" y="198" font-size="16" fill="#3a2418" text-anchor="middle">Celside</text>
+
+  <!-- Villaggio dei Salici -->
+  <circle cx="340" cy="300" r="9" fill="#3a5a4a" stroke="#2b1d14" stroke-width="2"/>
+  <text x="380" y="305" font-size="14" fill="#3a2418">Villaggio dei Salici</text>
+
+  <!-- Vallombra -->
+  <circle cx="330" cy="380" r="13" fill="#8a5a2a" stroke="#2b1d14" stroke-width="2"/>
+  <text x="330" y="405" font-size="18" fill="#3a2418" text-anchor="middle">Vallombra</text>
+
+  <!-- Miniera Abbandonata -->
+  <rect x="530" y="360" width="20" height="20" fill="#4a4a3a" stroke="#2b1d14" stroke-width="2"/>
+  <text x="540" y="405" font-size="14" fill="#3a2418" text-anchor="middle">Miniera</text>
+  <text x="540" y="420" font-size="14" fill="#3a2418" text-anchor="middle">Abbandonata</text>
+
+  <!-- Ossario Sepolto -->
+  <path d="M360,470 L400,520" stroke="#7a5a2a" stroke-width="3" stroke-dasharray="6,6" fill="none"/>
+  <circle cx="410" cy="530" r="12" fill="#2a2a2a" stroke="#f6ead9" stroke-width="2"/>
+  <text x="410" y="555" font-size="16" fill="#2a1a10" text-anchor="middle">L'Ossario Sepolto</text>
+
+  <!-- Rose des vents -->
+  <g transform="translate(830,50)">
+    <circle r="28" fill="#f6ead9" stroke="#3a2418" stroke-width="2"/>
+    <text x="0" y="-12" font-size="12" text-anchor="middle">N</text>
+    <text x="0" y="20" font-size="12" text-anchor="middle">S</text>
+    <text x="-16" y="5" font-size="12" text-anchor="middle">O</text>
+    <text x="16" y="5" font-size="12" text-anchor="middle">E</text>
+  </g>
+
+  <text x="450" y="30" font-size="22" fill="#3a2418" text-anchor="middle">Les Marches de Gratigna — Confédération des Libres Cités</text>
+</svg>

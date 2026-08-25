@@ -1,0 +1,20 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection, render } from 'astro:content';
+
+export const prerender = true;
+
+export async function getStaticPaths() {
+  const arcs = await getCollection('arcs');
+  return arcs.map((arc) => ({ params: { slug: arc.id }, props: { arc } }));
+}
+
+const { arc } = Astro.props;
+const { Content } = await render(arc);
+---
+<Layout title={arc.data.title}>
+  <p><a href="/campagne">&larr; Retour à la campagne</a></p>
+  <h1>{arc.data.title}</h1>
+  <p><em>{arc.data.sessions}</em></p>
+  <Content />
+</Layout>

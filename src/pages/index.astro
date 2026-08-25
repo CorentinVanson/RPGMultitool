@@ -1,0 +1,34 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const arcs = (await getCollection('arcs')).sort((a, b) => a.data.order - b.data.order);
+---
+<Layout title="Accueil">
+  <h1>Les Marches de Gratigna</h1>
+  <p>
+    Une campagne <strong>Historia</strong> d'environ 20 sessions, pour un groupe qui aime alterner
+    combat, enquête, énigmes, politique et gestion de quartier. Le bourg de <strong>Vallombra</strong>,
+    aux portes du désert de la Riarsa, sert de point de départ à une intrigue qui mêle sabotage
+    économique, culte oublié et jeux de pouvoir entre cités de la Confédération.
+  </p>
+
+  <h2>Arcs de la campagne</h2>
+  <div class="grid">
+    {arcs.map((arc) => (
+      <div class="card">
+        <h3><a href={`/campagne/${arc.id}`}>{arc.data.title}</a></h3>
+        <p><em>{arc.data.sessions}</em></p>
+        <p>{arc.data.summary}</p>
+      </div>
+    ))}
+  </div>
+
+  <h2>Raccourcis</h2>
+  <ul>
+    <li><a href="/monde">La carte et le contexte du monde</a></li>
+    <li><a href="/lieux">Les lieux importants</a></li>
+    <li><a href="/personnages">Les personnages non-joueurs</a></li>
+    <li><a href="/ennemis">Le bestiaire (ennemis et stats)</a></li>
+  </ul>
+</Layout>

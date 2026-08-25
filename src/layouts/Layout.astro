@@ -1,0 +1,100 @@
+---
+interface Props {
+  title: string;
+}
+const { title } = Astro.props;
+---
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title} — RPGMultitool</title>
+    <style>
+      :root {
+        --bg: #1c150f;
+        --bg-panel: #2b2018;
+        --accent: #b3813a;
+        --text: #f1e6d3;
+        --text-muted: #c9b899;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family: Georgia, "Times New Roman", serif;
+        line-height: 1.6;
+      }
+      header {
+        background: var(--bg-panel);
+        border-bottom: 2px solid var(--accent);
+        padding: 1rem 2rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        align-items: center;
+      }
+      header h1 { margin: 0; font-size: 1.4rem; color: var(--accent); }
+      nav { display: flex; gap: 1rem; flex-wrap: wrap; }
+      nav a {
+        color: var(--text-muted);
+        text-decoration: none;
+        font-size: 0.95rem;
+        border-bottom: 1px solid transparent;
+      }
+      nav a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+      main { max-width: 960px; margin: 0 auto; padding: 2rem; }
+      footer {
+        text-align: center;
+        padding: 2rem;
+        color: var(--text-muted);
+        font-size: 0.85rem;
+      }
+      h1, h2, h3 { color: var(--accent); }
+      a { color: #d9b46a; }
+      .card {
+        background: var(--bg-panel);
+        border: 1px solid #4a3a28;
+        border-radius: 6px;
+        padding: 1rem 1.25rem;
+        margin-bottom: 1rem;
+      }
+      .card img { width: 100%; border-radius: 4px; display: block; margin-bottom: 0.75rem; }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 1rem;
+      }
+      .tag {
+        display: inline-block;
+        background: #3a2c1d;
+        color: var(--text-muted);
+        border-radius: 3px;
+        padding: 0.1rem 0.5rem;
+        font-size: 0.75rem;
+        margin-right: 0.3rem;
+      }
+      table { border-collapse: collapse; width: 100%; }
+      table td, table th { border: 1px solid #4a3a28; padding: 0.4rem 0.6rem; text-align: left; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>🗡️ RPGMultitool</h1>
+      <nav>
+        <a href="/">Accueil</a>
+        <a href="/monde">Le Monde</a>
+        <a href="/lieux">Lieux</a>
+        <a href="/personnages">Personnages</a>
+        <a href="/ennemis">Ennemis</a>
+        <a href="/campagne">Campagne</a>
+      </nav>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer>
+      Outil de maîtrise pour la campagne Historia — usage personnel, non affilié à l'éditeur.
+    </footer>
+  </body>
+</html>

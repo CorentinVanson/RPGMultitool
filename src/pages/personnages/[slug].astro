@@ -1,0 +1,24 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection, render } from 'astro:content';
+
+export const prerender = true;
+
+export async function getStaticPaths() {
+  const npcs = await getCollection('npcs');
+  return npcs.map((npc) => ({ params: { slug: npc.id }, props: { npc } }));
+}
+
+const { npc } = Astro.props;
+const { Content } = await render(npc);
+---
+<Layout title={npc.data.name}>
+  <p><a href="/personnages">&larr; Retour aux personnages</a></p>
+  {npc.data.image && <img src={npc.data.image} alt={npc.data.name} style="width:200px; border-radius: 6px;" />}
+  <h1>{npc.data.name}</h1>
+  <p><em>{npc.data.role}</em></p>
+  {npc.data.location && <p>📍 {npc.data.location}</p>}
+  {npc.data.faction && <p class="tag">{npc.data.faction}</p>}
+  {npc.data.alignment && <p><strong>Attitude :</strong> {npc.data.alignment}</p>}
+  <Content />
+</Layout>
