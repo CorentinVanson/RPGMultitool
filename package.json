@@ -4,9 +4,9 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "dev": "nuxt dev",
+    "dev": "node scripts/generate-content.mjs && nuxt dev",
     "start": "node .output/server/index.mjs",
-    "build": "nuxt build",
+    "build": "node scripts/generate-content.mjs && nuxt build",
     "preview": "nuxt preview"
   },
   "dependencies": {

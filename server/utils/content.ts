@@ -1,6 +1,4 @@
-import { readFile, readdir } from 'node:fs/promises';
-import { join } from 'node:path';
-import matter from 'gray-matter';
+import { contentFiles } from '../generated/content';
 
 export type ContentEntry = {
   id: string;
@@ -8,22 +6,20 @@ export type ContentEntry = {
   body: string;
 };
 
-const contentRoot = join(process.cwd(), 'src', 'content');
-
 export async function getCollection(name: string): Promise<ContentEntry[]> {
-  const directory = join(contentRoot, name);
-  const files = (await readdir(directory)).filter((file) => file.endsWith('.md'));
+  const collectionPath = `/src/content/${name}/`;
 
-  return Promise.all(files.map(async (file) => {
-    const source = await readFile(join(directory, file), 'utf8');
-    const parsed = matter(source);
+  return Object.entries(contentFiles)
+    .filter(([filePath]) => filePath.replaceAll('\\', '/').includes(collectionPath))
+    .map(([filePath, entry]) => {
+      const fileName = filePath.replaceAll('\\', '/').split('/').pop() ?? '';
 
-    return {
-      id: file.replace(/\.md$/, ''),
-      data: parsed.data,
-      body: parsed.content,
-    };
-  }));
+      return {
+        id: fileName.replace(/\.md$/, ''),
+        data: entry.data,
+        body: entry.body,
+      };
+    });
 }
 
 export async function getEntry(name: string, id: string): Promise<ContentEntry | null> {

@@ -5,6 +5,7 @@ node_modules/
 dist/
 .nitro/
 .output/
+server/generated/
 .astro/
 .env
 .DS_Store
