@@ -5,6 +5,7 @@ node_modules/
 dist/
 .nitro/
 .output/
+.nuxt/
 server/generated/
 .astro/
 .env
