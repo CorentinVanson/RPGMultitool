@@ -3,6 +3,8 @@ books/**
 # Astro / Node
 node_modules/
 dist/
+.nitro/
+.output/
 .astro/
 .env
 .DS_Store
