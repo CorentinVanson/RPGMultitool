@@ -8,15 +8,9 @@ const output = join(process.cwd(), 'server', 'generated', 'content.ts');
 function normalizeText(value) {
   if (typeof value !== 'string') return value;
 
-  const decoded = value
-    .replace(/\\u([0-9a-fA-F]{4})/g, (_, code) => String.fromCharCode(parseInt(code, 16)))
-    .replace(/\\u00e(?=[a-z])/gi, 'e')
-    .replace(/\\u00f(?=[a-z])/gi, 'u')
-    .replace(/\\u[0-9a-fA-F]{2,3}/g, '')
-    .replace(/�/g, '');
-  if (!/[ÃÂâ]/.test(decoded)) return decoded;
-
-  return Buffer.from(decoded, 'latin1').toString('utf8').replace(/�/g, '');
+  return value.replace(/\\u([0-9a-fA-F]{4})/g, (_, code) =>
+    String.fromCharCode(parseInt(code, 16)),
+  );
 }
 
 function normalize(value) {
