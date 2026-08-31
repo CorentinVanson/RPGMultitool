@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { computed, onMounted, ref, watch } from 'vue';
-import { useFetch, useRoute } from '#imports';
+import { useRoute } from '#imports';
 import type { ContentEntry } from '../types/content';
+import { entryName, sectionCollections, useContentCollection } from '../composables/useContent';
 import { useProjectionController, type ProjectionActor } from '../composables/useProjection';
 
 const route = useRoute();
@@ -11,12 +12,13 @@ const showCatalog = ref(false);
 
 onMounted(start);
 
-const { data: locations } = useFetch<ContentEntry[]>('/api/content/locations', { key: 'projection-locations', lazy: true });
-const { data: npcs } = useFetch<ContentEntry[]>('/api/content/npcs', { key: 'projection-npcs', lazy: true });
-const { data: enemies } = useFetch<ContentEntry[]>('/api/content/enemies', { key: 'projection-enemies', lazy: true });
+// Le dock est monté sur toutes les pages : il amène donc tout le contenu dans le cache dès la première visite.
+useContentCollection('arcs');
+const { data: locations } = useContentCollection('locations');
+const { data: npcs } = useContentCollection('npcs');
+const { data: enemies } = useContentCollection('enemies');
 
-const entryName = (entry: ContentEntry) => String(entry.data.name ?? entry.data.title ?? entry.id);
-const withImage = (entries: ContentEntry[] | null) => (entries ?? []).filter((entry) => Boolean(entry.data.image));
+const withImage = (entries: ContentEntry[] | null | undefined) => (entries ?? []).filter((entry) => Boolean(entry.data.image));
 
 /** Normalise un nom de lieu pour comparer « L'Ossario Sepolto » et « L'Ossario Sepolto (catacombes) ». */
 function normalizePlace(value: string): string {
@@ -42,12 +44,10 @@ const availableActors = computed<ProjectionActor[]>(() => [
   ...withImage(enemies.value).map((entry) => toActor(entry, 'enemies')),
 ]);
 
-const sectionMap: Record<string, 'locations' | 'npcs' | 'enemies'> = { lieux: 'locations', personnages: 'npcs', ennemis: 'enemies' };
-
 const currentEntry = computed(() => {
-  const collection = sectionMap[String(route.params.section ?? '')];
+  const collection = sectionCollections[String(route.params.section ?? '')];
   const slug = String(route.params.slug ?? '');
-  if (!collection || !slug) return null;
+  if (!collection || collection === 'arcs' || !slug) return null;
   const source = { locations: locations.value, npcs: npcs.value, enemies: enemies.value }[collection];
   const entry = (source ?? []).find((item) => item.id === slug);
   return entry ? { collection, entry } : null;

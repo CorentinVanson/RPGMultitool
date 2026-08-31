@@ -1,8 +1,7 @@
 <script setup lang="ts">
-import { useFetch } from '#imports';
-import type { ContentEntry } from '../types/content';
+import { useContentCollection } from '../composables/useContent';
 
-const { data: entries } = await useFetch<ContentEntry[]>('/api/content/arcs');
+const { data: entries } = await useContentCollection('arcs');
 </script>
 
 <template>

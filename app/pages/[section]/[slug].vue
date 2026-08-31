@@ -1,13 +1,16 @@
 <script setup lang="ts">
+import { computed } from 'vue';
 import { createError } from 'h3';
-import { useFetch, useRoute } from '#imports';
-import type { ContentDetail } from '../../types/content';
+import { useRoute } from '#imports';
+import { sectionCollections, useContentCollection } from '../../composables/useContent';
 
 const route = useRoute();
 const section = route.params.section as string;
-const collectionMap: Record<string, string> = { campagne: 'arcs', lieux: 'locations', personnages: 'npcs', ennemis: 'enemies' };
-const { data: entry } = await useFetch<ContentDetail>(`/api/content/${collectionMap[section]}`, { query: { id: route.params.slug } });
-if (!collectionMap[section] || !entry.value) throw createError({ statusCode: 404, statusMessage: 'Page introuvable' });
+const collection = sectionCollections[section];
+if (!collection) throw createError({ statusCode: 404, statusMessage: 'Page introuvable' });
+const { data: entries } = await useContentCollection(collection);
+const entry = computed(() => (entries.value ?? []).find((item) => item.id === route.params.slug) ?? null);
+if (!entry.value) throw createError({ statusCode: 404, statusMessage: 'Page introuvable' });
 </script>
 
 <template>
