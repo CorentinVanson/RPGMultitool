@@ -1,6 +1,7 @@
 ---
 name: "Contessa Serafina Dal Moro"
 role: "Podestat de Vallombra (patronne principale des PJ)"
+familia: "Felide — gatta (theria)"
 location: "Vallombra"
 faction: "Conseil de Vallombra"
 image: "/images/npcs/serafina-dal-moro.svg"
@@ -25,7 +26,7 @@ summary: "Dirigeante ambitieuse de Vallombra, elle engage les PJ pour protéger 
 **Vitesse** : 30 ft  
 **Sauvegarde** : Sagesse +6, Charisme +6  
 **Compétences** : Intuition +6, Persuasion +6, Tromperie +5, Perspicacité +6, Histoire +5, Arcanes +5  
-**Traits** : Thérienne (féline, pelage gris argenté)  
+**Familia / Espèce** : Felide — gatta (theria). Les gatti excellent dans la guerre feutrée des cités, où la compétition se joue en influence plutôt qu'en force.  
 
 ### Équipement et armes
 - **Épée courte** (+ 3 au toucher, 1d6+1 dégâts)
@@ -41,9 +42,9 @@ summary: "Dirigeante ambitieuse de Vallombra, elle engage les PJ pour protéger 
 
 ## Portrait
 
-La Contessa Serafina est une Thérienne de 42 ans, au pelage gris argenté commençant à s'argenter naturellement aux tempes. Elle cultive une prestance impeccable : posture droite, regard perçant, vêtements toujours nobles mais sans ostentation exagérée. Elle porte les sceaux de sa charge avec sérieux, car pour elle, le titre n'est jamais séparé de la responsabilité.
+La Contessa Serafina est une gatta de 42 ans, au pelage gris fumé zébré de plus sombre, que l'âge argente autour du museau et des sourcils. Elle cultive une prestance impeccable : posture droite, oreilles toujours dressées et orientées vers celui qui parle, vêtements nobles mais sans ostentation exagérée. Elle porte les sceaux de sa charge avec sérieux, car pour elle, le titre n'est jamais séparé de la responsabilité.
 
-Physiquement, elle conserve la souplesse naturelle de sa race, mais son corps porte les marques de quarante années de vie politique : une cicatrice en biais sur l'avant-bras gauche (héritage d'une esquisse de coup lors d'une tentative d'assassinat, il y a quinze ans), une légère raideur à l'épaule droite (vieille blessure de guerre civile), des yeux qui ne s'étonnnent plus facile.
+Elle conserve la souplesse féline de sa familia, mais son corps porte les marques de quarante années de vie politique : une cicatrice en biais sur l'avant-bras gauche où le poil ne repousse plus (tentative d'assassinat, il y a quinze ans), une légère raideur à l'épaule droite (vieille blessure de guerre civile), une oreille gauche fendue à la pointe. Sa queue reste la seule partie d'elle qui trahisse encore ses humeurs, ce qu'elle déteste.
 
 ## Personnalité
 

@@ -1,6 +1,7 @@
 ---
 name: "Anziano Pietro"
 role: "Doyen du Villaggio dei Salici (quête-giver Arc I Session 5)"
+familia: "Grarcona — airone (aviano)"
 location: "Villaggio dei Salici (marais des saules)"
 faction: "Communauté du Villaggio"
 image: "/images/npcs/anziano-pietro.svg"
@@ -25,7 +26,7 @@ summary: "Doyen avisé d'un village de pêcheurs. Il refuse les explications sup
 **Vitesse** : 25 ft (légèrement raidi par l'âge)  
 **Sauvegarde** : Sagesse +6, Intelligence +5  
 **Compétences** : Perspicacité +6, Perception +6, Survie +6, Nature +5, Histoire +5, Médecine +6, Investigation +5  
-**Traits** : Humain, connaissances locales, expertise rurale
+**Familia / Espèce** : Grarcona — airone (aviano). Tempérament prudent, calculateur et prévoyant : les aironi sont les stratèges de la veille, ceux qui préparent le coup avant qu'il ne soit porté.
 
 ### Équipement et armes
 - **Bâton de marche** (+1 au toucher, 1d6+1 dégâts, aussi aide à la mobilité)
@@ -42,11 +43,11 @@ summary: "Doyen avisé d'un village de pêcheurs. Il refuse les explications sup
 
 ## Portrait
 
-Anziano (Doyen) Pietro est un homme de 68 ans, small et compact, avec un dos légèrement voûté par six décennies de travail manuel. Ses cheveux sont blancs, portés courts, sa barbe aussi blanche et bien entretenue. Son visage est deeply lined—des rides de rire, des rides de souci, des traces du temps et de l'expérience.
+Anziano (Doyen) Pietro est un airone de 68 ans, haut et anguleux, le cou long tenu légèrement rentré dans les épaules par six décennies de travail dans l'eau froide. Son plumage gris-bleu a blanchi à la gorge et sur la huppe, qu'il garde courte et soigneusement peignée. Son long bec jaune est ébréché à la pointe, souvenir d'un brochet qui s'est mieux défendu que prévu.
 
-Ses yeux bleu-gris sont nets, perçants, rarement clignotants. Ils vous regardent directement, sans malice mais aussi sans douceur. Il porte toujours un costume simple et propre de lin ou laine, jamais luxueux mais bien tissé. Un chapeau de paille large en été, une capuche en hiver.
+Ses yeux jaune pâle sont nets, perçants, presque immobiles. Ils vous regardent directement, sans malice mais aussi sans douceur. Il porte toujours un vêtement simple et propre de lin ou de laine, jamais luxueux mais bien tissé, un large chapeau de paille en été, une capuche en hiver.
 
-Ses mains sont calleuses, les doigts légèrement tordus par l'arthrite mais toujours forts. Il se déplace lentement, délibérément, utilisant son bâton de marche comme point d'appui.
+Ses pattes grêles sont nouées d'arthrite mais toujours sûres dans la vase ; il peut rester debout sur une seule jambe le temps d'une conversation entière sans y penser. Il se déplace lentement, délibérément, en s'appuyant sur son bâton de marche, et ne vole pratiquement plus — par prudence, dit-il, pas par faiblesse.
 
 ## Personnalité
 
@@ -84,7 +85,7 @@ Livia est brillante et curieuse—trop pour un petit village. Elle lisait (rare 
 
 Il y a deux semaines, Livia a disparu. Les traces menaient à la saulaie, à une corde coupée, une lanterne abandonnée, une odeur étrange de sable brûlé. Pietro a trouvé plus tard un fragment d'ossement gravé, de facture non-villageoise.
 
-Maintenant, à 68 ans, Pietro affronte peut-être la perte la plus grave : non pas la mort (il s'y attend à son âge), mais le mystère et l'inaction. Il ne peut plus enquêter seul. Il doit demander de l'aide étrangère. C'est dur pour un homme qui a prêché l'autosuffisance pendant 28 ans.
+Maintenant, à 68 ans, Pietro affronte peut-être la perte la plus grave : non pas la mort (il s'y attend à son âge), mais le mystère et l'inaction. Il ne peut plus enquêter seul. Il doit demander de l'aide étrangère. C'est dur pour un airone qui a prêché l'autosuffisance pendant 28 ans.
 
 ## Implications dans l'Arc I
 

@@ -9,7 +9,7 @@ summary: "Ancienne mine d'argent à la frontière de la Fossa Verde, disputée e
 
 ## Description
 
-Cette mine d'argent, fermée depuis une génération après un effondrement, borde le territoire sauvage de la Fossa Verde. Des rumeurs de veines encore riches ont attiré la compagnie mercenaire **I Randagi della Fossa Verde**, menée par la Capitaine Orsina Vetraia, qui en a pris possession de facto.
+Cette mine d'argent, fermée depuis une génération après un effondrement, borde le territoire sauvage de la Fossa Verde. Des rumeurs de veines encore riches ont attiré la compagnie mercenaire **I Randagi della Fossa Verde** — détachement de la Fratellanza dei Vermi — menée par la Capitaine Orsina Vetraia, qui en a pris possession de facto.
 
 Vallombra revendique légalement la mine (elle finance une partie de ses fortifications sur cette base), créant un différend qui peut se régler par la force, la diplomatie... ou une alliance contre une menace commune.
 

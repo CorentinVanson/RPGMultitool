@@ -1,8 +1,9 @@
 ---
 name: "Ilaria Conti"
 role: "Guildmaître de la Compagnia del Tralcio (antagoniste Arc I)"
+familia: "Licae — volpe rossa (theria)"
 location: "Gratigna"
-faction: "Compagnia del Tralcio"
+faction: "Compagnia del Compasso — consorzio del Tralcio (filiale vinicole)"
 image: "/images/npcs/ilaria-conti.svg"
 alignment: "Chaotique Neutre (ambition sans scrupule)"
 summary: "Femme d'affaires impitoyable qui contrôle le commerce du vin régional. Elle orchestre la crise de Vallombra pour en acquérir les celliers."
@@ -25,7 +26,8 @@ summary: "Femme d'affaires impitoyable qui contrôle le commerce du vin régiona
 **Vitesse** : 30 ft  
 **Sauvegarde** : Dextérité +5, Charisme +6, Intelligence +6  
 **Compétences** : Tromperie +6, Perspicacité +5, Persuasion +6, Duperie +6, Arcanes +6, Intuition +5  
-**Traits** : Humaine, magie mineure (Prestidigitation, Faux-Semblant, Rayon de Givre)  
+**Familia / Espèce** : Licae — volpe rossa (theria). Trompeuse-née : maîtrise naturelle du mensonge utile, intérêt personnel avant tout, et l'art de ne jamais prendre de risque inutile.  
+**Faction** : Compagnia del Compasso. Le « consorzio del Tralcio » est la filiale vinicole que la Compagnia a laissée prospérer dans l'arrière-pays ; Ilaria y tient un grade élevé et compte s'en servir pour peser sur les vertici.
 
 ### Équipement et armes
 - **Épée courte ensorcelée** (+4 au toucher, 1d6+2 dégâts, peut être maudite)
@@ -42,9 +44,9 @@ summary: "Femme d'affaires impitoyable qui contrôle le commerce du vin régiona
 
 ## Portrait
 
-Ilaria Conti est une femme de 48 ans d'apparence ordinaire : cheveux châtain rougeâtre attachés simplement, traits réguliers, vêtements nobles mais sans joyaux ostensibles. Son véritable charme réside dans son port et sa voix : elle se meut avec une grâce calculée, chaque geste au service de son intention. Sa voix est chaude, leggermente rauque (elle fume des herbes aromatiques), et elle rit souvent—mais c'est un rire sans chaleur, un outil.
+Ilaria Conti est une volpe rossa de 48 ans d'apparence volontairement banale : fourrure rousse tenue courte et propre, gorge et poitrail blancs, aucune parure ostensible sur des vêtements pourtant nobles. Son véritable charme réside dans son port et sa voix : elle se meut avec une grâce calculée, chaque geste au service de son intention. Sa voix est chaude, légèrement rauque (elle fume des herbes aromatiques), et elle rit souvent — mais c'est un rire sans chaleur, un outil.
 
-Ses yeux sont gris acier, presque décolorés, et ils ne vous quittent jamais vraiment quand elle vous parle. Les gens la trouvent magnétique et terrifiante à la fois.
+Ses yeux sont ambre pâle, presque décolorés, et ils ne vous quittent jamais vraiment quand elle vous parle. Ses oreilles se tournent vers la moindre conversation voisine pendant qu'elle vous écoute, et sa queue reste rigoureusement immobile : elle a appris très jeune que c'est par elle qu'un licae se trahit. Les gens la trouvent magnétique et terrifiante à la fois.
 
 ## Personnalité
 
@@ -65,7 +67,7 @@ Ses yeux sont gris acier, presque décolorés, et ils ne vous quittent jamais vr
 - Meco (son principal intermédiaire financier, peut-être l'homme le plus proche de l'amitié qu'elle connaisse).
 
 **Défauts** :
-- Elle surestime sa capacité à prédire et contrôler les variables humaines.
+- Elle surestime sa capacité à prédire et contrôler les variables personnelles de ses adversaires.
 - Elle porte rancune longtemps, avec une patience terrifiante (vengeance froide).
 - Elle confond richesse et invincibilité ; elle croit que de l'argent peut résoudre tout problème.
 

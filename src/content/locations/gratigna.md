@@ -16,7 +16,7 @@ La cité tourne le dos à la Riarsa, préférant se concentrer sur ses vignes no
 ## Personnages associés
 
 - Principe Aldo Vestraro (souverain de Gratigna)
-- Ilaria Conti (Guildmaster de la Compagnia del Tralcio)
+- Ilaria Conti (Guildmaster du consorzio del Tralcio, Compagnia del Compasso)
 
 ## Utilisation en jeu
 

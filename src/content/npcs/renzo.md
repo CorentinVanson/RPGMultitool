@@ -1,8 +1,9 @@
 ---
 name: "Renzo \"la Taupe\""
 role: "Informateur et contrebandier"
+familia: "Eulipa — talpa (theria)"
 location: "Vallombra (Guscio)"
-faction: "Indépendant / Réseau souterrain du Guscio"
+faction: "Circolo dei Sussurri — informateur du Guscio (grade 0)"
 image: "/images/npcs/renzo.svg"
 alignment: "Chaotique Neutre (loyal au paiement, pas aux principes)"
 summary: "Ferret des bas quartiers de Vallombra. Il sait tout, vend tout, et n'est fidèle qu'à sa bourse. Prêt à pourrir la moitié de la cité pour une pièce d'argent."
@@ -22,10 +23,11 @@ summary: "Ferret des bas quartiers de Vallombra. Il sait tout, vend tout, et n'e
 **Classe/Niveau** : Roué 4 / Spécialiste d'Information  
 **Armure de classe** : 14 (cuir léger, avantage de murs proches)  
 **Points de vie** : 22 (4d8+0)  
-**Vitesse** : 30 ft (40 ft dans les ruelles connues)  
+**Vitesse** : 7,5 m (fouissage 3 m ; il double sa mise dans les galeries et caves qu'il connaît)  
 **Sauvegarde** : Dextérité +4, Charisme +4  
 **Compétences** : Tromperie +4, Perspicacité +4, Perception +3, Duperie +4, Escamotage +5, Discrétion +5, Acrobatie +4  
-**Traits** : Humain, réseau d'informateurs, connaissances souterraines
+**Familia / Espèce** : Eulipa — talpa (theria). Excellente mémoire, dons innés de mineur et vitesse de fouissage ; vue déplorable compensée par des sens extrêmement développés.  
+**Faction** : Circolo dei Sussurri, grade 0. Il alimente la toile de secrets du Circolo sans en être vraiment membre, et n'a aucune idée de qui, plus haut, lit ce qu'il vend.
 
 ### Équipement et armes
 - **Dague courte** (+4 au toucher, 1d4+2 dégâts, idéale pour la fuite)
@@ -41,14 +43,14 @@ summary: "Ferret des bas quartiers de Vallombra. Il sait tout, vend tout, et n'e
 
 ## Portrait
 
-Renzo est un homme de 45 ans, petit (1m60), maigre, avec des yeux marron nerveux qui bougent constamment. Ses cheveux sont châtain-noir, grisonnants aux tempes, généralement couverts d'un bonnet usé ou d'un bandeau. Il porte des vêtements variés mais toujours aux coutures usées, jamais neufs. Une cicatrice court le long de sa mâchoire gauche (tentative d'assassinat, dix ans passés).
+Renzo est une talpa de 45 ans, petit (1 m), trapu sous la fourrure, au pelage noir velouté grisonnant autour du groin. Ses yeux minuscules, presque aveugles au grand jour, se plissent dès qu'on ouvre un volet ; il vous « regarde » en fait avec le nez et les vibrisses, qui frémissent sans arrêt. Ses mains sont démesurées, en forme de pelles, aux griffes limées assez court pour passer inaperçues sous des mitaines. Il porte des vêtements variés mais toujours aux coutures usées, jamais neufs, et un bonnet rabattu sur les yeux. Une cicatrice court le long de sa mâchoire gauche (tentative d'assassinat, dix ans passés).
 
-Il se meut avec une agilité féline, jamais pressé mais toujours en mouvement. Son rire est nerveux et fréquent, souvent au mauvais moment. Il fume des herbes bon marché dans une petite pipe en bois.
+Il se meut lentement en surface et redevient rapide dès qu'il y a un mur à longer ou une cave où descendre. Son rire est nerveux et fréquent, souvent au mauvais moment. Il fume des herbes bon marché dans une petite pipe en bois, et retient chaque mot qu'on prononce devant lui : la mémoire des talpe est la vraie marchandise qu'il vend.
 
 ## Personnalité
 
 **Traits dominants** :
-- **Nerveux chronique** : Renzo a le système nerveux d'un homme qui a survécu par la vigilance constante.
+- **Nerveux chronique** : Renzo a les nerfs de qui a survécu par la vigilance constante.
 - **Volubile quand payé** : Taiseux quand il ne l'est pas. L'information a un prix, toujours.
 - **Opportuniste sans scrupule** : Il vendrait sa propre grand-mère si le prix était bon.
 - **Étonnamment loyal (temporairement)** : Pour quelques semaines après un paiement généreux, Renzo traite ses clients comme des "patrons".
@@ -71,7 +73,7 @@ Il se meut avec une agilité féline, jamais pressé mais toujours en mouvement.
 
 ## Backstory
 
-Renzo est né dans les bas-quartiers du Guscio, fils d'une femme de chambre et d'un père jamais nommé (probablement un nobleman de passage). Sa mère l'a élevé dans les rues, le menant vol, puis mendicité, puis graduallement intelligence basse vers le commerce d'information.
+Renzo est né dans les bas-quartiers du Guscio, fils d'une servante talpa et d'un père jamais nommé (probablement un noble de passage). Sa mère l'a élevé dans les rues, le menant du vol à la mendicité, puis graduellement au commerce d'information.
 
 À 20 ans, il avait établi son premier contact utile : un garde corrompu de Vallombra. À 30 ans, il contrôlait un réseau de 10-15 informateurs secondaires. À 45 ans (maintenant), Renzo est la principale source de rumeurs filtrées des bas-quartiers de Vallombra.
 

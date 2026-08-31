@@ -13,7 +13,7 @@ stats:
   int: 6
   sag: 8
   cha: 5
-summary: "Squelette rituellement lacéré (\"Mortificato\") gardant l'Ossario Sepolto pour l'Ordine delle Ossa Sopite."
+summary: "Squelette rituellement lacéré (\"Mortificato\") gardant l'Ossario Sepolto pour le schisme des Ossa Sopite, dissident de la Confraternita dei Mortificati."
 ---
 
 ## Actions

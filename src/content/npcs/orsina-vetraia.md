@@ -1,8 +1,9 @@
 ---
 name: "Capitano Orsina Vetraia"
 role: "Chef de la compagnie mercenaire I Randagi della Fossa Verde"
+familia: "Sauta — cinghiale (theria)"
 location: "La Miniera Abbandonata (base)"
-faction: "I Randagi della Fossa Verde"
+faction: "Fratellanza dei Vermi — détachement des Randagi della Fossa Verde"
 image: "/images/npcs/orsina-vetraia.svg"
 alignment: "Chaotique Neutre → Chaotique Bon (selon les PJ)"
 summary: "Mercenaire aguerrie, elle commande les Randagi (exilés et désespérés). Pragmatique, méprise la noblesse, mais fidèle à ses hommes jusqu'à la mort."
@@ -25,7 +26,8 @@ summary: "Mercenaire aguerrie, elle commande les Randagi (exilés et désespér�
 **Vitesse** : 30 ft  
 **Sauvegarde** : Force +6, Constitution +6, Sagesse +5  
 **Compétences** : Athlétisme +6, Perception +5, Intuition +5, Intimidation +5, Survie +5, Commandement +5  
-**Traits** : Humaine (ascendance mixte Fossa Verde), marques de gang, cicatrices de bataille
+**Familia / Espèce** : Sauta — cinghiale (theria). Pragmatique, infatigable, prodigieusement forte ; impossible à prendre au dépourvu, et d'un cuir assez dur pour encaisser ce que d'autres ne survivraient pas.  
+**Faction** : Fratellanza dei Vermi. Les Randagi della Fossa Verde sont l'un des détachements que Tana del Verme entretient sur le continent — loin de la Tour, mal payés, et de plus en plus tentés de se vendre pour leur propre compte.
 
 ### Équipement et armes
 - **Épée bâtarde** (+6 au toucher, 1d10+3 dégâts, nommée "Scarpetana", gravée de runes)
@@ -43,11 +45,11 @@ summary: "Mercenaire aguerrie, elle commande les Randagi (exilés et désespér�
 
 ## Portrait
 
-Orsina Vetraia est une femme de 47 ans, grande (6'0), musclée, avec un physique qui suggère quatre décennies de travail de mercenaire. Ses cheveux sont noirs teintés de gris, toujours attachés ou rasés. Ses yeux sont noisette clair et froids, généralement dépourvus d'émotion.
+Orsina Vetraia est une cinghiale de 47 ans, haute et épaisse, bâtie en coin, avec une carrure que quatre décennies de métier ont rendue compacte et brutale. Sa soie noire tirée de gris est rase sur le crâne et hérissée le long de l'échine dès qu'elle se tend. Ses petits yeux sombres sont froids, généralement dépourvus d'émotion.
 
-Son visage porte les marques du temps et de la guerre : une cicatrice profonde court de sa tempe droite jusqu'à sa mâchoire, deux doigts manquent à sa main gauche (remplacés par une prothèse de cuir et de métal), une brûlure ancienne marque la moitié droite de son cou.
+Son groin et ses joues portent les marques du temps et de la guerre : une cicatrice profonde court de la tempe droite jusqu'à la mâchoire, sa défense inférieure gauche est brisée net à mi-longueur, deux doigts manquent à sa main gauche (remplacés par une prothèse de cuir et de métal), une brûlure ancienne marque la moitié droite de son cou.
 
-Elle se meut avec une agilité dangereuse, chaque geste efficient et prédateur. Elle porte toujours des vêtements mercenaires simples : cuir, toile renforcée, jamais de bijoux ou de luxe superflu.
+Elle se meut avec une agilité dangereuse pour sa masse, chaque geste efficient et prédateur, et charge en ligne droite quand la discussion est finie. Elle porte toujours des vêtements mercenaires simples : cuir, toile renforcée, jamais de bijoux ou de luxe superflu.
 
 ## Personnalité
 

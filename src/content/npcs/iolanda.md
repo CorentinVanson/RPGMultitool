@@ -1,8 +1,9 @@
 ---
 name: "Madre Iolanda"
 role: "Prêtresse de la Foi des Ossa / Chapelle de Vallombra"
+familia: "Striga — barbagianni (aviano)"
 location: "Vallombra (Chapelle)"
-faction: "Église du Sacro Regno (branche locale)"
+faction: "Chiesa delle Ossa — Dottrina Classica (sanctuaire de Vallombra)"
 image: "/images/npcs/iolanda.svg"
 alignment: "Loyal Bon (dévote, en quête de rédemption)"
 summary: "Prêtresse intelligente et dévote. Elle soupçonne l'existence d'un culte hérétique lié aux Ossa et tente secrètement de le combattre."
@@ -25,7 +26,8 @@ summary: "Prêtresse intelligente et dévote. Elle soupçonne l'existence d'un c
 **Vitesse** : 30 ft  
 **Sauvegarde** : Sagesse +6, Charisme +5  
 **Compétences** : Médecine +6, Intuition +6, Insight +6, Religion +5, Arcanes +5, Perspicacité +6  
-**Traits** : Humaine, sacrements, connaissance du clergé
+**Familia / Espèce** : Striga — barbagianni (aviano). Face blanche en forme de cœur, plumage doré, yeux noirs profonds ; oratrice redoutable qui préfère l'intimidation à la force et cache soigneusement ses sentiments.  
+**Faction** : Chiesa delle Ossa, Dottrina Classica. Dans une Confédération acquise à l'Eresia del Carlino, son sanctuaire est un avant-poste mal aimé : elle ne peut compter ni sur l'Inquisition ni sur les fidèles locaux.
 
 ### Équipement et armes
 - **Bâton de messe** (+3 au toucher, 1d6+1 dégâts, aussi focus de magie)
@@ -43,9 +45,9 @@ summary: "Prêtresse intelligente et dévote. Elle soupçonne l'existence d'un c
 
 ## Portrait
 
-Madre Iolanda est une femme de 54 ans, mince et légèrement voûtée de manière ascétique, portant une robe blanche de clergé sacré. Ses cheveux sont gris fer, toujours cachés sous une coiffe blanche. Son visage est fin et attentif, avec des yeux gris clair qui semblent voir au-delà du monde physique. Ses mains sont pales, soignées, marquées de cals des nombreuses prières.
+Madre Iolanda est une barbagianni de 54 ans, mince et légèrement voûtée de manière ascétique, portant la robe blanche du clergé sacré. Sa face en forme de cœur est d'un blanc d'ivoire, ourlée d'un plumage doré que l'âge a terni ; elle la garde en partie dissimulée sous une coiffe blanche. Ses yeux sont deux puits noirs, absolument fixes, qui semblent voir au-delà du monde physique — impression renforcée par sa manière de faire pivoter la tête d'un quart de tour sans bouger le reste du corps.
 
-Elle porte toujours le symbole du Sacro Regno sur sa poitrine, et elle se déplace lentement, délibérément, comme quelqu'un habitué à la contemplation plutôt qu'à l'action hâtive.
+Ses serres sont soigneusement limées, ses ailes toujours repliées sous l'étole. Elle porte le symbole du Sacro Regno sur la poitrine et se déplace lentement, délibérément, sans un bruit — le vol silencieux des strigi la fait apparaître dans les chapelles vides sans que personne ne l'ait entendue venir, ce dont elle ne s'excuse jamais tout à fait.
 
 ## Personnalité
 

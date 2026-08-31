@@ -9,7 +9,7 @@ summary: "Temple oublié consacré au culte des Ossa, enfoui sous les dunes de l
 
 ## Description
 
-Bien avant que le Sacro Regno n'impose son culte des Ossa comme religion d'État, un temple beaucoup plus ancien et beaucoup plus sombre honorait déjà les ossements dans ce qui est aujourd'hui la Riarsa. Enseveli depuis des siècles par les sables, il a été redécouvert par **Fra Cosma**, moine défroqué du Sacro Regno, qui y a fondé l'Ordine delle Ossa Sopite ("l'Ordre des Os Assoupis").
+Bien avant que le Sacro Regno n'impose son culte des Ossa comme religion d'État, un temple beaucoup plus ancien et beaucoup plus sombre honorait déjà les ossements dans ce qui est aujourd'hui la Riarsa. Enseveli depuis des siècles par les sables, il a été redécouvert par **Fra Cosma**, moine défroqué de la Chiesa delle Ossa, qui y a fondé l'Ordine delle Ossa Sopite ("l'Ordre des Os Assoupis") — un schisme de la Confraternita dei Mortificati que la Chiesa ne contrôle plus.
 
 Le site se compose de trois niveaux : les **Cryptes d'Entrée** (pièges, sentinelles squelettes), la **Nef Sépulcrale** (rituels, Custodes d'Ossa), et le **Cœur Sépulcral**, où Fra Cosma tente de réveiller ce qui dort sous l'autel.
 

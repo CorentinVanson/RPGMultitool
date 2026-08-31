@@ -1,6 +1,7 @@
 ---
 name: "Ser Baldassare"
 role: "Capitaine de la garde de Vallombra"
+familia: "Urcida — orso bruno (theria)"
 location: "Vallombra"
 faction: "Conseil de Vallombra / Garde Civile"
 image: "/images/npcs/baldassare.svg"
@@ -25,7 +26,7 @@ summary: "Vétéran militaire borné mais fiable. Il dirige une garde sous-effec
 **Vitesse** : 30 ft  
 **Sauvegarde** : Force +6, Constitution +5  
 **Compétences** : Athlétisme +6, Perception +4, Intimidation +3, Survie +4  
-**Traits** : Humain (ascendance mixte Confédération/Iles Aviane)  
+**Familia / Espèce** : Urcida — orso bruno (theria). Traditionaliste et routinier ; tout imprévu qui rompt son ordre établi provoque l'irritation, puis la colère — et la colère d'un urcide est redoutable.  
 
 ### Équipement et armes
 - **Grande épée** (+6 au toucher, 1d10+3 dégâts, lame usée mais bien entretenue)
@@ -34,16 +35,16 @@ summary: "Vétéran militaire borné mais fiable. Il dirige une garde sous-effec
 - **Cicatrices multiples** (marques de statut militaire)
 
 ### Actions et capacités
-- **Attaque surhumaine** : Peut faire deux attaques par action.
+- **Attaque redoublée** : Peut faire deux attaques par action.
 - **Parade réflexe** : Une fois par tour, peut réduire les dégâts d'une attaque de 1d6+3.
 - **Commandement militaire** : Les gardes locaux lui obéissent sans question. Peut mobiliser 8-12 gardes en 1 heure, 20+ en 4 heures.
 - **Connaissance du terrain** : Avantage sur les tests d'Athlétisme et Perception à Vallombra et ses alentours proches.
 
 ## Portrait
 
-Baldassare est un homme de 58 ans, massif et cicatrisé, aux cheveux gris ras militairement coupés. Ses yeux noisette sont constamment en vigilance, scrutant les environs comme s'il s'attendait à une embuscade. Son visage porte trois grandes cicatrices : une sur la joue droite (coup d'épée, époque des guerres civiles), une sur le front (flèche, bataille navale confédérée), et une demi-lune sous le menton (lame de poignard, tentative d'assassinat à Gratigna il y a 20 ans).
+Baldassare est un orso bruno de 58 ans, massif, l'épaule large et le pas lourd, dont la fourrure brun foncé grisonne au museau et sur le poitrail. Ses petits yeux sombres sont constamment en vigilance, scrutant les environs comme s'il s'attendait à une embuscade. Trois cicatrices tranchent son pelage là où le poil n'a jamais repoussé : une sur la joue droite (coup d'épée, époque des guerres civiles), une au-dessus de l'arcade (flèche, bataille navale confédérée), et une demi-lune sous la mâchoire (lame de poignard, tentative d'assassinat à Gratigna il y a 20 ans).
 
-Son port est rigide, militaire, jamais relâché. Il porte l'armure comme certains portent une seconde peau—confortable, familière, permanente. Même hors-devoir, il semble en uniforme invisible.
+Son port est rigide, militaire, jamais relâché. Son armure a été reforée trois fois pour suivre sa carrure ; il la porte comme certains portent une seconde peau — confortable, familière, permanente. Même hors-devoir, il semble en uniforme invisible. Il lime ses griffes court, par principe : un capitaine se bat avec l'arme du règlement, pas avec ce que la nature lui a donné.
 
 ## Personnalité
 
@@ -81,7 +82,7 @@ Vers 1360, après deux décennies de service, Baldassare a pensé à la retraite
 
 À 58 ans, Baldassare sait qu'il vieillissait, que ses réflexes s'émoussaient. Il doit prouver encore qu'il a de la valeur militaire. Cela le rend dangereux : prêt à surreagir à toute menace perçue, à escalader les conflits plutôt que de les désamorcer.
 
-Il a une fille quelque part (relation avec une femme confédérée il y a 30 ans), qu'il n'a jamais rencontrée officiellement. Il ignore son existence ou prétend l'ignorer. C'est un des rares sujets qui peut le mettre en colère irrationnelle.
+Il a une fille quelque part (liaison avec une ursine confédérée il y a 30 ans), qu'il n'a jamais rencontrée officiellement. Il ignore son existence ou prétend l'ignorer. C'est un des rares sujets qui peut le mettre en colère irrationnelle.
 
 ## Implications dans l'Arc I
 

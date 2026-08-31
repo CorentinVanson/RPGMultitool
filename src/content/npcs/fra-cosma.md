@@ -1,8 +1,9 @@
 ---
 name: "Fra Cosma, le Prophète Enseveli"
 role: "Chef de l'Ordine delle Ossa Sopite (antagoniste principal des Arcs II et III)"
+familia: "Vespertile — vampiro (theria)"
 location: "L'Ossario Sepolto (catacombes souterraines)"
-faction: "Ordine delle Ossa Sopite"
+faction: "Confraternita dei Mortificati — schisme hérétique des Ossa Sopite"
 image: "/images/npcs/fra-cosma.svg"
 alignment: "Chaotique Mauvais (fanatique religieux, mégalomane)"
 summary: "Ancien prêtre du Sacro Regno devenu prophète hérétique. Il a découvert l'Ossario Sepolto et tente de réveiller ce qui dort sous."
@@ -25,6 +26,8 @@ summary: "Ancien prêtre du Sacro Regno devenu prophète hérétique. Il a déco
 **Vitesse** : 30 ft  
 **Sauvegarde** : Intelligence +6, Sagesse +7, Charisme +6  
 **Compétences** : Arcanes +6, Religion +6, Intuition +7, Persuasion +6, Tromperie +6, Perspicacité +7  
+**Familia / Espèce** : Vespertile — vampiro (theria). Très mauvaise vue, mais perception du monde par ultrasons ; petite taille et tempérament dominant.  
+**Faction** : Confraternita dei Mortificati, dont il dirige un schisme. Les Mortificati sont normalement tenus en laisse par la Chiesa delle Ossa ; Cosma a rompu cette bride et pousse le détachement de la chair jusqu'à sa conclusion hérétique.  
 
 ### Équipement et armes
 - **Tome des Rituels Interdits** (grimoire de l'Ordine)
@@ -43,7 +46,9 @@ summary: "Ancien prêtre du Sacro Regno devenu prophète hérétique. Il a déco
 
 ## Portrait
 
-Fra Cosma est un homme de 62 ans, maigre et hautain. Cheveux blancs, barbe longue, yeux bleu pâle d'une intensité quasi surhumaine. Mains qui tremblent légèrement. Il porte une robe noire tachée de sang ancien ou d'encre rituelle. Son cou porte des marques de scalpel. Malgré son âge, il se meut avec une énergie étrange. Son sourire rare est profondément perturbant.
+Fra Cosma est un vampiro de 62 ans, minuscule et hautain, une silhouette de cuir et d'os sous une robe noire tachée de sang ancien et d'encre rituelle. Son pelage est d'un gris cendreux, ses grandes oreilles constamment en mouvement, ses membranes alaires plissées comme du parchemin trop lu. Ses yeux minuscules ne voient presque rien : il « regarde » en écoutant, la tête inclinée, ce qui donne l'impression atroce qu'il vous déchiffre de l'intérieur.
+
+Ses mains-griffes tremblent légèrement. Son cou porte des marques de scalpel. Malgré son âge, il se meut avec une énergie étrange, par petits bonds et suspensions, et sa voix monte souvent dans des aigus que seuls les autres vespertili entendent entièrement — les fidèles jurent que c'est ainsi qu'il parle aux Ossa.
 
 ## Personnalité
 

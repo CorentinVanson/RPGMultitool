@@ -13,7 +13,7 @@ stats:
   int: 12
   sag: 11
   cha: 10
-summary: "Assassin à la solde de la Compagnia del Tralcio, envoyé pour intimider ou éliminer les gêneurs de son commerce."
+summary: "Assassin à la solde du consorzio del Tralcio (Compagnia del Compasso), envoyé pour intimider ou éliminer les gêneurs de son commerce."
 ---
 
 ## Actions
@@ -24,4 +24,4 @@ summary: "Assassin à la solde de la Compagnia del Tralcio, envoyé pour intimid
 
 ## Notes de MJ
 
-Utilisé par Ilaria Conti pour intimider témoins ou négociateurs (Arc I) ; sa capture vivant peut fournir une preuve décisive contre la Compagnia del Tralcio.
+Utilisé par Ilaria Conti pour intimider témoins ou négociateurs (Arc I) ; sa capture vivant peut fournir une preuve décisive contre le consorzio del Tralcio — et, par ricochet, embarrasser la Compagnia del Compasso qui le couvre.

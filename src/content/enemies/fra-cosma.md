@@ -1,6 +1,6 @@
 ---
 name: "Fra Cosma, le Prophète Enseveli"
-type: "Humanoïde (thérien), néomalveillant convaincu"
+type: "Thérien (vespertile, vampiro), néomalveillant convaincu"
 cr: "8 (3900 XP)"
 image: "/images/enemies/fra-cosma.svg"
 ac: 16

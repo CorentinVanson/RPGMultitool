@@ -11,6 +11,7 @@ defineProps<{ entry: ContentDetailEntry; section: string }>();
     <img v-if="entry.data.image" :src="entry.data.image" :alt="entry.data.title ?? entry.data.name" :class="$style.image">
     <h1>{{ entry.data.title ?? entry.data.name }}</h1>
     <p><em>{{ entry.data.type ?? entry.data.role ?? entry.data.sessions }}</em></p>
+    <p v-if="entry.data.familia"><strong>Familia</strong> : {{ entry.data.familia }}</p>
     <table v-if="entry.data.cr">
       <tbody><tr><td><strong>Danger (CR)</strong></td><td>{{ entry.data.cr }}</td></tr><tr><td><strong>CA</strong></td><td>{{ entry.data.ac }}</td></tr><tr><td><strong>PV</strong></td><td>{{ entry.data.hp }}</td></tr><tr><td><strong>Vitesse</strong></td><td>{{ entry.data.speed }}</td></tr></tbody>
     </table>

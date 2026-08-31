@@ -11,7 +11,7 @@ Depuis un mois, les celliers de Vallombra (le Tinaie) subissent des sabotages : 
 
 ## Objectifs p\u00e9dagogiques de l'arc
 
-Introduire le hub (Vallombra), les factions (Conseil de Vallombra, Compagnia del Tralcio, Casato Vestraro) et un premier avant-go\u00fbt du mystère de l'Ossario (via le Villaggio dei Salici), tout en variant les styles de jeu : enqu\u00ete, combat, politique.
+Introduire le hub (Vallombra), les factions (Conseil de Vallombra, consorzio del Tralcio adossé à la Compagnia del Compasso, Casato Vestraro) et un premier avant-go\u00fbt du mystère de l'Ossario (via le Villaggio dei Salici), tout en variant les styles de jeu : enqu\u00ete, combat, politique.
 
 ## D\u00e9roul\u00e9 sugg\u00e9r\u00e9 (6 sessions)
 
@@ -119,7 +119,7 @@ Si les PJ aident Renzo, il donne le nom de Meco. S'ils accusent trop vite la Com
 
 Serafina confie aux PJ une cargaison-appat. Trois a cinq Banditi della Fossa Verde attaquent depuis les talus, menes par un Randagio Veterano. Les chariots renverses et les jarres inflammables rendent le terrain mobile.
 
-Un bandit capture avoue avoir ete paye pour voler, pas pour incendier. Le paiement venait d'un homme portant un jeton de l'ancienne douane. Traiter les Randagi avec respect ouvre une future alliance avec Orsina Vetraia.
+Un bandit capture avoue avoir ete paye pour voler, pas pour incendier. Le paiement venait d'un aviano encapuchonne portant un jeton de l'ancienne douane. Traiter les Randagi avec respect ouvre une future alliance avec Orsina Vetraia.
 
 #### Session 4 — Audience a Gratigna
 

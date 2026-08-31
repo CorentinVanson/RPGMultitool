@@ -1,8 +1,9 @@
 ---
 name: "Principe Aldo Vestraro"
 role: "Prince de Gratigna (supérieur politique de Serafina)"
+familia: "Corbea — corvo (aviano)"
 location: "Gratigna"
-faction: "Casato Vestraro"
+faction: "Casato Vestraro — mécène discret de l'Ordo Artis Occulta"
 image: "/images/npcs/aldo-vestraro.svg"
 alignment: "Loyal Neutre → Chaotique Neutre (selon les intérêts de Gratigna)"
 summary: "Souverain élégant et retors de Gratigna. Son soutien à Vallombra dépend entièrement des intérêts de sa maison. Jamais hostile, mais rarement franc."
@@ -25,7 +26,8 @@ summary: "Souverain élégant et retors de Gratigna. Son soutien à Vallombra d�
 **Vitesse** : 30 ft  
 **Sauvegarde** : Intelligence +6, Sagesse +5, Charisme +7  
 **Compétences** : Perspicacité +5, Tromperie +7, Persuasion +7, Histoire +6, Arcanes +6, Intuition +5, Diplomatie +7  
-**Traits** : Humain noble, charme aristocratique, connaissance politique
+**Familia / Espèce** : Corbea — corvo (aviano). Charisme fait d'arrogance, de mystère et de fascination ; sensibilité innée aux arcanes ; les corvi se retrouvent souvent conseillers des hautes sphères.  
+**Faction** : Casato Vestraro, casata nobiliaire de Gratigna. Aldo finance discrètement l'Ordo Artis Occulta — une dépense qu'il justifie comme un investissement, et qui lui vaut des correspondants là où la politique n'entre pas.
 
 ### Équipement et armes
 - **Épée courte dorée** (+4 au toucher, 1d6+2 dégâts, symbole de pouvoir avant tout)
@@ -43,11 +45,11 @@ summary: "Souverain élégant et retors de Gratigna. Son soutien à Vallombra d�
 
 ## Portrait
 
-Principe Aldo Vestraro est un homme de 51 ans d'une beauté sobre et calculée. Cheveux noirs légèrement grisonnants peignés avec perfection, barbe courte impeccablement taillée, peau olive pâle d'un homme qui passe plus de temps à l'intérieur. Il porte toujours des vêtements de qualité superbe : soie, velours, fourrure, or. Pas d'excès vulgaire, juste une manifestation évidente du pouvoir.
+Principe Aldo Vestraro est un corvo de 51 ans, grand et sec, au plumage noir lustré qu'il fait lisser chaque matin. Les plumes de sa nuque et de ses tempes ont viré au gris ardoise, seul aveu de son âge. Son bec est droit, puissant, poli comme une pièce d'orfèvrerie. Il porte toujours des vêtements de qualité superbe, coupés pour laisser libres les ailes repliées : soie, velours, or. Pas d'excès vulgaire, juste une manifestation évidente du pouvoir.
 
-Ses yeux sont noisette clair, froids et observateurs. Il vous regarde rarement directement, préférant observer tout le monde de la périphérie de son champ de vision. Son sourire est infrequent mais désarmant, comme s'il trouvait quelque chose d'amusement à la situation.
+Ses yeux sont noirs et vernis, froids et observateurs. Il vous regarde rarement de face, préférant vous tenir dans un œil puis dans l'autre, à la manière des aviani, ce qui donne l'impression permanente d'être jaugé de biais. Quand une idée l'amuse, les plumes de sa gorge se hérissent une seconde — le seul tic qu'il n'a jamais réussi à corriger.
 
-Son port est impeccable, sa démarche calculée. Il n'a jamais l'air pressé, même en crise.
+Son port est impeccable, sa démarche calculée, sautillée juste ce qu'il faut pour rester digne. Il n'a jamais l'air pressé, même en crise, et ne déploie ses ailes qu'en dernier recours : voler devant la cour serait avouer l'urgence.
 
 ## Personnalité
 
@@ -63,7 +65,7 @@ Son port est impeccable, sa démarche calculée. Il n'a jamais l'air pressé, m�
 - Chaque alliance est temporaire; seul l'intérêt personnel est permanent.
 
 **Liens** :
-- Sa maison, Vestraro (à laquelle il a consacré 30 années de perfectionnement politique).
+- Sa lignée, le Casato Vestraro (à laquelle il a consacré 30 années de perfectionnement politique).
 - Une maîtresse secrète à Vallombra (rumeur, non confirmée, qu'Ilaria Conti connaît et utilise comme levier).
 - Trois conseillers influents qu'il écoute réellement.
 

@@ -13,7 +13,7 @@ stats:
   int: 10
   sag: 11
   cha: 10
-summary: "Mercenaire aguerri des Randagi della Fossa Verde ; peut être un ennemi à la mine ou un allié précieux en Arc III."
+summary: "Mercenaire aguerri des Randagi della Fossa Verde, détachement de la Fratellanza dei Vermi ; ennemi possible à la mine ou allié précieux en Arc III."
 ---
 
 ## Actions
