@@ -1,5 +1,15 @@
+<script setup lang="ts">
+import { computed } from 'vue';
+import { useRoute } from '#imports';
+
+const route = useRoute();
+// La fenêtre de projection s'affiche plein écran, sans en-tête ni navigation.
+const bare = computed(() => route.path === '/projection');
+</script>
+
 <template>
-  <AppShell>
+  <NuxtPage v-if="bare" />
+  <AppShell v-else>
     <NuxtPage />
   </AppShell>
 </template>
