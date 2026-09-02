@@ -26,6 +26,7 @@ defineProps<{ entry: ContentDetailEntry; section: string }>();
 <style module>
 .image { width: 200px; border-radius: 6px; }
 .markdown :global(p:first-child) { margin-top: 0; }
+.markdown :global(img) { display: block; width: 100%; height: auto; margin: 1.25rem 0; border-radius: 6px; }
 table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
 td, th { border: 1px solid #4a3a28; padding: .4rem .6rem; text-align: left; }
 </style>
