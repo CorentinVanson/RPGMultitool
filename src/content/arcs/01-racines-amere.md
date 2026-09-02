@@ -39,6 +39,10 @@ Confrontation finale de l'arc : selon les preuves r\u00e9colt\u00e9es, les PJ pe
 - **Affaire \u00e9touff\u00e9e / n\u00e9goci\u00e9e** \u2192 Ilaria devient une alli\u00e9e \u00e9conomique r\u00e9ticente en Arc III, mais Serafina se m\u00e9fie davantage des PJ.
 - **Piste du Villaggio dei Salici approfondie** \u2192 d\u00e9marrage anticip\u00e9 de l'Arc II, les PJ arrivent \u00e0 l'Ossario Sepolto avec plus d'indices (avantage narratif et m\u00e9canique : un indice suppl\u00e9mentaire offert par Madre Iolanda).
 
+## Base de campagne : le Campo della Frontiera
+
+Des leur arrivee, les PJ recoivent de Serafina la cle et la lettre de mission du [Campo della Frontiera](/lieux/campo-della-frontiera), un ancien camp militaire abandonne situe en territoire vallombrien, a proximite de la frontiere de Gratigna. Ils devront le remettre en etat au fil de la campagne ; cette base devient un refuge, un poste d'observation et, si elle est bien developpee, une cible possible pour l'assaut final.
+
 ## Dossier de maitrise
 
 ### Verite de l'affaire

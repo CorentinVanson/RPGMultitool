@@ -36,7 +36,21 @@ Assaut final coordonn\u00e9 sur l'Ossario Sepolto avec les alli\u00e9s r\u00e9un
 ### Session 20 — \u00c9pilogue : Le Gouvernement des Cendres
 R\u00e9solution finale : statut politique de Vallombra (autonomie, rattachement renforc\u00e9 \u00e0 Gratigna, ou ind\u00e9pendance conflictuelle), sort des factions (Compagnia del Tralcio, Randagi, Sacro Regno local), et devenir des PJ (titres, r\u00e9putation, hooks pour une suite \u00e9ventuelle).
 
-## Mini-jeu de gestion de quartier (sessions 14, 18)
+## Cible de l'assaut final
+
+Le final ne se déroule pas automatiquement à l'Ossario. Si les PJ ont développé le [Campo della Frontiera](/lieux/campo-della-frontiera), l'ennemi peut attaquer cette position pour couper la route entre Vallombra et Gratigna. Le camp devient alors le dernier rempart : tenir la porte, protéger la citerne, empêcher l'ouverture du cellier et guider les renforts depuis la tour.
+
+Si le camp est trop faible ou compromis, l'assaut vise Vallombra ; le camp sert de refuge, de poste de repli et de base de contre-attaque. La décision est prise après l'évaluation de la session 14 et les événements des sessions 15 à 17.
+
+## Mini-jeu de développement du Campo della Frontiera (sessions 14, 18)
+
+Le développement concerne le [Campo della Frontiera](/lieux/campo-della-frontiera), confié aux PJ dès l'Arc I. À la session 14, donnez-leur **10 points de ressources** à répartir entre quatre pistes : **défense**, **garnison**, **logistique** et **renseignement**. Chaque piste commence au niveau acquis pendant les Arcs I et II ; chaque tranche de 3 points investis l'augmente d'un niveau, jusqu'au niveau 3.
+
+### Choisir la cible du final
+
+- **Camp fortifié :** au moins trois domaines au niveau 2, dont la défense ou la garnison au niveau 3. L'assaut se déroule principalement au camp ; Vallombra peut envoyer des renforts.
+- **Frontière disputée :** deux domaines au niveau 2. Les PJ doivent choisir entre protéger le camp et maintenir la route vers Vallombra.
+- **Vallombra assiégée :** aucun domaine défensif au niveau 3, ou camp compromis par une infiltration. Le camp sert de refuge et de base de contre-attaque.
 
 \u00c0 la session 14, donnez aux PJ un total de **10 points de ressources** \u00e0 r\u00e9partir entre quatre pistes (murailles, milice, approvisionnement, diplomatie). Chaque point investi r\u00e9duit d'un cran la difficult\u00e9 des \u00e9preuves correspondantes en session 18 (ex. : 3 points en murailles = -3 aux d\u00e9g\u00e2ts subis par la ville lors de l'assaut). Les \u00e9v\u00e9nements des sessions 15 \u00e0 17 peuvent accorder des points suppl\u00e9mentaires (succ\u00e8s diplomatique, mercenaires obtenus) ou en retirer (sabotage r\u00e9ussi de Celside).
 

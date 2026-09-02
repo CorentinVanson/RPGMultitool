@@ -27,6 +27,11 @@
   <!-- Route principale -->
   <path d="M300,260 L340,300 L330,380 L360,470" stroke="#7a5a2a" stroke-width="3" stroke-dasharray="6,6" fill="none"/>
 
+  <!-- Campo della Frontiera, proche de Vallombra et du côté vallombrien -->
+  <path d="M327,335 l-10,10 l10,10 l10,-10 z" fill="#5b4936" stroke="#f6ead9" stroke-width="2"/>
+  <path d="M321,340 l6,-7 l6,7 M321,350 l6,7 l6,-7" fill="none" stroke="#5b4936" stroke-width="2"/>
+  <text x="169" y="349" font-size="14" fill="#3a2418">Campo della Frontiera</text>
+
   <!-- Gratigna -->
   <circle cx="300" cy="260" r="14" fill="#6a2a3a" stroke="#2b1d14" stroke-width="2"/>
   <text x="300" y="235" font-size="18" fill="#3a2418" text-anchor="middle">Gratigna</text>
