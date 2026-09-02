@@ -146,8 +146,8 @@ watch(hasContext, (value) => { showCatalog.value = !value; }, { immediate: true 
 
 <template>
   <div>
-    <div :class="$style.fabRow">
-      <button v-show="!open" type="button" :class="$style.preview" title="Aperçu de l’écran de projection" @click="open = true">
+    <div :class="[$style.fabRow, open && $style.dockOpen]">
+      <button type="button" :class="$style.preview" title="Aperçu de l’écran de projection" @click="open = true">
         <ProjectionStage :state="state" />
         <span :class="$style.previewLabel">Aperçu projection</span>
       </button>
@@ -289,6 +289,7 @@ watch(hasContext, (value) => { showCatalog.value = !value; }, { immediate: true 
 .fabRow { position: fixed; right: 1.25rem; bottom: 1.25rem; z-index: 40; display: flex; flex-direction: column; align-items: flex-end; gap: .5rem; }
 .fabButtons { display: flex; align-items: center; gap: .5rem; }
 .preview { position: relative; width: 15rem; aspect-ratio: 16 / 9; padding: 0; overflow: hidden; background: #000; border: 2px solid var(--accent); border-radius: 6px; cursor: pointer; box-shadow: 0 4px 14px rgba(0, 0, 0, .5); }
+.dockOpen .preview { position: fixed; right: min(25.25rem, calc(100vw - 16.25rem)); bottom: 1.25rem; }
 .previewLabel { position: absolute; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, .65); color: var(--muted); font-family: inherit; font-size: .7rem; letter-spacing: .05em; padding: .1rem 0; }
 .panelPreview { width: 100%; aspect-ratio: 16 / 9; background: #000; border: 1px solid #4a3a28; border-radius: 4px; overflow: hidden; }
 .fab { display: flex; align-items: center; gap: .5rem; background: var(--accent); color: #1c150f; border: none; border-radius: 999px; padding: .7rem 1.1rem; font-family: inherit; font-weight: bold; cursor: pointer; box-shadow: 0 4px 14px rgba(0, 0, 0, .5); }
@@ -321,4 +322,8 @@ watch(hasContext, (value) => { showCatalog.value = !value; }, { immediate: true 
 .thumb { width: 2rem; height: 2rem; object-fit: cover; border-radius: 3px; }
 .mini { background: transparent; color: var(--muted); border: 1px solid #4a3a28; border-radius: 3px; cursor: pointer; padding: 0 .35rem; }
 .mini:disabled { opacity: .35; cursor: default; }
+
+@media (max-width: 52rem) {
+  .dockOpen .preview { top: 1rem; right: 1rem; bottom: auto; z-index: 50; }
+}
 </style>
