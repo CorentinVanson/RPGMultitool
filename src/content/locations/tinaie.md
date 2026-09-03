@@ -2,6 +2,7 @@
 name: "Le Tinaie"
 type: "Celliers et entrepots"
 region: "Vallombra"
+image: "/images/locations/tinaie.png"
 tags: ["enquete", "commerce", "incendie"]
 summary: "Le quartier des celliers de Vallombra, cible des sabotages qui lancent l'Arc I."
 ---

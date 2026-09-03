@@ -4,6 +4,7 @@ role: "Jardinière et médiatrice des jardins bas"
 familia: "Ruminsa — alce (theria)"
 location: "Vallombra (Fosses et jardins bas)"
 faction: "Communauté des jardins bas"
+image: "/images/npcs/marta-corneclaire.png"
 alignment: "Loyal Bon"
 summary: "Jardinière taciturne qui protège les parcelles communes et remarque tous les passages dans la boue."
 ---

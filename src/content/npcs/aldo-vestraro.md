@@ -4,7 +4,7 @@ role: "Prince de Gratigna (supérieur politique de Serafina)"
 familia: "Corbea — corvo (aviano)"
 location: "Gratigna"
 faction: "Casato Vestraro — mécène discret de l'Ordo Artis Occulta"
-image: "/images/npcs/aldo-vestraro.svg"
+image: "/images/npcs/aldo-vestraro.png"
 alignment: "Loyal Neutre → Chaotique Neutre (selon les intérêts de Gratigna)"
 summary: "Souverain élégant et retors de Gratigna. Son soutien à Vallombra dépend entièrement des intérêts de sa maison. Jamais hostile, mais rarement franc."
 ---

@@ -2,7 +2,7 @@
 name: "Custode d'Ossa"
 type: "Construction, non aligné"
 cr: "5 (1800 XP)"
-image: "/images/enemies/custode-dossa.svg"
+image: "/images/enemies/custode-dossa.png"
 ac: 17
 hp: "85 (10d10+30)"
 speed: "9 m"

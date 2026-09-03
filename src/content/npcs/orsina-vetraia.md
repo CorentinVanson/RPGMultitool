@@ -4,7 +4,7 @@ role: "Chef de la compagnie mercenaire I Randagi della Fossa Verde"
 familia: "Sauta — cinghiale (theria)"
 location: "La Miniera Abbandonata (base)"
 faction: "Fratellanza dei Vermi — détachement des Randagi della Fossa Verde"
-image: "/images/npcs/orsina-vetraia.svg"
+image: "/images/npcs/orsina-vetraia.png"
 alignment: "Chaotique Neutre → Chaotique Bon (selon les PJ)"
 summary: "Mercenaire aguerrie, elle commande les Randagi (exilés et désespérés). Pragmatique, méprise la noblesse, mais fidèle à ses hommes jusqu'à la mort."
 ---

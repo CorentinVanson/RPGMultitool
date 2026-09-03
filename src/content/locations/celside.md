@@ -2,7 +2,7 @@
 name: "Celside"
 type: "Cité-État (oligarchie terrienne)"
 region: "Confédération des Libres Cités"
-image: "/images/locations/celside.svg"
+image: "/images/locations/celside.png"
 tags: ["politique", "rivalité"]
 summary: "Cité rivale de Gratigna, gouvernée par ses grands propriétaires terriens, prête à profiter des malheurs de Vallombra."
 ---

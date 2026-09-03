@@ -4,6 +4,7 @@ role: "Peseuse publique de Vallombra"
 familia: "Mustacea — lontra (theria)"
 location: "Vallombra (Place du Marché)"
 faction: "Service communal du marché"
+image: "/images/npcs/bianca-salmastra.png"
 alignment: "Neutre Bon"
 summary: "Peseuse publique bavarde, curieuse et impossible à intimider durablement."
 ---

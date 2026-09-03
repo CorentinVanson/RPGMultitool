@@ -4,7 +4,7 @@ role: "Doyen du Villaggio dei Salici (quête-giver Arc I Session 5)"
 familia: "Grarcona — airone (aviano)"
 location: "Villaggio dei Salici (marais des saules)"
 faction: "Communauté du Villaggio"
-image: "/images/npcs/anziano-pietro.svg"
+image: "/images/npcs/anziano-pietro.png"
 alignment: "Loyal Bon (protecteur, refus de l'injustice)"
 summary: "Doyen avisé d'un village de pêcheurs. Il refuse les explications superstitieuses mais ne nier pas ce qu'il a vu : des disparitions, des empreintes à trois griffes, une odeur de sable brûlé."
 ---

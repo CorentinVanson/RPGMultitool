@@ -4,7 +4,7 @@ role: "Podestat de Vallombra (patronne principale des PJ)"
 familia: "Felide — gatta (theria)"
 location: "Vallombra"
 faction: "Conseil de Vallombra"
-image: "/images/npcs/serafina-dal-moro.svg"
+image: "/images/npcs/serafina-dal-moro.png"
 alignment: "Chaotique Neutre → Loyal Neutre (selon les choix des PJ)"
 summary: "Dirigeante ambitieuse de Vallombra, elle engage les PJ pour protéger et émanciper sa cité. Politicienne avisée confrontée à une crise existentielle."
 ---

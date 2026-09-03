@@ -2,7 +2,7 @@
 name: "Sciacallo delle Sabbie"
 type: "Bête, non aligné"
 cr: "1 (200 XP)"
-image: "/images/enemies/sciacallo-delle-sabbie.svg"
+image: "/images/enemies/sciacallo-delle-sabbie.png"
 ac: 13
 hp: "22 (4d8+4)"
 speed: "15 m"

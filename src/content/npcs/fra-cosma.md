@@ -4,7 +4,7 @@ role: "Chef de l'Ordine delle Ossa Sopite (antagoniste principal des Arcs II et 
 familia: "Vespertile — vampiro (theria)"
 location: "L'Ossario Sepolto (catacombes souterraines)"
 faction: "Confraternita dei Mortificati — schisme hérétique des Ossa Sopite"
-image: "/images/npcs/fra-cosma.svg"
+image: "/images/npcs/fra-cosma.png"
 alignment: "Chaotique Mauvais (fanatique religieux, mégalomane)"
 summary: "Ancien prêtre du Sacro Regno devenu prophète hérétique. Il a découvert l'Ossario Sepolto et tente de réveiller ce qui dort sous."
 ---

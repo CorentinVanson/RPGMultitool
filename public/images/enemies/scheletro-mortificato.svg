@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
-  <rect width="200" height="200" fill="#9a9a8a"/>
-  <circle cx="100" cy="80" r="45" fill="#2b1d14" opacity="0.25"/>
-  <circle cx="100" cy="200" r="90" fill="#2b1d14" opacity="0.25"/>
-  <text x="100" y="115" font-family="Georgia, serif" font-size="64" fill="#f6ead9" text-anchor="middle">SM</text>
-</svg>

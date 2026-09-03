@@ -2,7 +2,7 @@
 name: "Sicario del Tralcio"
 type: "Humanoïde (thérien), légalement mauvais"
 cr: "2 (450 XP)"
-image: "/images/enemies/sicario-del-tralcio.svg"
+image: "/images/enemies/sicario-del-tralcio.png"
 ac: 14
 hp: "33 (6d8+6)"
 speed: "12 m"

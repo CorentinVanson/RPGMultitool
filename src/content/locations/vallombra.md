@@ -2,7 +2,7 @@
 name: "Vallombra"
 type: "Bourg fortifié (base des PJ)"
 region: "Marches de Gratigna, Confédération des Libres Cités"
-image: "/images/locations/vallombra.svg"
+image: "/images/locations/vallombra.png"
 tags: ["hub", "politique", "gestion de quartier"]
 summary: "Petit bourg viticole aux portes de la Riarsa, dépendant de Gratigna, où les PJ commencent la campagne."
 ---

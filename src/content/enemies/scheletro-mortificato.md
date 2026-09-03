@@ -2,7 +2,7 @@
 name: "Scheletro Mortificato"
 type: "Mort-vivant, légion neutre mauvais"
 cr: "1/4 (50 XP)"
-image: "/images/enemies/scheletro-mortificato.svg"
+image: "/images/enemies/scheletro-mortificato.png"
 ac: 13
 hp: "13 (2d8+4)"
 speed: "9 m"

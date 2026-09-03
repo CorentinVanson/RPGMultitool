@@ -2,7 +2,7 @@
 name: "L'Ossario Sepolto"
 type: "Ruines / donjon souterrain"
 region: "La Riarsa (désert)"
-image: "/images/locations/ossario-sepolto.svg"
+image: "/images/locations/ossario-sepolto.png"
 tags: ["donjon", "horreur", "enquête", "combat"]
 summary: "Temple oublié consacré au culte des Ossa, enfoui sous les dunes de la Riarsa, réveillé par l'Ordine delle Ossa Sopite."
 ---

@@ -2,6 +2,7 @@
 name: "L'ancienne douane de Gratigna"
 type: "Poste de controle abandonne"
 region: "Route de Vallombra a Gratigna"
+image: "/images/locations/ancienne-douane.png"
 tags: ["enquete", "embuscade", "preuve"]
 summary: "Un poste desert qui sert de relais aux paiements des saboteurs et de repaire temporaire aux bandits."
 ---

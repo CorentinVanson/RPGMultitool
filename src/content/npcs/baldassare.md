@@ -4,7 +4,7 @@ role: "Capitaine de la garde de Vallombra"
 familia: "Urcida — orso bruno (theria)"
 location: "Vallombra"
 faction: "Conseil de Vallombra / Garde Civile"
-image: "/images/npcs/baldassare.svg"
+image: "/images/npcs/baldassare.png"
 alignment: "Loyal Neutre (ordre avant justice)"
 summary: "Vétéran militaire borné mais fiable. Il dirige une garde sous-effectivée et voit une menace militaire partout."
 ---

@@ -2,7 +2,7 @@
 name: "La Miniera Abbandonata"
 type: "Mine désaffectée"
 region: "Lisière de la Fossa Verde"
-image: "/images/locations/miniera-abbandonata.svg"
+image: "/images/locations/miniera-abbandonata.png"
 tags: ["combat", "ressources", "politique"]
 summary: "Ancienne mine d'argent à la frontière de la Fossa Verde, disputée entre Vallombra et une compagnie de mercenaires."
 ---

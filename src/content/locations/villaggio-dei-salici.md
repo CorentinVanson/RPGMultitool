@@ -2,7 +2,7 @@
 name: "Villaggio dei Salici"
 type: "Village"
 region: "Marches de Gratigna"
-image: "/images/locations/villaggio-dei-salici.svg"
+image: "/images/locations/villaggio-dei-salici.png"
 tags: ["enquête", "combat", "communauté"]
 summary: "Village de pêcheurs et de tisserands en amont de Vallombra, frappé par des disparitions inexpliquées."
 ---

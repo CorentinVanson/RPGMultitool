@@ -4,7 +4,7 @@ role: "Informateur et contrebandier"
 familia: "Eulipa — talpa (theria)"
 location: "Vallombra (Guscio)"
 faction: "Circolo dei Sussurri — informateur du Guscio (grade 0)"
-image: "/images/npcs/renzo.svg"
+image: "/images/npcs/renzo.png"
 alignment: "Chaotique Neutre (loyal au paiement, pas aux principes)"
 summary: "Ferret des bas quartiers de Vallombra. Il sait tout, vend tout, et n'est fidèle qu'à sa bourse. Prêt à pourrir la moitié de la cité pour une pièce d'argent."
 ---

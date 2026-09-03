@@ -4,6 +4,7 @@ role: "Contremaître du quai du Bastione"
 familia: "Rodentia — castoro (theria)"
 location: "Vallombra (Quai du Bastione)"
 faction: "Service fluvial du Conseil de Vallombra"
+image: "/images/npcs/nardo-digue.png"
 alignment: "Loyal Neutre"
 summary: "Contremaître méthodique, constructeur talentueux et gardien des manifestes du quai."
 ---

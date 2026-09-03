@@ -2,7 +2,7 @@
 name: "Campo della Frontiera"
 type: "Ancien camp militaire proche de la frontière (base des PJ)"
 region: "Territoire de Vallombra, près de la frontière de Gratigna"
-image: "/images/locations/campo-della-frontiera.svg"
+image: "/images/locations/campo-della-frontiera.png"
 tags: ["base", "gestion", "frontière", "militaire"]
 summary: "Ancien poste militaire abandonné confié aux PJ, à restaurer et défendre au fil de la campagne."
 ---
@@ -17,7 +17,7 @@ Le camp appartient officiellement à Vallombra, qui l'a confié aux PJ par lettr
 
 ## Plan actuel du camp
 
-![Plan actuel du Campo della Frontiera, avec sa barricade en bois, son portail et ses tentes](/images/locations/campo-della-frontiera.svg)
+![Plan actuel du Campo della Frontiera, avec sa barricade en bois, son portail et ses tentes](/images/locations/campo-della-frontiera.png)
 
 Le plan montre l'état réel du camp au moment où les PJ en prennent possession. Il ne s'agit pas encore d'un fort : la palissade est basse, les tentes sont vulnérables au feu et la cour reste exposée depuis les coteaux.
 

@@ -4,7 +4,7 @@ role: "Guildmaître de la Compagnia del Tralcio (antagoniste Arc I)"
 familia: "Licae — volpe rossa (theria)"
 location: "Gratigna"
 faction: "Compagnia del Compasso — consorzio del Tralcio (filiale vinicole)"
-image: "/images/npcs/ilaria-conti.svg"
+image: "/images/npcs/ilaria-conti.png"
 alignment: "Chaotique Neutre (ambition sans scrupule)"
 summary: "Femme d'affaires impitoyable qui contrôle le commerce du vin régional. Elle orchestre la crise de Vallombra pour en acquérir les celliers."
 ---

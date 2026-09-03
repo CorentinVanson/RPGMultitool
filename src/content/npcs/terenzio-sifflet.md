@@ -4,6 +4,7 @@ role: "Aubergiste et maître du relais"
 familia: "Canida — bracco (theria)"
 location: "Vallombra (Maison des voyageurs)"
 faction: "Maison des voyageurs, établissement local"
+image: "/images/npcs/terenzio-sifflet.png"
 alignment: "Chaotique Bon"
 summary: "Aubergiste infatigable qui mémorise chaque itinéraire et chaque visage de passage."
 ---

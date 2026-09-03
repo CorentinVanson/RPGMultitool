@@ -2,7 +2,7 @@
 name: "Bandito della Fossa Verde"
 type: "Humanoïde (thérien), tout alignement"
 cr: "1/8 (25 XP)"
-image: "/images/enemies/bandito-fossa-verde.svg"
+image: "/images/enemies/bandito-fossa-verde.png"
 ac: 12
 hp: "11 (2d8+2)"
 speed: "9 m"

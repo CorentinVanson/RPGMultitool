@@ -2,7 +2,7 @@
 name: "Randagio Veterano"
 type: "Humanoïde (thérien), neutre"
 cr: "3 (700 XP)"
-image: "/images/enemies/randagio-veterano.svg"
+image: "/images/enemies/randagio-veterano.png"
 ac: 15
 hp: "58 (9d8+18)"
 speed: "9 m"

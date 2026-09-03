@@ -2,7 +2,7 @@
 name: "Fra Cosma, le Prophète Enseveli"
 type: "Thérien (vespertile, vampiro), néomalveillant convaincu"
 cr: "8 (3900 XP)"
-image: "/images/enemies/fra-cosma.svg"
+image: "/images/enemies/fra-cosma.png"
 ac: 16
 hp: "136 (16d8+64)"
 speed: "9 m"

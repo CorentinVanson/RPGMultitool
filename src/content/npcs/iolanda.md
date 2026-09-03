@@ -4,7 +4,7 @@ role: "Prêtresse de la Foi des Ossa / Chapelle de Vallombra"
 familia: "Striga — barbagianni (aviano)"
 location: "Vallombra (Chapelle)"
 faction: "Chiesa delle Ossa — Dottrina Classica (sanctuaire de Vallombra)"
-image: "/images/npcs/iolanda.svg"
+image: "/images/npcs/iolanda.png"
 alignment: "Loyal Bon (dévote, en quête de rédemption)"
 summary: "Prêtresse intelligente et dévote. Elle soupçonne l'existence d'un culte hérétique lié aux Ossa et tente secrètement de le combattre."
 ---

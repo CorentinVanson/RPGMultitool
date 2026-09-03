@@ -2,7 +2,7 @@
 name: "Gratigna"
 type: "Cité-État (principauté)"
 region: "Confédération des Libres Cités"
-image: "/images/locations/gratigna.svg"
+image: "/images/locations/gratigna.png"
 tags: ["politique", "intrigue", "cour"]
 summary: "Cité vinicole gouvernée par un Prince, dont dépend administrativement Vallombra ; cœur des intrigues politiques de la campagne."
 ---

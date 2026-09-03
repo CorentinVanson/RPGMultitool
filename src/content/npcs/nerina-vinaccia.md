@@ -4,6 +4,7 @@ role: "Comptable des celliers du Tralcio"
 familia: "Mustacea — martora (theria)"
 location: "Vallombra (Les Tinaie)"
 faction: "Comptoirs viticoles du Tralcio, consortium marchand local"
+image: "/images/npcs/nerina-vinaccia.png"
 alignment: "Neutre"
 summary: "Comptable élégante et nerveuse, prise entre la vérité des registres et la survie des celliers."
 ---
