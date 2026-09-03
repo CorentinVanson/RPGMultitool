@@ -4,6 +4,14 @@ import type { ProjectionState } from '../composables/useProjection';
 
 const props = defineProps<{ state: ProjectionState }>();
 
+function actorColor(actor: { id: string; name: string; collection: string }): string {
+  let hash = 0;
+  for (const character of `${actor.collection}:${actor.id}:${actor.name}`) {
+    hash = (hash * 31 + character.charCodeAt(0)) >>> 0;
+  }
+  return `hsl(${hash % 360} 62% 62%)`;
+}
+
 const backgroundStyle = computed(() => (props.state.background
   ? { backgroundImage: `url("${props.state.background.image}")` }
   : {}));
@@ -18,7 +26,9 @@ const backgroundStyle = computed(() => (props.state.background
     <div :class="$style.actors">
       <transition-group name="proj-fade">
         <figure v-for="actor in state.actors" :key="actor.id" :class="$style.actor">
-          <img :src="actor.image" :alt="actor.name" :class="$style.portrait">
+          <div :class="$style.portraitBackdrop" :style="{ '--actor-color': actorColor(actor) }">
+            <img :src="actor.image" :alt="actor.name" :class="$style.portrait">
+          </div>
           <figcaption v-if="state.showNames" :class="$style.name">{{ actor.name }}</figcaption>
         </figure>
       </transition-group>
@@ -41,7 +51,8 @@ const backgroundStyle = computed(() => (props.state.background
 .background::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(0, 0, 0, .75), rgba(0, 0, 0, 0) 55%); }
 .actors { position: absolute; inset: auto 0 0 0; display: flex; justify-content: center; align-items: flex-end; gap: 2cqw; padding: 0 3cqw 2cqh; }
 .actor { margin: 0; text-align: center; }
-.portrait { height: 62cqh; max-width: 26cqw; object-fit: contain; filter: drop-shadow(0 0 1.5cqh rgba(0, 0, 0, .9)); }
+.portraitBackdrop { display: inline-flex; align-items: flex-end; line-height: 0; }
+.portrait { display: block; height: 52cqh; max-width: 26cqw; object-fit: contain; filter: drop-shadow(0 0 2cqh var(--actor-color)) drop-shadow(0 0 1.5cqh rgba(0, 0, 0, .95)); }
 .name { margin-top: .5cqh; font-size: 4cqh; letter-spacing: .12em; text-transform: uppercase; color: #f1e6d3; text-shadow: 0 2px 6px #000; }
 .caption { position: absolute; top: 3cqh; left: 50%; transform: translateX(-50%); margin: 0; padding: 1cqh 3cqh; background: rgba(0, 0, 0, .6); border: 1px solid #b3813a; border-radius: 4px; color: #f1e6d3; font-size: 5cqh; white-space: nowrap; }
 .blackout { position: absolute; inset: 0; background: #000; }
