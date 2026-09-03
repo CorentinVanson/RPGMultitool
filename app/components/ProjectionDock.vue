@@ -3,7 +3,7 @@ import { computed, onMounted, ref, watch } from 'vue';
 import { useRoute } from '#imports';
 import type { ContentEntry } from '../types/content';
 import { entryName, sectionCollections, useContentCollection } from '../composables/useContent';
-import { useProjectionController, type ProjectionActor } from '../composables/useProjection';
+import { DEFAULT_BACKGROUND, useProjectionController, type ProjectionActor } from '../composables/useProjection';
 
 const route = useRoute();
 const { state, start } = useProjectionController();
@@ -117,6 +117,11 @@ function setBackground(entry: ContentEntry) {
   state.value.background = { id: entry.id, name: entryName(entry), image: String(entry.data.image) };
 }
 
+function resetDefaultScreen() {
+  state.value.background = { ...DEFAULT_BACKGROUND };
+  state.value.blackout = false;
+}
+
 function addActor(actor: ProjectionActor) {
   if (!isOnStage(actor)) state.value.actors = [...state.value.actors, actor];
 }
@@ -180,8 +185,8 @@ watch(hasContext, (value) => { showCatalog.value = !value; }, { immediate: true 
 
       <div :class="$style.toolbar">
         <button type="button" :class="$style.primary" @click="openProjection">Fenêtre de projection</button>
-        <button type="button" :class="[$style.button, state.blackout && $style.active]" @click="state.blackout = !state.blackout">
-          {{ state.blackout ? 'Rétablir' : 'Écran noir' }}
+        <button type="button" :class="$style.button" @click="resetDefaultScreen">
+          Écran par défaut
         </button>
         <button type="button" :class="$style.button" @click="state.actors = []">Vider la scène</button>
         <button type="button" :class="[$style.button, state.showNames && $style.active]" @click="state.showNames = !state.showNames">

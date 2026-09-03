@@ -23,15 +23,22 @@ export interface ProjectionState {
 
 const CHANNEL = 'rpg-projection';
 const STORAGE_KEY = 'rpg-projection-state';
+export const DEFAULT_BACKGROUND: ProjectionBackground = {
+  id: 'default-screen',
+  name: 'Écran par défaut',
+  image: '/images/default_screen.png',
+};
 
 export function defaultProjectionState(): ProjectionState {
-  return { background: null, actors: [], caption: '', showNames: true, blackout: false };
+  return { background: { ...DEFAULT_BACKGROUND }, actors: [], caption: '', showNames: true, blackout: false };
 }
 
 function readStored(): ProjectionState {
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
-    return raw ? { ...defaultProjectionState(), ...JSON.parse(raw) } : defaultProjectionState();
+    if (!raw) return defaultProjectionState();
+    const stored = JSON.parse(raw) as Partial<ProjectionState>;
+    return { ...defaultProjectionState(), ...stored, background: stored.background ?? { ...DEFAULT_BACKGROUND } };
   } catch {
     return defaultProjectionState();
   }
