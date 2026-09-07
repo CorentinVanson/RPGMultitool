@@ -2,7 +2,7 @@
 import { computed, nextTick, ref, watch } from 'vue';
 import { useSessionNotes } from '../composables/useSessionNotes';
 
-const { notes, history, saveNote, updateNote, deleteNote, clearHistory } = useSessionNotes();
+const { notes, history, activeTeam, saveNote, updateNote, deleteNote, clearHistory } = useSessionNotes();
 const open = ref(false);
 const historyElement = ref<HTMLElement | null>(null);
 const editingId = ref<string | null>(null);
@@ -51,7 +51,7 @@ watch([open, history], scrollHistoryToBottom, { deep: true });
 
     <aside v-show="open" :class="$style.panel" aria-label="Notes de séance">
       <header :class="$style.head">
-        <strong>Notes de séance</strong>
+        <strong>Notes — {{ activeTeam?.name ?? 'générales' }}</strong>
         <button type="button" :class="$style.mini" title="Fermer" @click="open = false">✕</button>
       </header>
 

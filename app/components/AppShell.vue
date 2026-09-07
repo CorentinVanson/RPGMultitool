@@ -9,6 +9,7 @@
       <NuxtLink to="/ennemis">Ennemis</NuxtLink>
       <NuxtLink to="/campagne">Campagne</NuxtLink>
     </nav>
+    <TeamSelector />
   </header>
   <main :class="$style.main"><slot /></main>
   <SessionNotesPanel />

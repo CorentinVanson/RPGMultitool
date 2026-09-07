@@ -1,4 +1,5 @@
 import { onMounted, ref, watch } from 'vue';
+import { usePlayerTeams } from './usePlayerTeams';
 
 export interface SessionNote {
   id: string;
@@ -6,31 +7,49 @@ export interface SessionNote {
   createdAt: string;
 }
 
-const NOTES_KEY = 'rpg-session-notes';
-const HISTORY_KEY = 'rpg-session-notes-history';
 const notes = ref('');
 const history = ref<SessionNote[]>([]);
 let initialized = false;
 
+function storageKey(prefix: string, teamId: string | null) {
+  return `${prefix}:${teamId ?? 'general'}`;
+}
+
 export function useSessionNotes() {
-  onMounted(() => {
-    if (initialized) return;
-    initialized = true;
+  const { activeTeamId, activeTeam } = usePlayerTeams();
+
+  function loadNotes() {
+    const notesKey = storageKey('rpg-session-notes', activeTeamId.value);
+    const historyKey = storageKey('rpg-session-notes-history', activeTeamId.value);
     try {
-      notes.value = localStorage.getItem(NOTES_KEY) ?? '';
-      const storedHistory = localStorage.getItem(HISTORY_KEY);
+      const storedNotes = localStorage.getItem(notesKey) ?? (activeTeamId.value ? '' : localStorage.getItem('rpg-session-notes') ?? '');
+      const storedHistory = localStorage.getItem(historyKey) ?? (activeTeamId.value ? null : localStorage.getItem('rpg-session-notes-history'));
+      notes.value = storedNotes;
       history.value = storedHistory ? JSON.parse(storedHistory) as SessionNote[] : [];
+      if (!activeTeamId.value && !localStorage.getItem(notesKey) && storedNotes) localStorage.setItem(notesKey, storedNotes);
+      if (!activeTeamId.value && !localStorage.getItem(historyKey) && storedHistory) localStorage.setItem(historyKey, storedHistory);
     } catch {
       notes.value = '';
       history.value = [];
     }
+  }
+
+  onMounted(() => {
+    if (initialized) return;
+    initialized = true;
+    loadNotes();
+  });
+
+  watch(activeTeamId, () => {
+    if (initialized) loadNotes();
   });
 
   watch(notes, (value) => {
     if (!initialized) return;
     try {
-      if (value.trim()) localStorage.setItem(NOTES_KEY, value);
-      else localStorage.removeItem(NOTES_KEY);
+      const key = storageKey('rpg-session-notes', activeTeamId.value);
+      if (value.trim()) localStorage.setItem(key, value);
+      else localStorage.removeItem(key);
     } catch {
       // La saisie reste utilisable si le stockage local est indisponible.
     }
@@ -38,7 +57,7 @@ export function useSessionNotes() {
 
   function persistHistory() {
     try {
-      localStorage.setItem(HISTORY_KEY, JSON.stringify(history.value));
+      localStorage.setItem(storageKey('rpg-session-notes-history', activeTeamId.value), JSON.stringify(history.value));
     } catch {
       // L'historique reste disponible tant que la page est ouverte.
     }
@@ -76,5 +95,5 @@ export function useSessionNotes() {
     persistHistory();
   }
 
-  return { notes, history, saveNote, updateNote, deleteNote, clearNotes, clearHistory };
+  return { notes, history, activeTeam, saveNote, updateNote, deleteNote, clearNotes, clearHistory };
 }
