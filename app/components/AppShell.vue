@@ -8,6 +8,7 @@
       <NuxtLink to="/personnages">Personnages</NuxtLink>
       <NuxtLink to="/ennemis">Ennemis</NuxtLink>
       <NuxtLink to="/campagne">Campagne</NuxtLink>
+      <NuxtLink to="/campo-della-frontiera">Campo</NuxtLink>
     </nav>
     <TeamSelector />
   </header>

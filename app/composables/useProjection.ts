@@ -11,6 +11,7 @@ export interface ProjectionBackground {
   id: string;
   name: string;
   image: string;
+  planNodeIds?: string[];
 }
 
 export interface ProjectionState {

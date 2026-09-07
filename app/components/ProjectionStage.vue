@@ -20,7 +20,9 @@ const backgroundStyle = computed(() => (props.state.background
 <template>
   <div :class="$style.stage">
     <transition name="proj-fade">
-      <div v-if="state.background" :key="state.background.id" :class="$style.background" :style="backgroundStyle" />
+      <div v-if="state.background" :key="state.background.id" :class="$style.background" :style="backgroundStyle">
+        <CampoPlan v-if="state.background.id === 'campo-frontiera-plan'" :built-node-ids="state.background.planNodeIds ?? []" />
+      </div>
     </transition>
 
     <div :class="$style.actors">
