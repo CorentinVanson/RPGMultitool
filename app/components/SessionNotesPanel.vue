@@ -2,13 +2,25 @@
 import { computed, nextTick, ref, watch } from 'vue';
 import { useSessionNotes } from '../composables/useSessionNotes';
 
-const { notes, history, activeTeam, saveNote, updateNote, deleteNote, clearHistory } = useSessionNotes();
+const { notes, history, linkedHistory, activeTeam, saveNote, updateNote, deleteNote, clearHistory } = useSessionNotes();
 const open = ref(false);
 const historyElement = ref<HTMLElement | null>(null);
 const editingId = ref<string | null>(null);
 const editingText = ref('');
-const hasNotes = computed(() => Boolean(notes.value.trim() || history.value.length));
-const orderedHistory = computed(() => [...history.value].sort((left, right) => left.createdAt.localeCompare(right.createdAt)));
+const hasNotes = computed(() => Boolean(notes.value.trim() || history.value.length || linkedHistory.value.length));
+const orderedHistory = computed(() => [...history.value, ...linkedHistory.value].sort((left, right) => left.createdAt.localeCompare(right.createdAt)));
+
+function shortText(value: string, limit = 80): string {
+  return value.length > limit ? `${value.slice(0, limit - 1).trimEnd()}…` : value;
+}
+
+function noteAnchor(note: { pagePath?: string; anchorId?: string; id: string }): string {
+  if (!note.pagePath) return '#';
+  let hash = 0;
+  const value = note.anchorId ?? note.id;
+  for (let index = 0; index < value.length; index += 1) hash = ((hash << 5) - hash) + value.charCodeAt(index) | 0;
+  return `${note.pagePath}#linked-${Math.abs(hash).toString(36)}`;
+}
 
 function scrollHistoryToBottom() {
   nextTick(() => {
@@ -58,9 +70,9 @@ watch([open, history], scrollHistoryToBottom, { deep: true });
       <section ref="historyElement" :class="$style.history">
         <div :class="$style.sectionHead">
           <h2 :class="$style.title">Historique</h2>
-          <button v-if="history.length" type="button" :class="$style.mini" @click="clearHistory">Tout effacer</button>
+            <button v-if="history.length || linkedHistory.length" type="button" :class="$style.mini" @click="clearHistory">Tout effacer</button>
         </div>
-        <p v-if="!history.length" :class="$style.empty">Aucune note enregistrée pour cette partie.</p>
+          <p v-if="!orderedHistory.length" :class="$style.empty">Aucune note enregistrée pour cette partie.</p>
         <article v-for="note in orderedHistory" :key="note.id" :class="$style.note">
           <div :class="$style.noteHead">
             <time :datetime="note.createdAt">{{ formatDate(note.createdAt) }}</time>
@@ -71,6 +83,10 @@ watch([open, history], scrollHistoryToBottom, { deep: true });
           </div>
           <textarea v-if="editingId === note.id" v-model="editingText" :class="$style.editInput" rows="4" />
           <p v-else>{{ note.text }}</p>
+          <p v-if="note.kind === 'linked'" :class="$style.linkedContext">
+            Sur <NuxtLink :to="note.pagePath ?? '#'">{{ shortText(note.pageTitle ?? note.pagePath ?? 'Page') }}</NuxtLink> :
+            <NuxtLink :to="noteAnchor(note)">« {{ shortText(note.anchorText ?? 'Texte lié') }} »</NuxtLink>
+          </p>
           <div v-if="editingId === note.id" :class="$style.noteActions">
             <button type="button" :class="$style.primary" :disabled="!editingText.trim()" @click="saveEditedNote">Enregistrer</button>
             <button type="button" :class="$style.mini" @click="cancelEdit">Annuler</button>
@@ -108,6 +124,7 @@ watch([open, history], scrollHistoryToBottom, { deep: true });
 .note { border: 1px solid #4a3a28; border-radius: 4px; padding: .6rem .7rem; background: #1c150f; }
 .note time { color: var(--muted); font-size: .75rem; }
 .note p { margin: .45rem 0 0; white-space: pre-wrap; overflow-wrap: anywhere; }
+.linkedContext { color: var(--accent); font-size: .8rem; }
 .noteActions { display: flex; align-items: center; gap: .35rem; }
 .editInput { width: 100%; margin-top: .45rem; resize: vertical; background: #2b2018; color: var(--text); border: 1px solid #4a3a28; border-radius: 4px; padding: .5rem .6rem; font: inherit; line-height: 1.45; }
 .mini { background: transparent; color: var(--muted); border: 1px solid #4a3a28; border-radius: 3px; cursor: pointer; padding: .15rem .4rem; font-family: inherit; }

@@ -11,7 +11,7 @@
     </nav>
     <TeamSelector />
   </header>
-  <main :class="$style.main"><slot /></main>
+  <main :class="$style.main"><LinkedNotes><slot /></LinkedNotes></main>
   <SessionNotesPanel />
   <ProjectionDock />
   <footer :class="$style.footer">Outil de maîtrise pour la campagne Historia — usage personnel, non affilié à l’éditeur.</footer>
