@@ -2,7 +2,7 @@
 import { computed } from 'vue';
 import type { ProjectionState } from '../composables/useProjection';
 
-const props = defineProps<{ state: ProjectionState }>();
+const props = defineProps<{ state: ProjectionState; compact?: boolean }>();
 
 function actorColor(actor: { id: string; name: string; collection: string }): string {
   let hash = 0;
@@ -12,7 +12,7 @@ function actorColor(actor: { id: string; name: string; collection: string }): st
   return `hsl(${hash % 360} 62% 62%)`;
 }
 
-const backgroundStyle = computed(() => (props.state.background
+const backgroundStyle = computed(() => (props.state.background && props.state.background.id !== 'campo-frontiera-plan'
   ? { backgroundImage: `url("${props.state.background.image}")` }
   : {}));
 </script>
@@ -21,7 +21,7 @@ const backgroundStyle = computed(() => (props.state.background
   <div :class="$style.stage">
     <transition name="proj-fade">
       <div v-if="state.background" :key="state.background.id" :class="$style.background" :style="backgroundStyle">
-        <CampoPlan v-if="state.background.id === 'campo-frontiera-plan'" :built-node-ids="state.background.planNodeIds ?? []" />
+        <CampoPlan v-if="state.background.id === 'campo-frontiera-plan'" :class="$style.campoPlan" :built-node-ids="state.background.planNodeIds ?? []" :compact="props.compact" />
       </div>
     </transition>
 
@@ -49,7 +49,8 @@ const backgroundStyle = computed(() => (props.state.background
 <style module>
 /* Les tailles sont exprimées en unités de conteneur : le même rendu sert au plein écran et à la miniature. */
 .stage { container-type: size; position: relative; width: 100%; height: 100%; background: #000; overflow: hidden; }
-.background { position: absolute; inset: 0; background-size: cover; background-position: center; }
+.background { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background-size: cover; background-position: center; }
+.campoPlan { flex: 0 0 auto; width: auto !important; height: 100%; max-width: 100%; }
 .background::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(0, 0, 0, .75), rgba(0, 0, 0, 0) 55%); }
 .actors { position: absolute; inset: auto 0 0 0; display: flex; justify-content: center; align-items: flex-end; gap: 2cqw; padding: 0 3cqw 2cqh; }
 .actor { margin: 0; text-align: center; }

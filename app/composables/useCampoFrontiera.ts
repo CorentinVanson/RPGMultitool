@@ -23,6 +23,8 @@ export interface CampoConstruction {
   baseIncome: number;
   baseVisitors: number;
   benefit: string;
+  access?: string[];
+  constructionDiscount?: number;
   candidates: CampoNpcCandidate[];
 }
 
@@ -61,16 +63,25 @@ const constructions: CampoConstruction[] = [
   { id: 'palisade', name: 'Palissade', category: 'Défense', description: 'Barrière de bois qui délimite le camp.', requires: [], level: 0, cost: 0, baseIncome: 0, baseVisitors: 0, benefit: 'État initial du camp.', candidates: [] },
   { id: 'cabins', name: 'Cabanes', category: 'Vie du camp', description: 'Améliore les tentes en logements plus solides.', requires: ['tents'], level: 1, cost: 90, baseIncome: 0, baseVisitors: 2, benefit: 'La population maximale et le confort augmentent.', candidates: [] },
   { id: 'tavern', name: 'Taverne', category: 'Commerce', description: 'Un lieu de repas, de repos et de rencontres.', requires: ['palisade'], level: 1, cost: 120, baseIncome: 8, baseVisitors: 2, benefit: 'Génère argent et visiteurs selon son tavernier.', candidates: tavernCandidates },
+  { id: 'tavern-plus-1', name: 'Taverne +1', category: 'Commerce', description: 'Ouvre une salle commune chauffée et des tables pour les voyageurs.', requires: ['tavern', 'cabins'], level: 2, cost: 190, baseIncome: 16, baseVisitors: 4, benefit: 'Le relais devient une étape régulière sur la route.', candidates: [] },
+  { id: 'tavern-plus-2', name: 'Taverne +2', category: 'Commerce', description: 'Aménage des chambres, une cuisine complète et une réserve de vin.', requires: ['tavern-plus-1', 'cistern'], level: 3, cost: 360, baseIncome: 28, baseVisitors: 7, benefit: 'Le camp attire marchands, messagers et petites caravanes.', candidates: [] },
   { id: 'cistern', name: 'Citerne remise en eau', category: 'Logistique', description: 'Dégage et étanchéifie la citerne ensablée.', requires: ['palisade'], level: 1, cost: 70, baseIncome: 0, baseVisitors: 0, benefit: 'Le camp possède une réserve d’eau.', candidates: genericCandidates('cistern', ['Orazio Brun', 'Marta Castor', 'Piero Campagnol'], ['Urcida — orso bruno', 'Mustacea — lontra', 'Rodentia — topo']) },
-  { id: 'forge', name: 'Forge', category: 'Artisanat', description: 'Répare armes, outils et ferrures de la base.', requires: ['cistern'], level: 2, cost: 150, baseIncome: 10, baseVisitors: 0, benefit: 'Réduit les coûts narratifs des réparations.', candidates: forgeCandidates },
-  { id: 'workshop', name: 'Atelier', category: 'Artisanat', description: 'Fabrique les pièces de bois et améliore les chantiers.', requires: ['forge'], level: 3, cost: 180, baseIncome: 12, baseVisitors: 1, benefit: 'Débloque les améliorations avancées.', candidates: genericCandidates('workshop', ['Nardo Digue', 'Ada Lavandaia', 'Lello Castor'], ['Mustacea — tasso', 'Mustacea — tasso', 'Mustacea — lontra']) },
+  { id: 'forge', name: 'Forge', category: 'Artisanat', description: 'Répare armes, outils et ferrures de la base.', requires: ['cistern'], level: 2, cost: 150, baseIncome: 10, baseVisitors: 0, benefit: 'Réduit les coûts narratifs des réparations.', access: ['Outils de forgeron et d’artisan', 'Armes de mêlée et à distance simples'], candidates: forgeCandidates },
+  { id: 'forge-plus-1', name: 'Forge +1', category: 'Artisanat', description: 'Ajoute un établi de précision, des moules et une réserve de métal.', requires: ['forge'], level: 3, cost: 280, baseIncome: 12, baseVisitors: 0, benefit: 'Permet l’entretien et la commande d’équipement militaire.', access: ['Armes de guerre de mêlée et à distance', 'Boucliers : brocchier, scudo, tavolaccio et palvese'], candidates: [] },
+  { id: 'forge-plus-2', name: 'Forge +2', category: 'Artisanat', description: 'Installe un foyer renforcé et un atelier de mécanique fine.', requires: ['forge-plus-1', 'workshop'], level: 4, cost: 520, baseIncome: 18, baseVisitors: 0, benefit: 'Le camp peut entretenir un arsenal spécialisé.', access: ['Entretien des armes à feu et fabrication de munitions', 'Armes avianes de guerre sur commande', 'Armes et armures de facture rodelienne, avec un contact et la réputation nécessaires'], candidates: [] },
+  { id: 'workshop', name: 'Atelier', category: 'Artisanat', description: 'Fabrique les pièces de bois et améliore les chantiers.', requires: ['forge'], level: 3, cost: 180, baseIncome: 12, baseVisitors: 1, benefit: 'Les gabarits et outils communs réduisent les coûts de construction.', constructionDiscount: .1, candidates: genericCandidates('workshop', ['Nardo Digue', 'Ada Lavandaia', 'Lello Castor'], ['Mustacea — tasso', 'Mustacea — tasso', 'Mustacea — lontra']) },
+  { id: 'workshop-plus-1', name: 'Atelier +1', category: 'Artisanat', description: 'Ajoute un banc de sciage et un stock de pièces standardisées.', requires: ['workshop', 'tavern'], level: 4, cost: 300, baseIncome: 16, baseVisitors: 1, benefit: 'Les chantiers sont organisés en série et coûtent moins cher.', constructionDiscount: .1, candidates: [] },
+  { id: 'workshop-plus-2', name: 'Atelier +2', category: 'Artisanat', description: 'Équipe l’atelier d’un treuil et d’outils de charpente lourde.', requires: ['workshop-plus-1', 'stone-wall'], level: 5, cost: 480, baseIncome: 20, baseVisitors: 1, benefit: 'Le camp peut produire et réparer ses grands ouvrages sur place.', constructionDiscount: .1, candidates: [] },
   { id: 'watchtower', name: 'Tour de guet', category: 'Renseignement', description: 'Surveille la route et les terres sèches.', requires: ['palisade'], level: 1, cost: 180, baseIncome: 5, baseVisitors: 1, benefit: 'Les menaces sont repérées plus tôt.', candidates: watchCandidates },
-  { id: 'tannery', name: 'Tannerie', category: 'Artisanat', description: 'Transforme les peaux et fournit cuir, courroies et protections.', requires: ['workshop'], level: 4, cost: 210, baseIncome: 24, baseVisitors: 1, benefit: 'Le camp développe une production marchande.', candidates: genericCandidates('tannery', ['Bice Renarde', 'Sisto Corbeau', 'Mina Fouine'], ['Licae — volpe rossa', 'Corbea — corvo', 'Mustacea — faina']) },
+  { id: 'tannery', name: 'Tannerie', category: 'Artisanat', description: 'Transforme les peaux et fournit cuir, courroies et protections.', requires: ['workshop'], level: 4, cost: 210, baseIncome: 24, baseVisitors: 1, benefit: 'Le camp développe une production marchande.', access: ['Gambeson et tabarda imbottita', 'Courroies, étuis et entretien des protections'], candidates: genericCandidates('tannery', ['Bice Renarde', 'Sisto Corbeau', 'Mina Fouine'], ['Licae — volpe rossa', 'Corbea — corvo', 'Mustacea — faina']) },
+  { id: 'tannery-plus-1', name: 'Tannerie +1', category: 'Artisanat', description: 'Installe des cuves couvertes et un espace de coupe sur mesure.', requires: ['tannery', 'forge-plus-1'], level: 5, cost: 390, baseIncome: 34, baseVisitors: 2, benefit: 'Les protections sont ajustées et l’armurerie du camp peut tenir du stock.', access: ['Brigantina, giaco di maglia et maglia di ferro', 'Armatures avianes adaptées, à commander depuis Nidialti ou Rodelia'], candidates: [] },
   { id: 'map-room', name: 'Salle des cartes', category: 'Commandement', description: 'Centralise cartes, rapports et décisions.', requires: ['watchtower'], level: 2, cost: 240, baseIncome: 10, baseVisitors: 2, benefit: 'Les visiteurs et les missions sont mieux orientés.', candidates: genericCandidates('map-room', ['Cassio Corbe', 'Renzo Taupe', 'Mara Rossa'], ['Corbea — corvo', 'Rodentia — topo', 'Licae — volpe rossa']) },
   { id: 'church', name: 'Chapelle', category: 'Communauté', description: 'Un lieu de recueillement pour les habitants et voyageurs.', requires: ['cabins'], level: 2, cost: 220, baseIncome: 4, baseVisitors: 5, benefit: 'Attire habitants et pèlerins, mais demande une présence constante.', candidates: genericCandidates('church', ['Sœur Alba', 'Frère Neri', 'Pia Croyante'], ['Striga — gufo', 'Corbea — corvo', 'Felide — gatto']) },
   { id: 'infirmary', name: 'Infirmerie', category: 'Communauté', description: 'Soigne les blessés et les ouvriers.', requires: ['cabins', 'forge'], level: 3, cost: 260, baseIncome: 0, baseVisitors: 2, benefit: 'Les habitants récupèrent plus sûrement après un incident.', candidates: genericCandidates('infirmary', ['Dottoressa Ilaria', 'Marta Soigneuse', 'Tullio Herboriste'], ['Felide — gatto', 'Mustacea — tasso', 'Rodentia — topo']) },
   { id: 'stone-wall', name: 'Muraille de pierre', category: 'Défense', description: 'Remplace la palissade par une enceinte capable de tenir un siège.', requires: ['workshop', 'watchtower'], level: 4, cost: 600, baseIncome: 0, baseVisitors: 0, benefit: 'Défense de fin de campagne.', candidates: genericCandidates('stone-wall', ['Livia Pierreferme', 'Orazio Brun', 'Cesare Maçon'], ['Mustacea — tasso', 'Urcida — orso bruno', 'Urcida — orso bruno']) },
-  { id: 'artificer', name: 'Laboratoire d’artificier', category: 'End game', description: 'Un atelier rare pour expérimenter poudres, mécanismes et défenses.', requires: ['forge', 'map-room'], level: 4, cost: 520, baseIncome: 38, baseVisitors: 1, benefit: 'Débloque des solutions exceptionnelles pour le final.', candidates: genericCandidates('artificer', ['Dottor Vero', 'Milo Inventeur', 'Nerina Curieuse'], ['Corbea — corvo', 'Rodentia — topo', 'Felide — gatto']) },
+  { id: 'artificer', name: 'Laboratoire d’artificier', category: 'End game', description: 'Un atelier rare pour expérimenter poudres, mécanismes et défenses.', requires: ['forge-plus-1', 'map-room'], level: 4, cost: 520, baseIncome: 38, baseVisitors: 1, benefit: 'Débloque des solutions exceptionnelles pour le final.', access: ['Entretien de pistolets et mousquets', 'Poudre noire et munitions, sous la responsabilité d’un geniere'], candidates: genericCandidates('artificer', ['Dottor Vero', 'Milo Inventeur', 'Nerina Curieuse'], ['Corbea — corvo', 'Rodentia — topo', 'Felide — gatto']) },
+  { id: 'artificer-plus-1', name: 'Laboratoire +1', category: 'End game', description: 'Ajoute un tour de mécanique fine et une chambre de poudre sécurisée.', requires: ['artificer', 'forge-plus-2'], level: 5, cost: 740, baseIncome: 48, baseVisitors: 1, benefit: 'Les mécanismes complexes deviennent réparables au Campo.', access: ['Arquebuses et colubrines', 'Pièces de rechange et maintenance avancée des armes à feu'], candidates: [] },
+  { id: 'artificer-plus-2', name: 'Laboratoire +2', category: 'End game', description: 'Aménage une fosse d’essai et une remise d’artillerie hors de l’enceinte.', requires: ['artificer-plus-1', 'stone-wall'], level: 6, cost: 1100, baseIncome: 62, baseVisitors: 2, benefit: 'Le Campo possède une capacité de défense lourde, à employer avec prudence.', access: ['Bombardes et falconetti', 'Entretien des pièces d’artillerie et de leurs munitions'], candidates: [] },
 ];
 
 export const CAMPO_CONSTRUCTIONS = constructions;
@@ -115,7 +126,9 @@ export function useCampoFrontiera() {
   onMounted(initialize);
 
   const builtConstructions = computed(() => constructions.filter((construction) => builtIds.value.includes(construction.id)));
-  const availableConstructions = computed(() => constructions.filter((construction) => !builtIds.value.includes(construction.id) && construction.requires.every((id) => builtIds.value.includes(id)) && gold.value >= construction.cost));
+  const constructionDiscount = computed(() => builtConstructions.value.reduce((total, construction) => total + (construction.constructionDiscount ?? 0), 0));
+  function constructionCost(construction: CampoConstruction) { return Math.ceil(construction.cost * (1 - constructionDiscount.value)); }
+  const availableConstructions = computed(() => constructions.filter((construction) => !builtIds.value.includes(construction.id) && construction.requires.every((id) => builtIds.value.includes(id)) && gold.value >= constructionCost(construction)));
   const dailyIncome = computed(() => builtConstructions.value.reduce((total, construction) => {
     const candidate = construction.candidates.find((item) => item.id === assignments.value[construction.id]);
     return total + construction.baseIncome + (candidate?.income ?? 0);
@@ -130,8 +143,8 @@ export function useCampoFrontiera() {
 
   function build(id: string) {
     const construction = constructions.find((item) => item.id === id);
-    if (!construction || isBuilt(id) || gold.value < construction.cost || !construction.requires.every(isBuilt)) return false;
-    gold.value -= construction.cost;
+    if (!construction || isBuilt(id) || gold.value < constructionCost(construction) || !construction.requires.every(isBuilt)) return false;
+    gold.value -= constructionCost(construction);
     builtIds.value = [...builtIds.value, id];
     persist();
     return true;
@@ -175,5 +188,5 @@ export function useCampoFrontiera() {
     return true;
   }
 
-  return { builtIds, assignments, day, gold, population, builtConstructions, availableConstructions, dailyIncome, dailyVisitors, populationGrowth, isBuilt, build, demolish, assignNpc, advanceDay, addGold, addPopulation };
+  return { builtIds, assignments, day, gold, population, builtConstructions, availableConstructions, dailyIncome, dailyVisitors, populationGrowth, constructionDiscount, constructionCost, isBuilt, build, demolish, assignNpc, advanceDay, addGold, addPopulation };
 }

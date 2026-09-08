@@ -153,7 +153,7 @@ watch(hasContext, (value) => { showCatalog.value = !value; }, { immediate: true 
   <div>
     <div :class="[$style.fabRow, open && $style.dockOpen]">
       <button type="button" :class="$style.preview" title="Aperçu de l’écran de projection" @click="open = true">
-        <ProjectionStage :state="state" />
+        <ProjectionStage :state="state" compact />
         <span :class="$style.previewLabel">Aperçu projection</span>
       </button>
       <div :class="$style.fabButtons">
@@ -180,7 +180,7 @@ watch(hasContext, (value) => { showCatalog.value = !value; }, { immediate: true 
       </header>
 
       <div :class="$style.panelPreview">
-        <ProjectionStage :state="state" />
+        <ProjectionStage :state="state" compact />
       </div>
 
       <div :class="$style.toolbar">
