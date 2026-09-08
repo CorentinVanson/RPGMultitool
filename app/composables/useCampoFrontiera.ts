@@ -125,29 +125,23 @@ const constructions: CampoConstruction[] = [
 export const CAMPO_CONSTRUCTIONS = constructions;
 export const CAMPO_STARTING_IDS = ['tents', 'palisade'];
 export const CAMPO_NPC_CANDIDATES = constructions.flatMap((construction) => construction.candidates.map((candidate) => ({ candidate, construction: construction.name })));
+const candidateSlugs: Record<string, string> = {
+  'tavern-elisabetta': 'elisabetta-tasso', 'tavern-ruggero': 'ruggero-volpe', 'tavern-niccolo': 'niccolo-souris',
+  'forge-ambra': 'ambra-blaireau', 'forge-dario': 'dario-corbeau', 'forge-lucia': 'lucia-lapine',
+  'watch-cesare': 'cesare-corbeau',
+  'cistern-1': 'orazio-brun', 'watch-orazio': 'orazio-brun', 'stone-wall-2': 'orazio-brun',
+  'cistern-2': 'marta-castor', 'cistern-3': 'piero-campagnol',
+  'workshop-1': 'nardo-digue', 'workshop-2': 'ada-lavandaia', 'workshop-3': 'lello-castor',
+  'tannery-1': 'bice-renarde', 'tannery-2': 'sisto-corbeau', 'tannery-3': 'mina-fouine',
+  'map-room-1': 'cassio-corbe', 'map-room-2': 'renzo', 'map-room-3': 'mara-rossa', 'watch-mara': 'mara-rossa',
+  'church-1': 'soeur-alba', 'church-2': 'frere-neri', 'church-3': 'pia-croyante',
+  'infirmary-1': 'dottoressa-ilaria', 'infirmary-2': 'marta-soigneuse', 'infirmary-3': 'tullio-herboriste',
+  'stone-wall-1': 'livia-pierreferme', 'stone-wall-3': 'cesare-macon',
+  'artificer-1': 'dottor-vero', 'artificer-2': 'milo-inventeur', 'artificer-3': 'nerina-curieuse',
+};
 
-export function campoCandidateToContentEntry({ candidate, construction }: typeof CAMPO_NPC_CANDIDATES[number]) {
-  const sections = [
-    `<h2>Poste proposé</h2><p>${construction}</p>`,
-    `<h2>Parcours</h2><p>${candidate.background}</p>`,
-    `<h2>Personnalité</h2><p>${candidate.personality}</p>`,
-    `<h2>Atout</h2><p>${candidate.qualities}</p>`,
-    `<h2>Limite</h2><p>${candidate.flaws}</p>`,
-    `<h2>Rendement</h2><p>+${candidate.income} pièces par jour · +${candidate.visitors} visiteur${candidate.visitors > 1 ? 's' : ''} · progression +${candidate.growth}</p>`,
-  ];
-  return {
-    id: `campo-${candidate.id}`,
-    data: {
-      name: candidate.name,
-      role: 'Employé du camp',
-      familia: candidate.species,
-      image: candidate.image,
-      summary: candidate.background,
-      tags: ['Employé du camp'],
-    },
-    body: '',
-    bodyHtml: sections.join(''),
-  };
+export function campoCandidateSlug(candidateId: string): string {
+  return candidateSlugs[candidateId] ?? candidateId;
 }
 
 const STORAGE_KEY = 'rpg-campo-frontiera';

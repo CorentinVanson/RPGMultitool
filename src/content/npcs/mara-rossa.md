@@ -4,6 +4,7 @@ role: "Éclaireuse et messagère"
 familia: "Licae — volpe rossa (theria)"
 location: "Campo della Frontiera"
 faction: "Institution locale de Vallombra"
+image: "/images/npcs/mara-rossa.png"
 alignment: "Chaotique Bonne"
 summary: "Volpe rossa vive et prudente, spécialisée dans les trajets rapides entre le camp, Vallombra et les pistes de la frontière."
 ---

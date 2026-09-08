@@ -4,6 +4,7 @@ role: "Intendant et gardien des réserves"
 familia: "Urcida — orso bruno (theria)"
 location: "Campo della Frontiera"
 faction: "Institution locale de Vallombra"
+image: "/images/npcs/orazio-brun.png"
 alignment: "Loyal Neutre"
 summary: "Orso brun massif et soigneux, responsable de l'eau, des vivres et de la discipline quotidienne du camp."
 ---

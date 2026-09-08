@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, onMounted, ref } from 'vue';
-import { useCampoFrontiera, CAMPO_CONSTRUCTIONS, type CampoConstruction } from '../composables/useCampoFrontiera';
+import { useCampoFrontiera, CAMPO_CONSTRUCTIONS, campoCandidateSlug, type CampoConstruction } from '../composables/useCampoFrontiera';
 import { useProjectionController } from '../composables/useProjection';
 
 const { state, start } = useProjectionController();
@@ -88,8 +88,8 @@ function creditPopulation() {
             <label :class="$style.assignment">Responsable
               <select :value="assignments[construction.id] ?? ''" @change="assignNpc(construction.id, ($event.target as HTMLSelectElement).value)"><option value="">Choisir parmi 3 PNJ</option><option v-for="candidate in construction.candidates" :key="candidate.id" :value="candidate.id">{{ candidate.name }}</option></select>
             </label>
-            <div v-if="selectedCandidate(construction)" :class="$style.profile"><NuxtLink :to="`/personnages/campo-${selectedCandidate(construction)?.id}`"><strong>{{ selectedCandidate(construction)?.name }}</strong></NuxtLink><span>Qualités : {{ selectedCandidate(construction)?.qualities }}</span><span>Défauts : {{ selectedCandidate(construction)?.flaws }}</span></div>
-            <div v-else :class="$style.candidates"><article v-for="candidate in construction.candidates" :key="candidate.id"><NuxtLink :to="`/personnages/campo-${candidate.id}`"><strong>{{ candidate.name }}</strong></NuxtLink><small>{{ candidate.qualities }}</small><small class="flaw">Point faible : {{ candidate.flaws }}</small><button type="button" :class="$style.choose" @click="assignNpc(construction.id, candidate.id)">Choisir</button></article></div>
+            <div v-if="selectedCandidate(construction)" :class="$style.profile"><NuxtLink :to="`/personnages/${campoCandidateSlug(selectedCandidate(construction)?.id ?? '')}`"><strong>{{ selectedCandidate(construction)?.name }}</strong></NuxtLink><span>Qualités : {{ selectedCandidate(construction)?.qualities }}</span><span>Défauts : {{ selectedCandidate(construction)?.flaws }}</span></div>
+            <div v-else :class="$style.candidates"><article v-for="candidate in construction.candidates" :key="candidate.id"><NuxtLink :to="`/personnages/${campoCandidateSlug(candidate.id)}`"><strong>{{ candidate.name }}</strong></NuxtLink><small>{{ candidate.qualities }}</small><small class="flaw">Point faible : {{ candidate.flaws }}</small><button type="button" :class="$style.choose" @click="assignNpc(construction.id, candidate.id)">Choisir</button></article></div>
           </div>
           <p v-if="isBuilt(construction.id) && construction.candidates.length && selectedCandidate(construction)" :class="$style.assignedYield">{{ candidateName(construction, assignments[construction.id]) }} : +{{ selectedCandidate(construction)?.income }} pièces/jour<span v-if="selectedCandidate(construction)?.visitors"> · +{{ selectedCandidate(construction)?.visitors }} visiteurs</span><span v-if="selectedCandidate(construction)?.growth"> · progression +{{ selectedCandidate(construction)?.growth }}</span></p>
         </article>

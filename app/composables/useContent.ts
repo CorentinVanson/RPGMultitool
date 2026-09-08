@@ -1,7 +1,6 @@
 import { computed, type Ref } from 'vue';
 import { useFetch, useNuxtApp } from '#imports';
 import type { ContentDetail } from '../types/content';
-import { campoCandidateToContentEntry, CAMPO_NPC_CANDIDATES } from './useCampoFrontiera';
 
 export type ContentCollection = 'arcs' | 'locations' | 'npcs' | 'enemies';
 
@@ -29,8 +28,7 @@ export function characterTag(id: string, tags?: unknown): typeof CHARACTER_TAGS[
 }
 
 export function characterEntries(entries: ContentDetail[]): ContentDetail[] {
-  const classified = entries.map((entry) => ({ ...entry, data: { ...entry.data, tags: [characterTag(entry.id, entry.data.tags)] } }));
-  return [...classified, ...CAMPO_NPC_CANDIDATES.map(campoCandidateToContentEntry)];
+  return entries.map((entry) => ({ ...entry, data: { ...entry.data, tags: [characterTag(entry.id, entry.data.tags)] } }));
 }
 
 /**

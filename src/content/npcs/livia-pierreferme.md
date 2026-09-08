@@ -4,6 +4,7 @@ role: "Maîtresse maçonne du Campo della Frontiera"
 familia: "Mustacea — tasso (theria)"
 location: "Campo della Frontiera"
 faction: "Institution locale de Vallombra"
+image: "/images/npcs/livia-pierreferme.png"
 alignment: "Loyal Neutre"
 summary: "Maîtresse maçonne tasso, méthodique et inflexible, capable de transformer une ruine en ouvrage défendable."
 ---

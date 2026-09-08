@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { CAMPO_NPC_CANDIDATES } from '../../../composables/useCampoFrontiera';
+import { CAMPO_NPC_CANDIDATES, campoCandidateSlug } from '../../../composables/useCampoFrontiera';
 
 const candidates = CAMPO_NPC_CANDIDATES;
 </script>
@@ -21,7 +21,7 @@ const candidates = CAMPO_NPC_CANDIDATES;
         <header :class="$style.cardHeader">
           <div>
             <p :class="$style.job">{{ entry.construction }}</p>
-            <h2><NuxtLink :to="`/personnages/campo-${entry.candidate.id}`">{{ entry.candidate.name }}</NuxtLink></h2>
+            <h2><NuxtLink :to="`/personnages/${campoCandidateSlug(entry.candidate.id)}`">{{ entry.candidate.name }}</NuxtLink></h2>
             <p :class="$style.species">{{ entry.candidate.species }}</p>
           </div>
           <span :class="$style.growth">+{{ entry.candidate.growth }} prog.</span>

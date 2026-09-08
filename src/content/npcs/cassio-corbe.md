@@ -4,6 +4,7 @@ role: "Cartographe et guetteur"
 familia: "Corbea — corvo (aviano)"
 location: "Campo della Frontiera"
 faction: "Institution locale de Vallombra"
+image: "/images/npcs/cassio-corbe.png"
 alignment: "Neutre Bon"
 summary: "Corvo cartographe, attentif aux mouvements sur la route et aux détails que les autres éclaireurs négligent."
 ---
