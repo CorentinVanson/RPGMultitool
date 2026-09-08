@@ -46,7 +46,7 @@ function creditPopulation() {
   <section>
     <p><NuxtLink to="/lieux">&larr; Retour aux lieux</NuxtLink></p>
     <header :class="$style.hero">
-      <div><p :class="$style.eyebrow">Base des PJ · Gestion de campagne</p><h1>Campo della Frontiera</h1><p>Développez le poste frontière, choisissez les personnes qui le font vivre et observez sa croissance jour après jour.</p></div>
+      <div><p :class="$style.eyebrow">Base des PJ · Gestion de campagne</p><h1>Campo della Frontiera</h1><p>Développez le poste frontière, choisissez les personnes qui le font vivre et observez sa croissance jour après jour.</p><NuxtLink to="/candidatures-campo" :class="$style.peopleLink">Voir les candidatures du camp</NuxtLink></div>
       <button type="button" :class="$style.project" @click="projectPlan">Projeter le plan évolutif</button>
     </header>
 
@@ -88,8 +88,8 @@ function creditPopulation() {
             <label :class="$style.assignment">Responsable
               <select :value="assignments[construction.id] ?? ''" @change="assignNpc(construction.id, ($event.target as HTMLSelectElement).value)"><option value="">Choisir parmi 3 PNJ</option><option v-for="candidate in construction.candidates" :key="candidate.id" :value="candidate.id">{{ candidate.name }}</option></select>
             </label>
-            <div v-if="selectedCandidate(construction)" :class="$style.profile"><NuxtLink :to="`/campo-della-frontiera/personnages/${selectedCandidate(construction)?.id}`"><strong>{{ selectedCandidate(construction)?.name }}</strong></NuxtLink><span>Qualités : {{ selectedCandidate(construction)?.qualities }}</span><span>Défauts : {{ selectedCandidate(construction)?.flaws }}</span></div>
-            <div v-else :class="$style.candidates"><article v-for="candidate in construction.candidates" :key="candidate.id"><NuxtLink :to="`/campo-della-frontiera/personnages/${candidate.id}`"><strong>{{ candidate.name }}</strong></NuxtLink><small>{{ candidate.qualities }}</small><small class="flaw">Point faible : {{ candidate.flaws }}</small><button type="button" :class="$style.choose" @click="assignNpc(construction.id, candidate.id)">Choisir</button></article></div>
+            <div v-if="selectedCandidate(construction)" :class="$style.profile"><NuxtLink :to="`/personnages/campo-${selectedCandidate(construction)?.id}`"><strong>{{ selectedCandidate(construction)?.name }}</strong></NuxtLink><span>Qualités : {{ selectedCandidate(construction)?.qualities }}</span><span>Défauts : {{ selectedCandidate(construction)?.flaws }}</span></div>
+            <div v-else :class="$style.candidates"><article v-for="candidate in construction.candidates" :key="candidate.id"><NuxtLink :to="`/personnages/campo-${candidate.id}`"><strong>{{ candidate.name }}</strong></NuxtLink><small>{{ candidate.qualities }}</small><small class="flaw">Point faible : {{ candidate.flaws }}</small><button type="button" :class="$style.choose" @click="assignNpc(construction.id, candidate.id)">Choisir</button></article></div>
           </div>
           <p v-if="isBuilt(construction.id) && construction.candidates.length && selectedCandidate(construction)" :class="$style.assignedYield">{{ candidateName(construction, assignments[construction.id]) }} : +{{ selectedCandidate(construction)?.income }} pièces/jour<span v-if="selectedCandidate(construction)?.visitors"> · +{{ selectedCandidate(construction)?.visitors }} visiteurs</span><span v-if="selectedCandidate(construction)?.growth"> · progression +{{ selectedCandidate(construction)?.growth }}</span></p>
         </article>
@@ -101,7 +101,7 @@ function creditPopulation() {
 </template>
 
 <style module>
-.hero { display: flex; justify-content: space-between; align-items: end; gap: 1.5rem; padding: 1.25rem 0 2rem; border-bottom: 1px solid #4a3a28; } .hero h1 { margin: .25rem 0; } .hero p { max-width: 42rem; }
+.hero { display: flex; justify-content: space-between; align-items: end; gap: 1.5rem; padding: 1.25rem 0 2rem; border-bottom: 1px solid #4a3a28; } .hero h1 { margin: .25rem 0; } .hero p { max-width: 42rem; } .peopleLink { display: inline-block; margin-top: .75rem; color: var(--accent); }
 .eyebrow, .muted { color: var(--muted); } .eyebrow { margin: 0; text-transform: uppercase; letter-spacing: .08em; font-size: .8rem; }
 .project, .nextDay, .build { background: var(--accent); color: #1c150f; border: 1px solid var(--accent); border-radius: 4px; padding: .6rem .8rem; font: inherit; font-weight: bold; cursor: pointer; } .project, .nextDay { white-space: nowrap; }
 .dashboard { display: grid; grid-template-columns: repeat(4, 1fr) auto; gap: .75rem; margin: 1.5rem 0; } .resource { display: flex; flex-direction: column; gap: .15rem; background: var(--panel); border: 1px solid #4a3a28; border-radius: 4px; padding: .7rem .8rem; } .resource span { color: var(--muted); font-size: .75rem; text-transform: uppercase; } .resource strong { color: var(--accent); } .nextDay small { display: block; font-weight: normal; font-size: .7rem; }

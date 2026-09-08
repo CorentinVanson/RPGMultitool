@@ -2,14 +2,16 @@
 import { computed } from 'vue';
 import { createError } from 'h3';
 import { useRoute } from '#imports';
-import { sectionCollections, useContentCollection } from '../../composables/useContent';
+import { characterEntries, sectionCollections, useContentCollection } from '../../composables/useContent';
 
 const route = useRoute();
 const section = route.params.section as string;
 const collection = sectionCollections[section];
 if (!collection) throw createError({ statusCode: 404, statusMessage: 'Page introuvable' });
 const { data: entries } = await useContentCollection(collection);
-const entry = computed(() => (entries.value ?? []).find((item) => item.id === route.params.slug) ?? null);
+const entry = computed(() => section === 'personnages'
+  ? characterEntries(entries.value ?? []).find((item) => item.id === route.params.slug) ?? null
+  : (entries.value ?? []).find((item) => item.id === route.params.slug) ?? null);
 if (!entry.value) throw createError({ statusCode: 404, statusMessage: 'Page introuvable' });
 </script>
 

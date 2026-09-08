@@ -10,7 +10,7 @@ export default defineNuxtConfig({
     prerender: {
       crawlLinks: true,
       routes: [
-        '/', '/projection', '/campo-della-frontiera',
+        '/', '/projection', '/campo-della-frontiera', '/candidatures-campo',
         ...[
           'tavern-elisabetta', 'tavern-ruggero', 'tavern-niccolo',
           'forge-ambra', 'forge-dario', 'forge-lucia',
