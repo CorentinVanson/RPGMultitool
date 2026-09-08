@@ -42,7 +42,7 @@ export default defineNuxtConfig({
       start_url: '/',
     },
     workbox: {
-      globPatterns: ['**/*.{js,css,html,json,svg,png,jpg,jpeg,webp,ico,woff2}'],
+      globPatterns: ['**/*.{js,css,html,json,svg,png,jpg,jpeg,webp,ico,woff2,mp4}'],
       maximumFileSizeToCacheInBytes: 8 * 1024 * 1024,
       navigateFallback: '/',
       cleanupOutdatedCaches: true,
