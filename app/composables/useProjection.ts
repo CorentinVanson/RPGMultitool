@@ -18,6 +18,7 @@ export interface ProjectionState {
   background: ProjectionBackground | null;
   actors: ProjectionActor[];
   caption: string;
+  campStatsCaption: string;
   showNames: boolean;
   blackout: boolean;
   speakerActorId: string | null;
@@ -32,7 +33,7 @@ export const DEFAULT_BACKGROUND: ProjectionBackground = {
 };
 
 export function defaultProjectionState(): ProjectionState {
-  return { background: { ...DEFAULT_BACKGROUND }, actors: [], caption: '', showNames: true, blackout: false, speakerActorId: null };
+  return { background: { ...DEFAULT_BACKGROUND }, actors: [], caption: '', campStatsCaption: '', showNames: true, blackout: false, speakerActorId: null };
 }
 
 function readStored(): ProjectionState {

@@ -16,6 +16,7 @@ const isSpeaker = (actor: { id: string }) => props.state.speakerActorId === acto
 const backgroundStyle = computed(() => (props.state.background && props.state.background.id !== 'campo-frontiera-plan'
   ? { backgroundImage: `url("${props.state.background.image}")` }
   : {}));
+const showCampStats = computed(() => props.state.background?.id === 'campo-frontiera-plan' && Boolean(props.state.campStatsCaption));
 </script>
 
 <template>
@@ -44,6 +45,10 @@ const backgroundStyle = computed(() => (props.state.background && props.state.ba
         </figure>
       </transition-group>
     </div>
+
+    <transition name="proj-fade">
+      <p v-if="showCampStats" :class="$style.caption">{{ state.campStatsCaption }}</p>
+    </transition>
 
     <transition name="proj-fade">
       <p v-if="state.caption" :class="$style.caption">{{ state.caption }}</p>

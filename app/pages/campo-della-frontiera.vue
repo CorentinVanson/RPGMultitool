@@ -30,7 +30,8 @@ function projectPlan() {
   state.value.background = {
     id: 'campo-frontiera-plan', name: 'Plan du Campo della Frontiera', image: '/images/locations/campo-della-frontiera.png', planNodeIds: [...builtIds.value],
   };
-  state.value.caption = `Jour ${day.value} · ${gold.value} pièces · ${population.value} habitant·e·s`;
+  state.value.campStatsCaption = `Jour ${day.value} · ${gold.value} pièces · ${population.value} habitant·e·s`;
+  state.value.caption = '';
 }
 
 function candidateName(construction: CampoConstruction, id: string | undefined): string {
