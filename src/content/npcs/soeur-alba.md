@@ -3,6 +3,7 @@ name: "Sœur Alba"
 role: "Officiante candidate de la chapelle"
 familia: "Striga — gufo (aviano)"
 location: "Vallombra"
+image: "/images/npcs/soeur-alba.png"
 tags:
   - "Employé du camp"
 summary: "Présence douce et ferme qui veut offrir au camp un lieu de recueillement sans pression."

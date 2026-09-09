@@ -3,6 +3,7 @@ name: "Elisabetta Tasso"
 role: "Tavernière candidate du Campo"
 familia: "Mustacea — tasso (theria)"
 location: "Vallombra"
+image: "/images/npcs/elisabetta-tasso.png"
 tags:
   - "Employé du camp"
 summary: "Cuisinière méthodique qui veut reconstruire l’auberge familiale au Campo della Frontiera."

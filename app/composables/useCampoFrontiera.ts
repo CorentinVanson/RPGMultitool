@@ -145,16 +145,26 @@ export function campoCandidateSlug(candidateId: string): string {
 }
 
 const STORAGE_KEY = 'rpg-campo-frontiera';
+const XP_TIERS = [
+  { threshold: 0, income: 0, visitors: 0 },
+  { threshold: 10, income: 2, visitors: 1 },
+  { threshold: 20, income: 6, visitors: 2 },
+  { threshold: 35, income: 12, visitors: 4 },
+] as const;
+
 const builtIds = ref<string[]>([...CAMPO_STARTING_IDS]);
 const assignments = ref<Record<string, string>>({});
 const day = ref(1);
 const gold = ref(200);
 const population = ref(0);
+const incomeModifier = ref(0);
+const visitorModifier = ref(0);
+const employeeXp = ref<Record<string, number>>({});
 let initialized = false;
 
 function persist() {
   try {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify({ builtIds: builtIds.value, assignments: assignments.value, day: day.value, gold: gold.value, population: population.value }));
+    localStorage.setItem(STORAGE_KEY, JSON.stringify({ builtIds: builtIds.value, assignments: assignments.value, day: day.value, gold: gold.value, population: population.value, incomeModifier: incomeModifier.value, visitorModifier: visitorModifier.value, employeeXp: employeeXp.value }));
   } catch {
     // L’état reste disponible tant que la page est ouverte.
   }
@@ -164,19 +174,45 @@ function initialize() {
   if (initialized) return;
   initialized = true;
   try {
-    const stored = JSON.parse(localStorage.getItem(STORAGE_KEY) ?? '{}') as Partial<{ builtIds: string[]; assignments: Record<string, string>; day: number; gold: number; population: number }>;
+    const stored = JSON.parse(localStorage.getItem(STORAGE_KEY) ?? '{}') as Partial<{ builtIds: string[]; assignments: Record<string, string>; day: number; gold: number; population: number; incomeModifier: number; visitorModifier: number; employeeXp: Record<string, number> }>;
     builtIds.value = [...new Set([...CAMPO_STARTING_IDS, ...(stored.builtIds ?? [])])].filter((id) => constructions.some((item) => item.id === id));
     assignments.value = stored.assignments ?? {};
     day.value = stored.day ?? 1;
     gold.value = stored.gold ?? 200;
     population.value = stored.population ?? 0;
+    incomeModifier.value = stored.incomeModifier ?? 0;
+    visitorModifier.value = stored.visitorModifier ?? 0;
+    employeeXp.value = stored.employeeXp ?? {};
   } catch {
     builtIds.value = [...CAMPO_STARTING_IDS];
     assignments.value = {};
     day.value = 1;
     gold.value = 200;
     population.value = 0;
+    incomeModifier.value = 0;
+    visitorModifier.value = 0;
+    employeeXp.value = {};
   }
+}
+
+function xpTier(xp: number) {
+  let tier = 0;
+  for (const rule of XP_TIERS.slice(1)) {
+    if (xp >= rule.threshold) tier += 1;
+  }
+  return tier;
+}
+
+function xpBonus(candidateId: string) {
+  const xp = employeeXp.value[candidateId] ?? 0;
+  const tier = xpTier(xp);
+  const bonus = XP_TIERS[Math.min(tier + 1, XP_TIERS.length - 1)] ?? XP_TIERS[0];
+  return {
+    tier,
+    income: bonus.income,
+    visitors: bonus.visitors,
+    levelName: ['Inactif', 'Apprenti', 'Expérimenté', 'Maître'][Math.min(tier, 3)] ?? 'Inactif',
+  };
 }
 
 export function useCampoFrontiera() {
@@ -186,14 +222,18 @@ export function useCampoFrontiera() {
   const constructionDiscount = computed(() => builtConstructions.value.reduce((total, construction) => total + (construction.constructionDiscount ?? 0), 0));
   function constructionCost(construction: CampoConstruction) { return Math.ceil(construction.cost * (1 - constructionDiscount.value)); }
   const availableConstructions = computed(() => constructions.filter((construction) => !builtIds.value.includes(construction.id) && construction.requires.every((id) => builtIds.value.includes(id)) && gold.value >= constructionCost(construction)));
-  const dailyIncome = computed(() => builtConstructions.value.reduce((total, construction) => {
+  const baseDailyIncome = computed(() => builtConstructions.value.reduce((total, construction) => {
     const candidate = construction.candidates.find((item) => item.id === assignments.value[construction.id]);
-    return total + construction.baseIncome + (candidate?.income ?? 0);
+    const bonus = xpBonus(candidate?.id ?? '');
+    return total + construction.baseIncome + (candidate?.income ?? 0) + bonus.income;
   }, 0));
-  const dailyVisitors = computed(() => builtConstructions.value.reduce((total, construction) => {
+  const dailyIncome = computed(() => baseDailyIncome.value + incomeModifier.value);
+  const baseDailyVisitors = computed(() => builtConstructions.value.reduce((total, construction) => {
     const candidate = construction.candidates.find((item) => item.id === assignments.value[construction.id]);
-    return total + construction.baseVisitors + (candidate?.visitors ?? 0);
+    const bonus = xpBonus(candidate?.id ?? '');
+    return total + construction.baseVisitors + (candidate?.visitors ?? 0) + bonus.visitors;
   }, 0));
+  const dailyVisitors = computed(() => baseDailyVisitors.value + visitorModifier.value);
   const populationGrowth = computed(() => Math.max(0, dailyVisitors.value + builtConstructions.value.reduce((total, construction) => total + (construction.candidates.find((item) => item.id === assignments.value[construction.id])?.growth ?? 0), 0)));
 
   function isBuilt(id: string) { return builtIds.value.includes(id); }
@@ -231,6 +271,46 @@ export function useCampoFrontiera() {
     persist();
   }
 
+  function setDay(value: number) {
+    if (!Number.isFinite(value)) return false;
+    day.value = Math.max(1, Math.floor(value));
+    persist();
+    return true;
+  }
+
+  function setDailyIncomeModifier(amount: number) {
+    if (!Number.isFinite(amount)) return false;
+    incomeModifier.value = Math.floor(amount);
+    persist();
+    return true;
+  }
+
+  function setDailyVisitorsModifier(amount: number) {
+    if (!Number.isFinite(amount)) return false;
+    visitorModifier.value = Math.floor(amount);
+    persist();
+    return true;
+  }
+
+  function gainXp(candidateId: string, amount = 5) {
+    if (!candidateId || !Number.isFinite(amount) || amount <= 0) return false;
+    employeeXp.value = { ...employeeXp.value, [candidateId]: (employeeXp.value[candidateId] ?? 0) + Math.floor(amount) };
+    persist();
+    return true;
+  }
+
+  function resetCamp() {
+    builtIds.value = [...CAMPO_STARTING_IDS];
+    assignments.value = {};
+    day.value = 1;
+    gold.value = 200;
+    population.value = 0;
+    incomeModifier.value = 0;
+    visitorModifier.value = 0;
+    employeeXp.value = {};
+    persist();
+  }
+
   function addGold(amount: number) {
     if (!Number.isFinite(amount) || amount <= 0) return false;
     gold.value += Math.floor(amount);
@@ -245,5 +325,5 @@ export function useCampoFrontiera() {
     return true;
   }
 
-  return { builtIds, assignments, day, gold, population, builtConstructions, availableConstructions, dailyIncome, dailyVisitors, populationGrowth, constructionDiscount, constructionCost, isBuilt, build, demolish, assignNpc, advanceDay, addGold, addPopulation };
+  return { builtIds, assignments, day, gold, population, employeeXp, incomeModifier, visitorModifier, builtConstructions, availableConstructions, dailyIncome, dailyVisitors, populationGrowth, constructionDiscount, constructionCost, isBuilt, build, demolish, assignNpc, advanceDay, setDay, setDailyIncomeModifier, setDailyVisitorsModifier, gainXp, resetCamp, addGold, addPopulation, xpTier, xpBonus };
 }

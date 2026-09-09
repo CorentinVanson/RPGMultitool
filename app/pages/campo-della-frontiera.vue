@@ -6,10 +6,14 @@ import { useProjectionController } from '../composables/useProjection';
 const { state, start } = useProjectionController();
 const {
   builtIds, assignments, day, gold, population, builtConstructions, availableConstructions,
-  dailyIncome, dailyVisitors, populationGrowth, constructionDiscount, constructionCost, isBuilt, build, demolish, assignNpc, advanceDay, addGold, addPopulation,
+  dailyIncome, dailyVisitors, populationGrowth, constructionDiscount, constructionCost, isBuilt, build, demolish, assignNpc, advanceDay,
+  addGold, addPopulation, setDay, setDailyIncomeModifier, setDailyVisitorsModifier, gainXp, resetCamp, xpBonus,
 } = useCampoFrontiera();
 const goldAmount = ref('');
 const populationAmount = ref('');
+const dayAmount = ref('');
+const incomeModifierAmount = ref('');
+const visitorsModifierAmount = ref('');
 const candidateFor = (construction: CampoConstruction, id: string | undefined) => construction.candidates.find((candidate) => candidate.id === id);
 const selectedCandidate = (construction: CampoConstruction) => candidateFor(construction, assignments.value[construction.id]);
 const availableIds = computed(() => new Set(availableConstructions.value.map((construction) => construction.id)));
@@ -40,6 +44,26 @@ function creditGold() {
 function creditPopulation() {
   if (addPopulation(Number(populationAmount.value))) populationAmount.value = '';
 }
+
+function updateDay() {
+  if (setDay(Number(dayAmount.value))) dayAmount.value = '';
+}
+
+function updateIncomeModifier() {
+  if (setDailyIncomeModifier(Number(incomeModifierAmount.value))) incomeModifierAmount.value = '';
+}
+
+function updateVisitorsModifier() {
+  if (setDailyVisitorsModifier(Number(visitorsModifierAmount.value))) visitorsModifierAmount.value = '';
+}
+
+function rewardXp(candidateId: string) {
+  gainXp(candidateId);
+}
+
+function resetAll() {
+  resetCamp();
+}
 </script>
 
 <template>
@@ -62,6 +86,10 @@ function creditPopulation() {
       <h2>Ressources du MJ</h2>
       <form @submit.prevent="creditGold"><label>Ajouter des pièces<input v-model="goldAmount" type="number" min="1" step="1" placeholder="Montant"><button type="submit" :disabled="!goldAmount">Créditer</button></label></form>
       <form @submit.prevent="creditPopulation"><label>Ajouter des habitants<input v-model="populationAmount" type="number" min="1" step="1" placeholder="Nombre"><button type="submit" :disabled="!populationAmount">Ajouter</button></label></form>
+      <form @submit.prevent="updateDay"><label>Jour<input v-model="dayAmount" type="number" min="1" step="1" placeholder="Jour"><button type="submit" :disabled="!dayAmount">Appliquer</button></label></form>
+      <form @submit.prevent="updateIncomeModifier"><label>Ressources/jour<input v-model="incomeModifierAmount" type="number" step="1" placeholder="Δ pièces"><button type="submit" :disabled="!incomeModifierAmount">Appliquer</button></label></form>
+      <form @submit.prevent="updateVisitorsModifier"><label>Visiteurs/jour<input v-model="visitorsModifierAmount" type="number" step="1" placeholder="Δ visiteurs"><button type="submit" :disabled="!visitorsModifierAmount">Appliquer</button></label></form>
+      <button type="button" :class="$style.secondary" @click="resetAll">Reset everything</button>
     </section>
 
     <section :class="$style.planSection">
@@ -90,8 +118,12 @@ function creditPopulation() {
             </label>
             <div v-if="selectedCandidate(construction)" :class="$style.profile"><NuxtLink :to="`/personnages/${campoCandidateSlug(selectedCandidate(construction)?.id ?? '')}`"><strong>{{ selectedCandidate(construction)?.name }}</strong></NuxtLink><span>Qualités : {{ selectedCandidate(construction)?.qualities }}</span><span>Défauts : {{ selectedCandidate(construction)?.flaws }}</span></div>
             <div v-else :class="$style.candidates"><article v-for="candidate in construction.candidates" :key="candidate.id"><NuxtLink :to="`/personnages/${campoCandidateSlug(candidate.id)}`"><strong>{{ candidate.name }}</strong></NuxtLink><small>{{ candidate.qualities }}</small><small class="flaw">Point faible : {{ candidate.flaws }}</small><button type="button" :class="$style.choose" @click="assignNpc(construction.id, candidate.id)">Choisir</button></article></div>
+            <div v-if="selectedCandidate(construction)" :class="$style.xpRow">
+              <span>{{ xpBonus(selectedCandidate(construction)?.id ?? '').levelName }}</span>
+              <button type="button" :class="$style.xpButton" @click="rewardXp(selectedCandidate(construction)?.id ?? '')">+XP</button>
+            </div>
           </div>
-          <p v-if="isBuilt(construction.id) && construction.candidates.length && selectedCandidate(construction)" :class="$style.assignedYield">{{ candidateName(construction, assignments[construction.id]) }} : +{{ selectedCandidate(construction)?.income }} pièces/jour<span v-if="selectedCandidate(construction)?.visitors"> · +{{ selectedCandidate(construction)?.visitors }} visiteurs</span><span v-if="selectedCandidate(construction)?.growth"> · progression +{{ selectedCandidate(construction)?.growth }}</span></p>
+          <p v-if="isBuilt(construction.id) && construction.candidates.length && selectedCandidate(construction)" :class="$style.assignedYield">{{ candidateName(construction, assignments[construction.id]) }} : +{{ selectedCandidate(construction)?.income }} pièces/jour<span v-if="selectedCandidate(construction)?.visitors"> · +{{ selectedCandidate(construction)?.visitors }} visiteurs</span><span v-if="selectedCandidate(construction)?.growth"> · progression +{{ selectedCandidate(construction)?.growth }}</span><span> · {{ xpBonus(selectedCandidate(construction)?.id ?? '').levelName }}</span></p>
         </article>
           </div>
         </div>
@@ -112,6 +144,6 @@ function creditPopulation() {
 .access { display: grid; gap: .2rem; margin: 0; padding-left: 1.1rem; color: #d6d0c3; font-size: .79rem; } .access::before { content: 'Accès au camp'; margin-left: -1.1rem; color: var(--accent); font-weight: bold; text-transform: uppercase; font-size: .7rem; }
 .nodeState { display: flex; justify-content: space-between; align-items: center; margin-top: auto; color: var(--accent); font-weight: bold; } .smallDanger { background: transparent; color: #e3a39a; border: 1px solid #7e4a42; border-radius: 3px; padding: .2rem .4rem; font: inherit; font-size: .75rem; cursor: pointer; } .smallDanger:disabled { opacity: .45; cursor: default; } .build { margin-top: auto; } .build:disabled { background: #4a3a28; border-color: #4a3a28; color: var(--muted); cursor: default; }
 .assignmentBlock { border-top: 1px solid #4a3a28; padding-top: .6rem; } .assignment { display: flex; flex-direction: column; gap: .25rem; color: var(--muted); font-size: .8rem; } .assignment select { background: var(--bg); color: var(--text); border: 1px solid #4a3a28; border-radius: 3px; padding: .35rem; font: inherit; }
-.candidates { display: grid; gap: .4rem; } .candidates article { display: flex; flex-direction: column; gap: .15rem; border: 1px solid #4a3a28; border-radius: 3px; padding: .4rem; font-size: .78rem; } .candidates small, .profile span { color: var(--muted); } .flaw { color: #e3a39a !important; } .choose { align-self: start; background: transparent; color: var(--accent); border: 1px solid var(--accent); border-radius: 3px; padding: .2rem .4rem; font: inherit; cursor: pointer; } .profile { display: flex; flex-direction: column; gap: .2rem; font-size: .78rem; } .assignedYield { color: var(--accent); font-size: .78rem !important; }
+.candidates { display: grid; gap: .4rem; } .candidates article { display: flex; flex-direction: column; gap: .15rem; border: 1px solid #4a3a28; border-radius: 3px; padding: .4rem; font-size: .78rem; } .candidates small, .profile span { color: var(--muted); } .flaw { color: #e3a39a !important; } .choose { align-self: start; background: transparent; color: var(--accent); border: 1px solid var(--accent); border-radius: 3px; padding: .2rem .4rem; font: inherit; cursor: pointer; } .profile { display: flex; flex-direction: column; gap: .2rem; font-size: .78rem; } .assignedYield { color: var(--accent); font-size: .78rem !important; } .xpRow { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-top: .4rem; color: var(--muted); font-size: .75rem; } .xpButton { background: transparent; color: var(--accent); border: 1px solid var(--accent); border-radius: 3px; padding: .2rem .55rem; font: inherit; cursor: pointer; }
 @media (max-width: 55rem) { .dashboard { grid-template-columns: repeat(2, 1fr); } .levelNodes { grid-template-columns: repeat(2, minmax(0, 1fr)); } } @media (max-width: 42rem) { .hero, .sectionHeader { align-items: stretch; flex-direction: column; } .levelNodes { grid-template-columns: 1fr; padding-left: 1.8rem; } }
 </style>

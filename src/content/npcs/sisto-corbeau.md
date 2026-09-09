@@ -3,6 +3,7 @@ name: "Sisto Corbeau"
 role: "Tanneur candidat du Campo"
 familia: "Corbea — corvo (aviano)"
 location: "Vallombra"
+image: "/images/npcs/sisto-corbeau.png"
 tags:
   - "Employé du camp"
 summary: "Artisan inventif qui cherche à économiser l’eau et à moderniser le travail du cuir."

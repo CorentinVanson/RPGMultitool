@@ -3,6 +3,7 @@ name: "Frère Neri"
 role: "Gardien candidat de la chapelle"
 familia: "Corbea — corvo (aviano)"
 location: "Vallombra"
+image: "/images/npcs/frere-neri.png"
 tags:
   - "Employé du camp"
 summary: "Gardien réfléchi qui sait écouter les conflits avant qu’ils ne deviennent publics."

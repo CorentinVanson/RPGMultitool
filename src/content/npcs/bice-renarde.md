@@ -3,6 +3,7 @@ name: "Bice Renarde"
 role: "Tanneuse candidate du Campo"
 familia: "Licae — volpe rossa (theria)"
 location: "Vallombra"
+image: "/images/npcs/bice-renarde.png"
 tags:
   - "Employé du camp"
 summary: "Tanneuse patiente qui connaît les peaux adaptées aux protections et aux courroies."

@@ -3,6 +3,7 @@ name: "Piero Campagnol"
 role: "Aide de citerne du Campo"
 familia: "Rodentia — topo (theria)"
 location: "Vallombra"
+image: "/images/npcs/piero-campagnol.png"
 tags:
   - "Employé du camp"
 summary: "Petit artisan volontaire qui voit la remise en eau du camp comme sa première grande responsabilité."

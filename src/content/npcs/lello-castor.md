@@ -3,6 +3,7 @@ name: "Lello Castor"
 role: "Charpentier candidat du Campo"
 familia: "Mustacea — lontra (theria)"
 location: "Vallombra"
+image: "/images/npcs/lello-castor.png"
 tags:
   - "Employé du camp"
 summary: "Jeune aide de chantier qui veut construire un ouvrage durable avec ses propres outils."

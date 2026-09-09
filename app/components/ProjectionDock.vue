@@ -4,9 +4,11 @@ import { useRoute } from '#imports';
 import type { ContentEntry } from '../types/content';
 import { entryName, sectionCollections, useContentCollection } from '../composables/useContent';
 import { DEFAULT_BACKGROUND, useProjectionController, type ProjectionActor } from '../composables/useProjection';
+import { useCampoFrontiera, CAMPO_CONSTRUCTIONS, campoCandidateSlug } from '../composables/useCampoFrontiera';
 
 const route = useRoute();
 const { state, start } = useProjectionController();
+const camp = useCampoFrontiera();
 const open = ref(false);
 const showCatalog = ref(false);
 
@@ -39,6 +41,20 @@ const toActor = (entry: ContentEntry, collection: 'npcs' | 'enemies'): Projectio
 });
 
 const availableLocations = computed(() => withImage(locations.value));
+const campEmployeeActors = computed<ProjectionActor[]>(() => {
+  const seen = new Map<string, ProjectionActor>();
+  for (const construction of CAMPO_CONSTRUCTIONS) {
+    if (!camp.isBuilt(construction.id)) continue;
+    const npcId = camp.assignments.value[construction.id];
+    if (!npcId) continue;
+    const candidate = construction.candidates.find((item) => item.id === npcId);
+    if (!candidate) continue;
+    const slug = campoCandidateSlug(candidate.id);
+    const actorId = `npcs:${slug}`;
+    seen.set(candidate.id, { id: actorId, name: candidate.name, image: `/images/npcs/${slug}.png`, collection: 'npcs' });
+  }
+  return Array.from(seen.values());
+});
 const availableActors = computed<ProjectionActor[]>(() => [
   ...withImage(npcs.value).map((entry) => toActor(entry, 'npcs')),
   ...withImage(enemies.value).map((entry) => toActor(entry, 'enemies')),
@@ -122,12 +138,36 @@ function resetDefaultScreen() {
   state.value.blackout = false;
 }
 
+function setSpeaker(actor: ProjectionActor | null) {
+  state.value.speakerActorId = actor ? actor.id : null;
+}
+
+function syncSpeakerPolicy() {
+  if (state.value.actors.length === 1) {
+    const onlyActor = state.value.actors[0];
+    state.value.speakerActorId = onlyActor ? onlyActor.id : null;
+  } else {
+    state.value.speakerActorId = null;
+  }
+}
+
 function addActor(actor: ProjectionActor) {
-  if (!isOnStage(actor)) state.value.actors = [...state.value.actors, actor];
+  if (!isOnStage(actor)) {
+    state.value.actors = [...state.value.actors, actor];
+    syncSpeakerPolicy();
+  }
+}
+
+function removeActor(actor: ProjectionActor) {
+  state.value.actors = state.value.actors.filter((item) => item.id !== actor.id);
+  if (state.value.speakerActorId === actor.id) {
+    state.value.speakerActorId = null;
+  }
+  syncSpeakerPolicy();
 }
 
 function toggleActor(actor: ProjectionActor) {
-  if (isOnStage(actor)) state.value.actors = state.value.actors.filter((item) => item.id !== actor.id);
+  if (isOnStage(actor)) removeActor(actor);
   else addActor(actor);
 }
 
@@ -247,6 +287,7 @@ watch(hasContext, (value) => { showCatalog.value = !value; }, { immediate: true 
           <li v-for="(actor, index) in state.actors" :key="actor.id" :class="$style.stageItem">
             <img :src="actor.image" :alt="actor.name" :class="$style.thumb">
             <span :class="$style.grow">{{ actor.name }}</span>
+            <button type="button" :class="[$style.mini, state.speakerActorId === actor.id && $style.speakerButton]" @click="setSpeaker(state.speakerActorId === actor.id ? null : actor)">{{ state.speakerActorId === actor.id ? 'Personne' : 'Parler' }}</button>
             <button type="button" :class="$style.mini" :disabled="index === 0" @click="moveActor(index, -1)">←</button>
             <button type="button" :class="$style.mini" :disabled="index === state.actors.length - 1" @click="moveActor(index, 1)">→</button>
             <button type="button" :class="$style.mini" @click="toggleActor(actor)">✕</button>
@@ -272,13 +313,25 @@ watch(hasContext, (value) => { showCatalog.value = !value; }, { immediate: true 
               <img :src="entry.data.image" :alt="entryName(entry)" :class="$style.chipImage">{{ entryName(entry) }}
             </button>
           </div>
+          <h4 :class="$style.title">Employés du camp</h4>
+          <div :class="$style.chips">
+            <button
+              v-for="actor in campEmployeeActors"
+              :key="actor.id"
+              type="button"
+              :class="[$style.chip, isOnStage(actor) && $style.active, state.speakerActorId === actor.id && $style.speaker]"
+              @click="toggleActor(actor)"
+            >
+              <img :src="actor.image" :alt="actor.name" :class="$style.chipImage">{{ actor.name }}
+            </button>
+          </div>
           <h4 :class="$style.title">Personnages et créatures</h4>
           <div :class="$style.chips">
             <button
               v-for="actor in availableActors"
               :key="actor.id"
               type="button"
-              :class="[$style.chip, isOnStage(actor) && $style.active]"
+              :class="[$style.chip, isOnStage(actor) && $style.active, state.speakerActorId === actor.id && $style.speaker]"
               @click="toggleActor(actor)"
             >
               <img :src="actor.image" :alt="actor.name" :class="$style.chipImage">{{ actor.name }}
@@ -321,6 +374,8 @@ watch(hasContext, (value) => { showCatalog.value = !value; }, { immediate: true 
 .chip { display: flex; align-items: center; gap: .35rem; background: #1c150f; color: var(--text); border: 1px solid #4a3a28; border-radius: 999px; padding: .25rem .7rem .25rem .25rem; font-family: inherit; font-size: .8rem; cursor: pointer; }
 .chip:hover { border-color: var(--accent); }
 .chipImage { width: 1.6rem; height: 1.6rem; object-fit: cover; border-radius: 999px; }
+.speaker { border-color: var(--accent); color: var(--accent); box-shadow: 0 0 0 1px var(--accent) inset; }
+.speakerButton { color: var(--accent); border-color: var(--accent); }
 .stageList { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: .35rem; }
 .stageItem { display: flex; align-items: center; gap: .4rem; background: #1c150f; border: 1px solid #4a3a28; border-radius: 4px; padding: .3rem .45rem; font-size: .85rem; }
 .grow { flex: 1; }

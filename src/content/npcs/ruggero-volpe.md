@@ -3,6 +3,7 @@ name: "Ruggero Volpe"
 role: "Tavernier candidat du Campo"
 familia: "Licae — volpe rossa (theria)"
 location: "Frontière de Vallombra"
+image: "/images/npcs/ruggero-volpe.png"
 tags:
   - "Employé du camp"
 summary: "Vendeur charmeur qui connaît les relais, les convois et les clients de toute la frontière."

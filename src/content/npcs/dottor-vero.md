@@ -3,6 +3,7 @@ name: "Dottor Vero"
 role: "Artificier candidat du Campo"
 familia: "Corbea — corvo (aviano)"
 location: "Vallombra"
+image: "/images/npcs/dottor-vero.png"
 tags:
   - "Employé du camp"
 summary: "Chercheur prudent qui veut expérimenter les mécanismes et la poudre sous surveillance."

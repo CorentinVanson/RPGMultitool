@@ -20,6 +20,7 @@ export interface ProjectionState {
   caption: string;
   showNames: boolean;
   blackout: boolean;
+  speakerActorId: string | null;
 }
 
 const CHANNEL = 'rpg-projection';
@@ -31,7 +32,7 @@ export const DEFAULT_BACKGROUND: ProjectionBackground = {
 };
 
 export function defaultProjectionState(): ProjectionState {
-  return { background: { ...DEFAULT_BACKGROUND }, actors: [], caption: '', showNames: true, blackout: false };
+  return { background: { ...DEFAULT_BACKGROUND }, actors: [], caption: '', showNames: true, blackout: false, speakerActorId: null };
 }
 
 function readStored(): ProjectionState {

@@ -3,6 +3,7 @@ name: "Niccolò Souris"
 role: "Apprenti tavernier du Campo"
 familia: "Rodentia — topo (theria)"
 location: "Vallombra"
+image: "/images/npcs/niccolo-souris.png"
 tags:
   - "Employé du camp"
 summary: "Jeune observateur sans expérience qui apprend vite et rêve de diriger sa première salle."

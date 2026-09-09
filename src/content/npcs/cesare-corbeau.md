@@ -3,6 +3,7 @@ name: "Cesare Corbeau"
 role: "Guetteur candidat de la tour"
 familia: "Corbea — corvo (aviano)"
 location: "Frontière de Vallombra"
+image: "/images/npcs/cesare-corbeau.png"
 tags:
   - "Employé du camp"
 summary: "Guetteur méthodique qui mémorise les routes, les convois et les silhouettes de la frontière."

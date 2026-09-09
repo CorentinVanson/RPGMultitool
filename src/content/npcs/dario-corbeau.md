@@ -3,6 +3,7 @@ name: "Dario Corbeau"
 role: "Mécanicien candidat de la forge"
 familia: "Corbea — corvo (aviano)"
 location: "Vallombra"
+image: "/images/npcs/dario-corbeau.png"
 tags:
   - "Employé du camp"
 summary: "Inventeur distrait qui transforme les mécanismes abandonnés en solutions inattendues."

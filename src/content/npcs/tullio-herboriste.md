@@ -3,6 +3,7 @@ name: "Tullio Herboriste"
 role: "Herboriste candidat de l’infirmerie"
 familia: "Rodentia — topo (theria)"
 location: "Vallombra"
+image: "/images/npcs/tullio-herboriste.png"
 tags:
   - "Employé du camp"
 summary: "Herboriste méticuleux qui cherche un lieu stable pour transmettre son savoir."

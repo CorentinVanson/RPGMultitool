@@ -3,6 +3,7 @@ name: "Milo Inventeur"
 role: "Inventeur candidat du Campo"
 familia: "Rodentia — topo (theria)"
 location: "Vallombra"
+image: "/images/npcs/milo-inventeur.png"
 tags:
   - "Employé du camp"
 summary: "Bricoleur exubérant qui transforme des pièces récupérées en prototypes surprenants."

@@ -3,6 +3,7 @@ name: "Mina Fouine"
 role: "Apprentie tanneuse du Campo"
 familia: "Mustacea — faina (theria)"
 location: "Vallombra"
+image: "/images/npcs/mina-fouine.png"
 tags:
   - "Employé du camp"
 summary: "Réparatrice discrète de sacs et de harnais qui veut apprendre le traitement complet des peaux."

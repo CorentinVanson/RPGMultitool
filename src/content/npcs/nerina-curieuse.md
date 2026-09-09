@@ -3,6 +3,7 @@ name: "Nerina Curieuse"
 role: "Apprentie artificière du Campo"
 familia: "Felide — gatto (theria)"
 location: "Vallombra"
+image: "/images/npcs/nerina-curieuse.png"
 tags:
   - "Employé du camp"
 summary: "Apprentie disciplinée qui veut comprendre les artifices sans prendre de risques inconsidérés."

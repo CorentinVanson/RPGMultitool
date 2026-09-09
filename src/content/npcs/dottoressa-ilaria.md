@@ -3,6 +3,7 @@ name: "Dottoressa Ilaria"
 role: "Soigneuse candidate de l’infirmerie"
 familia: "Felide — gatto (theria)"
 location: "Vallombra"
+image: "/images/npcs/dottoressa-ilaria.png"
 tags:
   - "Employé du camp"
 summary: "Soigneuse décidée qui veut organiser une infirmerie fiable pour les ouvriers et les habitants."

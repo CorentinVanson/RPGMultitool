@@ -3,6 +3,7 @@ name: "Cesare Maçon"
 role: "Maçon candidat de la muraille"
 familia: "Urcida — orso bruno (theria)"
 location: "Frontière de Vallombra"
+image: "/images/npcs/cesare-macon.png"
 tags:
   - "Employé du camp"
 summary: "Maçon observateur qui veut prendre la responsabilité d’un ouvrage défensif durable."

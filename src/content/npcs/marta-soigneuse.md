@@ -3,6 +3,7 @@ name: "Marta Soigneuse"
 role: "Aide-soignante candidate de l’infirmerie"
 familia: "Mustacea — tasso (theria)"
 location: "Vallombra"
+image: "/images/npcs/marta-soigneuse.png"
 tags:
   - "Employé du camp"
 summary: "Aide attentive qui sait rassurer un patient et reconnaître ses limites."

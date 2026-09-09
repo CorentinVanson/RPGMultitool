@@ -3,6 +3,7 @@ name: "Lucia Lapine"
 role: "Apprentie forgeronne du Campo"
 familia: "Rodentia — lepre (theria)"
 location: "Vallombra"
+image: "/images/npcs/lucia-lapine.png"
 tags:
   - "Employé du camp"
 summary: "Jeune réparatrice volontaire qui cherche un atelier où apprendre sans être écartée."

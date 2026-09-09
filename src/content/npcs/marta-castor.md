@@ -3,6 +3,7 @@ name: "Marta Castor"
 role: "Responsable de citerne candidate"
 familia: "Mustacea — lontra (theria)"
 location: "Vallombra"
+image: "/images/npcs/marta-castor.png"
 tags:
   - "Employé du camp"
 summary: "Technicienne des canaux qui sait reconnaître une eau saine et tenir des registres simples."

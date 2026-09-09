@@ -3,6 +3,7 @@ name: "Pia Croyante"
 role: "Aide de chapelle du Campo"
 familia: "Felide — gatto (theria)"
 location: "Vallombra"
+image: "/images/npcs/pia-croyante.png"
 tags:
   - "Employé du camp"
 summary: "Habitante chaleureuse qui connaît les besoins concrets des familles et des voyageurs."

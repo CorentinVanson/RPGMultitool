@@ -12,6 +12,7 @@ function actorColor(actor: { id: string; name: string; collection: string }): st
   return `hsl(${hash % 360} 62% 62%)`;
 }
 
+const isSpeaker = (actor: { id: string }) => props.state.speakerActorId === actor.id;
 const backgroundStyle = computed(() => (props.state.background && props.state.background.id !== 'campo-frontiera-plan'
   ? { backgroundImage: `url("${props.state.background.image}")` }
   : {}));
@@ -27,7 +28,15 @@ const backgroundStyle = computed(() => (props.state.background && props.state.ba
 
     <div :class="$style.actors">
       <transition-group name="proj-fade">
-        <figure v-for="actor in state.actors" :key="actor.id" :class="$style.actor">
+        <figure
+          v-for="actor in state.actors"
+          :key="actor.id"
+          :class="[
+            $style.actor,
+            isSpeaker(actor) && $style.speakerActor,
+            state.speakerActorId && !isSpeaker(actor) && $style.otherActorGreyed,
+          ]"
+        >
           <div :class="$style.portraitBackdrop" :style="{ '--actor-color': actorColor(actor) }">
             <img :src="actor.image" :alt="actor.name" :class="$style.portrait">
           </div>
@@ -54,6 +63,9 @@ const backgroundStyle = computed(() => (props.state.background && props.state.ba
 .background::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(0, 0, 0, .75), rgba(0, 0, 0, 0) 55%); }
 .actors { position: absolute; inset: auto 0 0 0; display: flex; justify-content: center; align-items: flex-end; gap: 2cqw; padding: 0 3cqw 2cqh; }
 .actor { margin: 0; text-align: center; }
+.otherActorGreyed { filter: grayscale(1); opacity: .58; }
+.speakerActor { transform: translateY(-1cqh); }
+.speakerActor .portraitBackdrop { border-radius: 50%; padding: .4cqh; box-shadow: 0 0 1cqh var(--actor-color), 0 0 4cqh var(--actor-color), 0 0 7cqh var(--actor-color); }
 .portraitBackdrop { display: inline-flex; align-items: flex-end; line-height: 0; }
 .portrait { display: block; height: 52cqh; max-width: 26cqw; object-fit: contain; filter: drop-shadow(0 0 2cqh var(--actor-color)) drop-shadow(0 0 1.5cqh rgba(0, 0, 0, .95)); }
 .name { margin-top: .5cqh; font-size: 4cqh; letter-spacing: .12em; text-transform: uppercase; color: #f1e6d3; text-shadow: 0 2px 6px #000; }

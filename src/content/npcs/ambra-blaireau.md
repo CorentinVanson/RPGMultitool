@@ -3,6 +3,7 @@ name: "Ambra Blaireau"
 role: "Forgeronne candidate du Campo"
 familia: "Mustacea — tasso (theria)"
 location: "Vallombra"
+image: "/images/npcs/ambra-blaireau.png"
 tags:
   - "Employé du camp"
 summary: "Artisane précise qui préfère réparer honnêtement plutôt que remplacer inutilement."
