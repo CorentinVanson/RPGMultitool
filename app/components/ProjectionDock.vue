@@ -2,7 +2,7 @@
 import { computed, onMounted, ref, watch } from 'vue';
 import { useRoute } from '#imports';
 import type { ContentEntry } from '../types/content';
-import { entryName, sectionCollections, useContentCollection } from '../composables/useContent';
+import { CHARACTER_TAGS, characterEntries, entryName, sectionCollections, useContentCollection } from '../composables/useContent';
 import { DEFAULT_BACKGROUND, useProjectionController, type ProjectionActor } from '../composables/useProjection';
 import { useCampoFrontiera, CAMPO_CONSTRUCTIONS, campoCandidateSlug } from '../composables/useCampoFrontiera';
 
@@ -11,6 +11,10 @@ const { state, start } = useProjectionController();
 const camp = useCampoFrontiera();
 const open = ref(false);
 const showCatalog = ref(false);
+const catalogTab = ref<'characters' | 'locations'>('characters');
+const activeCharacterTag = ref<typeof CHARACTER_TAGS[number]>('Personnage principal');
+const catalogSearch = ref('');
+const isCatalogSearching = computed(() => Boolean(searchable(catalogSearch.value).trim()));
 
 onMounted(start);
 
@@ -21,6 +25,19 @@ const { data: npcs } = useContentCollection('npcs');
 const { data: enemies } = useContentCollection('enemies');
 
 const withImage = (entries: ContentEntry[] | null | undefined) => (entries ?? []).filter((entry) => Boolean(entry.data.image));
+
+function searchable(value: unknown): string {
+  return String(value ?? '')
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase();
+}
+
+function matchesSearch(values: unknown[], query: string): boolean {
+  const needle = searchable(query).trim();
+  if (!needle) return true;
+  return values.some((value) => searchable(value).includes(needle));
+}
 
 /** Normalise un nom de lieu pour comparer « L'Ossario Sepolto » et « L'Ossario Sepolto (catacombes) ». */
 function normalizePlace(value: string): string {
@@ -41,6 +58,13 @@ const toActor = (entry: ContentEntry, collection: 'npcs' | 'enemies'): Projectio
 });
 
 const availableLocations = computed(() => withImage(locations.value));
+const searchableLocations = computed(() => availableLocations.value.filter((entry) => matchesSearch([
+  entryName(entry),
+  entry.data.type,
+  entry.data.region,
+  entry.data.summary,
+], catalogSearch.value)));
+const catalogLocations = computed(() => (isCatalogSearching.value ? searchableLocations.value : availableLocations.value));
 const campEmployeeActors = computed<ProjectionActor[]>(() => {
   const seen = new Map<string, ProjectionActor>();
   for (const construction of CAMPO_CONSTRUCTIONS) {
@@ -55,10 +79,55 @@ const campEmployeeActors = computed<ProjectionActor[]>(() => {
   }
   return Array.from(seen.values());
 });
-const availableActors = computed<ProjectionActor[]>(() => [
-  ...withImage(npcs.value).map((entry) => toActor(entry, 'npcs')),
-  ...withImage(enemies.value).map((entry) => toActor(entry, 'enemies')),
-]);
+const characterActorsByTag = computed<Record<typeof CHARACTER_TAGS[number], ProjectionActor[]>>(() => {
+  const groups: Record<typeof CHARACTER_TAGS[number], ProjectionActor[]> = {
+    'Personnage principal': [],
+    'Employé du camp': [],
+    'Personnage secondaire': [],
+  };
+  for (const entry of withImage(characterEntries(npcs.value ?? []))) {
+    const tag = entry.data.tags?.find((item: string) => CHARACTER_TAGS.includes(item as typeof CHARACTER_TAGS[number])) as typeof CHARACTER_TAGS[number] | undefined;
+    if (!tag) continue;
+    groups[tag].push(toActor(entry, 'npcs'));
+  }
+  const employeeIds = new Set(groups['Employé du camp'].map((actor) => actor.id));
+  for (const actor of campEmployeeActors.value) {
+    if (employeeIds.has(actor.id)) continue;
+    groups['Employé du camp'].push(actor);
+  }
+  for (const entry of withImage(enemies.value)) {
+    groups['Personnage secondaire'].push(toActor(entry, 'enemies'));
+  }
+  return groups;
+});
+const currentCharacterActors = computed(() => characterActorsByTag.value[activeCharacterTag.value]);
+const searchableCharacterActors = computed<ProjectionActor[]>(() => {
+  const actors: ProjectionActor[] = [];
+  const seen = new Set<string>();
+
+  for (const entry of withImage(characterEntries(npcs.value ?? []))) {
+    if (!matchesSearch([entryName(entry), entry.data.role, entry.data.location, entry.data.summary], catalogSearch.value)) continue;
+    const actor = toActor(entry, 'npcs');
+    actors.push(actor);
+    seen.add(actor.id);
+  }
+  for (const actor of campEmployeeActors.value) {
+    if (seen.has(actor.id) || !matchesSearch([actor.name], catalogSearch.value)) continue;
+    actors.push(actor);
+    seen.add(actor.id);
+  }
+  for (const entry of withImage(enemies.value)) {
+    if (!matchesSearch([entryName(entry), entry.data.role, entry.data.location, entry.data.habitat, entry.data.region, entry.data.summary], catalogSearch.value)) continue;
+    const actor = toActor(entry, 'enemies');
+    actors.push(actor);
+  }
+
+  return actors;
+});
+const catalogResultCount = computed(() => catalogTab.value === 'locations'
+  ? catalogLocations.value.length
+  : currentCharacterActors.value.length);
+const searchResultCount = computed(() => searchableCharacterActors.value.length + searchableLocations.value.length);
 
 const currentEntry = computed(() => {
   const collection = sectionCollections[String(route.params.section ?? '')];
@@ -187,6 +256,9 @@ function moveActor(index: number, offset: number) {
 
 // Le catalogue complet ne s'ouvre d'office que sur les pages sans contexte projetable.
 watch(hasContext, (value) => { showCatalog.value = !value; }, { immediate: true });
+watch(isCatalogSearching, (value) => {
+  if (value) showCatalog.value = true;
+});
 </script>
 
 <template>
@@ -297,46 +369,91 @@ watch(hasContext, (value) => { showCatalog.value = !value; }, { immediate: true 
       </section>
 
       <section>
+        <input v-model="catalogSearch" :class="$style.search" type="search" placeholder="Rechercher un personnage ou un décor">
+
         <button type="button" :class="$style.disclosure" @click="showCatalog = !showCatalog">
           {{ showCatalog ? '▾' : '▸' }} Catalogue complet
         </button>
         <template v-if="showCatalog">
-          <h4 :class="$style.title">Décors</h4>
-          <div :class="$style.chips">
-            <button
-              v-for="entry in availableLocations"
-              :key="entry.id"
-              type="button"
-              :class="[$style.chip, state.background?.id === entry.id && $style.active]"
-              @click="setBackground(entry)"
-            >
-              <img :src="entry.data.image" :alt="entryName(entry)" :class="$style.chipImage">{{ entryName(entry) }}
-            </button>
-          </div>
-          <h4 :class="$style.title">Employés du camp</h4>
-          <div :class="$style.chips">
-            <button
-              v-for="actor in campEmployeeActors"
-              :key="actor.id"
-              type="button"
-              :class="[$style.chip, isOnStage(actor) && $style.active, state.speakerActorId === actor.id && $style.speaker]"
-              @click="toggleActor(actor)"
-            >
-              <img :src="actor.image" :alt="actor.name" :class="$style.chipImage">{{ actor.name }}
-            </button>
-          </div>
-          <h4 :class="$style.title">Personnages et créatures</h4>
-          <div :class="$style.chips">
-            <button
-              v-for="actor in availableActors"
-              :key="actor.id"
-              type="button"
-              :class="[$style.chip, isOnStage(actor) && $style.active, state.speakerActorId === actor.id && $style.speaker]"
-              @click="toggleActor(actor)"
-            >
-              <img :src="actor.image" :alt="actor.name" :class="$style.chipImage">{{ actor.name }}
-            </button>
-          </div>
+          <template v-if="isCatalogSearching">
+            <p :class="$style.hint">{{ searchResultCount }} résultat{{ searchResultCount > 1 ? 's' : '' }} dans personnages et décors</p>
+            <h4 :class="$style.subtitle">Personnages</h4>
+            <div v-if="searchableCharacterActors.length" :class="$style.chips">
+              <button
+                v-for="actor in searchableCharacterActors"
+                :key="actor.id"
+                type="button"
+                :class="[$style.chip, isOnStage(actor) && $style.active, state.speakerActorId === actor.id && $style.speaker]"
+                @click="toggleActor(actor)"
+              >
+                <img :src="actor.image" :alt="actor.name" :class="$style.chipImage">{{ actor.name }}
+              </button>
+            </div>
+            <p v-else :class="$style.hint">Aucun personnage trouvé.</p>
+
+            <h4 :class="$style.subtitle">Décors</h4>
+            <div v-if="searchableLocations.length" :class="$style.chips">
+              <button
+                v-for="entry in searchableLocations"
+                :key="entry.id"
+                type="button"
+                :class="[$style.chip, state.background?.id === entry.id && $style.active]"
+                @click="setBackground(entry)"
+              >
+                <img :src="entry.data.image" :alt="entryName(entry)" :class="$style.chipImage">{{ entryName(entry) }}
+              </button>
+            </div>
+            <p v-else :class="$style.hint">Aucun décor trouvé.</p>
+          </template>
+
+          <template v-else>
+            <div :class="$style.tabs" role="tablist" aria-label="Catalogue de projection">
+              <button type="button" :class="[$style.tab, catalogTab === 'characters' && $style.active]" :aria-selected="catalogTab === 'characters'" role="tab" @click="catalogTab = 'characters'">Personnages</button>
+              <button type="button" :class="[$style.tab, catalogTab === 'locations' && $style.active]" :aria-selected="catalogTab === 'locations'" role="tab" @click="catalogTab = 'locations'">Décors</button>
+            </div>
+            <p :class="$style.hint">{{ catalogResultCount }} résultat{{ catalogResultCount > 1 ? 's' : '' }}</p>
+
+            <template v-if="catalogTab === 'locations'">
+              <div :class="$style.chips">
+                <button
+                  v-for="entry in catalogLocations"
+                  :key="entry.id"
+                  type="button"
+                  :class="[$style.chip, state.background?.id === entry.id && $style.active]"
+                  @click="setBackground(entry)"
+                >
+                  <img :src="entry.data.image" :alt="entryName(entry)" :class="$style.chipImage">{{ entryName(entry) }}
+                </button>
+              </div>
+            </template>
+
+            <template v-else>
+              <div :class="$style.filterGroup">
+                <span :class="$style.filterLabel">Catégorie</span>
+                <div :class="$style.filters" aria-label="Catégories de personnages">
+                  <button
+                    v-for="tag in CHARACTER_TAGS"
+                    :key="tag"
+                    type="button"
+                    :class="[$style.filter, activeCharacterTag === tag && $style.active]"
+                    @click="activeCharacterTag = tag"
+                  >{{ tag }} <small>{{ characterActorsByTag[tag].length }}</small></button>
+                </div>
+              </div>
+              <div :class="$style.chips">
+                <button
+                  v-for="actor in currentCharacterActors"
+                  :key="actor.id"
+                  type="button"
+                  :class="[$style.chip, isOnStage(actor) && $style.active, state.speakerActorId === actor.id && $style.speaker]"
+                  @click="toggleActor(actor)"
+                >
+                  <img :src="actor.image" :alt="actor.name" :class="$style.chipImage">{{ actor.name }}
+                </button>
+              </div>
+              <p v-if="activeCharacterTag === 'Employé du camp' && campEmployeeActors.length" :class="$style.hint">Les employés affectés au Campo restent aussi disponibles selon les bâtiments construits.</p>
+            </template>
+          </template>
         </template>
       </section>
     </aside>
@@ -366,7 +483,21 @@ watch(hasContext, (value) => { showCatalog.value = !value; }, { immediate: true 
 .disclosure { width: 100%; text-align: left; }
 .button:hover, .disclosure:hover { border-color: var(--accent); }
 .active { border-color: var(--accent); color: var(--accent); }
-.caption { background: #1c150f; color: var(--text); border: 1px solid #4a3a28; border-radius: 4px; padding: .45rem .7rem; font-family: inherit; }
+.caption, .search { background: #1c150f; color: var(--text); border: 1px solid #4a3a28; border-radius: 4px; padding: .45rem .7rem; font-family: inherit; }
+.search { width: 100%; }
+.disclosure { margin: 10px 0; }
+.tabs { display: grid; grid-template-columns: 1fr 1fr; gap: .35rem; padding: .2rem; background: #1c150f; border: 1px solid #4a3a28; border-radius: 6px; }
+.tab { background: transparent; color: var(--muted); border: 0; border-radius: 4px; padding: .5rem .65rem; font: inherit; font-size: .86rem; font-weight: bold; cursor: pointer; }
+.tab.active { background: var(--accent); color: #1c150f; }
+.filterGroup { display: flex; flex-direction: column; gap: .35rem; border-left: 2px solid #4a3a28; padding-left: .65rem; }
+.filterLabel { color: var(--muted); font-size: .72rem; text-transform: uppercase; letter-spacing: .06em; }
+.filters { display: flex; flex-wrap: wrap; gap: .3rem; }
+.filter { background: transparent; color: var(--muted); border: 1px solid #4a3a28; border-radius: 3px; padding: .28rem .5rem; font: inherit; font-size: .76rem; cursor: pointer; }
+.filter small { color: var(--accent); }
+.tab:hover, .filter:hover { border-color: var(--accent); }
+.filter.active { background: #3a2c1d; border-color: var(--accent); color: var(--accent); }
+.filter.active small { color: var(--accent); }
+.subtitle { margin: .65rem 0 .35rem; color: var(--accent); font-size: .82rem; }
 .context { border: 1px solid #4a3a28; border-radius: 6px; padding: .75rem; display: flex; flex-direction: column; gap: .6rem; }
 .row { display: flex; align-items: center; gap: .6rem; font-weight: bold; }
 .hint { margin: 0; color: var(--muted); font-size: .8rem; }
