@@ -11,6 +11,14 @@ RPGMultitool est un site destiné à aider à maîtriser (Maître du Jeu) une ca
 - `pnpm dev` pour lancer le serveur de développement, `pnpm build` pour builder.
 - Déploiement : **Vercel**.
 
+## Système de dés du projet
+Le système de résolution utilise un **reverse pool dice** : plus le dé est grand, plus l'action est difficile. Une action très facile utilise un D4 ; une action impossible peut utiliser un D100.
+- Les compétences des personnages et des ennemis doivent généralement rester entre 1 et 6 environ.
+- Une première maîtrise permet d'utiliser le dé du palier immédiatement plus facile (par exemple D6 au lieu de D8).
+- Une deuxième maîtrise permet de lancer deux dés, selon la règle d'avantage du système.
+- Toute nouvelle mécanique, page ou fiche doit respecter cette échelle et ne doit pas réintroduire une résolution classique basée sur un seul D20.
+- Les anciennes CD/DD d'Historia ne s'appliquent plus aux jets d'action. Toute ancienne difficulté doit être convertie en palier de dé avant d'être affichée ; ne jamais afficher une résolution active du type « CD 12 ».
+
 ## Contrainte majeure : fonctionnement hors ligne
 Le site est utilisé en table de jeu, parfois sans réseau. **Toute fonctionnalité doit continuer à marcher hors ligne une fois le site chargé une première fois.**
 - PWA via `@vite-pwa/nuxt` : les pages prérendues, les payloads Nuxt, le JS/CSS et les images de `public/` sont précachés ; `/api/content/*` est en `StaleWhileRevalidate` et les images en `CacheFirst` (voir `nuxt.config.ts`).
