@@ -6,7 +6,7 @@ import type { ContentDetail } from '../../types/content';
 
 const route = useRoute();
 const section = route.params.section as string;
-const headings: Record<string, string> = { campagne: 'La campagne : Les Marches de Gratigna', lieux: 'Lieux importants', personnages: 'Personnages non-joueurs', ennemis: 'Bestiaire' };
+const headings: Record<string, string> = { campagne: 'La campagne : Les Marches de Gratigna', lieux: 'Lieux importants', personnages: 'Personnages non-joueurs', ennemis: 'Bestiaire', quetes: 'Quêtes secondaires' };
 const collection = sectionCollections[section];
 if (!collection) throw createError({ statusCode: 404, statusMessage: 'Page introuvable' });
 const { data: entries } = await useContentCollection(collection);

@@ -2,9 +2,9 @@ import { getRouterParam, createError, defineEventHandler } from 'h3';
 import { marked } from 'marked';
 import { getCollection, sortByOrder } from '../../utils/content';
 
-const collections = ['arcs', 'locations', 'npcs', 'enemies'] as const;
+const collections = ['arcs', 'locations', 'npcs', 'enemies', 'quests'] as const;
 
-// Une seule URL par collection, corps HTML inclus : le service worker n'a que quatre réponses à conserver pour servir tout le site hors ligne.
+// Une seule URL par collection, corps HTML inclus : le service worker conserve chaque collection pour le mode hors ligne.
 export default defineEventHandler(async (event) => {
   const collection = getRouterParam(event, 'collection');
   if (!collection || !collections.includes(collection as typeof collections[number])) {

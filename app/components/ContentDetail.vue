@@ -1,8 +1,14 @@
 <script setup lang="ts">
+import { computed } from 'vue';
+import { useContentCollection } from '../composables/useContent';
 import type { ContentDetail as ContentDetailEntry } from '../types/content';
 
 const statKeys = ['for', 'dex', 'con', 'int', 'sag', 'cha'];
-defineProps<{ entry: ContentDetailEntry; section: string }>();
+const props = defineProps<{ entry: ContentDetailEntry; section: string }>();
+const { data: quests } = useContentCollection('quests');
+const relatedQuests = computed(() => props.section === 'personnages'
+  ? (quests.value ?? []).filter((quest) => quest.data.characters?.includes(props.entry.id))
+  : []);
 </script>
 
 <template>
@@ -12,6 +18,12 @@ defineProps<{ entry: ContentDetailEntry; section: string }>();
     <h1>{{ entry.data.title ?? entry.data.name }}</h1>
     <p><em>{{ entry.data.type ?? entry.data.role ?? entry.data.sessions }}</em></p>
     <div v-if="entry.data.tags?.length" :class="$style.tags"><span v-for="tag in entry.data.tags" :key="tag" :class="$style.tag">{{ tag }}</span></div>
+    <aside v-if="relatedQuests.length" :class="$style.related">
+      <strong>Quêtes liées</strong>
+      <ul>
+        <li v-for="quest in relatedQuests" :key="quest.id"><NuxtLink :to="`/quetes/${quest.id}`">{{ quest.data.title }}</NuxtLink></li>
+      </ul>
+    </aside>
     <p v-if="entry.data.familia"><strong>Familia</strong> : {{ entry.data.familia }}</p>
     <table v-if="entry.data.cr">
       <tbody><tr><td><strong>Danger (CR)</strong></td><td>{{ entry.data.cr }}</td></tr><tr><td><strong>CA</strong></td><td>{{ entry.data.ac }}</td></tr><tr><td><strong>PV</strong></td><td>{{ entry.data.hp }}</td></tr><tr><td><strong>Vitesse</strong></td><td>{{ entry.data.speed }}</td></tr></tbody>
@@ -31,4 +43,6 @@ defineProps<{ entry: ContentDetailEntry; section: string }>();
 .markdown :global(img) { display: block; width: 100%; height: auto; margin: 1.25rem 0; border-radius: 6px; }
 table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
 td, th { border: 1px solid #4a3a28; padding: .4rem .6rem; text-align: left; }
+.related { margin: 1rem 0; padding: .75rem 1rem; border-left: 3px solid var(--accent); background: var(--panel); }
+.related ul { margin: .4rem 0 0; padding-left: 1.25rem; }
 </style>

@@ -2,7 +2,7 @@ import { computed, type Ref } from 'vue';
 import { useFetch, useNuxtApp } from '#imports';
 import type { ContentDetail } from '../types/content';
 
-export type ContentCollection = 'arcs' | 'locations' | 'npcs' | 'enemies';
+export type ContentCollection = 'arcs' | 'locations' | 'npcs' | 'enemies' | 'quests';
 
 /** Sections d'URL vers les collections de contenu. */
 export const sectionCollections: Record<string, ContentCollection> = {
@@ -10,9 +10,10 @@ export const sectionCollections: Record<string, ContentCollection> = {
   lieux: 'locations',
   personnages: 'npcs',
   ennemis: 'enemies',
+  quetes: 'quests',
 };
 
-export const contentCollections: ContentCollection[] = ['arcs', 'locations', 'npcs', 'enemies'];
+export const contentCollections: ContentCollection[] = ['arcs', 'locations', 'npcs', 'enemies', 'quests'];
 
 export const CHARACTER_TAGS = ['Personnage principal', 'Employé du camp', 'Personnage secondaire'] as const;
 const mainCharacterIds = new Set(['serafina-dal-moro', 'renzo', 'ilaria-conti', 'aldo-vestraro', 'baldassare', 'iolanda', 'orsina-vetraia', 'matteo-riva', 'anziano-pietro']);
