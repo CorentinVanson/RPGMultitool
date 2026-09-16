@@ -1,5 +1,6 @@
 import { onMounted, ref, watch } from 'vue';
 import { usePlayerTeams } from './usePlayerTeams';
+import { hydrateLocalStorageKey, mirrorLocalStorageKey } from './useSyncedDocument';
 
 export interface SessionNote {
   id: string;
@@ -43,9 +44,12 @@ export function useSessionNotes() {
     }
   }
 
-  onMounted(() => {
+  onMounted(async () => {
     if (initialized) return;
     initialized = true;
+    const keys = [storageKey('rpg-session-notes', activeTeamId.value), storageKey('rpg-session-notes-history', activeTeamId.value), storageKey('rpg-linked-notes-history', activeTeamId.value)];
+    const remote = await Promise.all(keys.map((key) => hydrateLocalStorageKey(key)));
+    remote.forEach((value, index) => { if (value != null) localStorage.setItem(keys[index]!, value); });
     loadNotes();
   });
 
@@ -59,6 +63,7 @@ export function useSessionNotes() {
       const key = storageKey('rpg-session-notes', activeTeamId.value);
       if (value.trim()) localStorage.setItem(key, value);
       else localStorage.removeItem(key);
+      void mirrorLocalStorageKey(key, value);
     } catch {
       // La saisie reste utilisable si le stockage local est indisponible.
     }
@@ -67,6 +72,7 @@ export function useSessionNotes() {
   function persistHistory() {
     try {
       localStorage.setItem(storageKey('rpg-session-notes-history', activeTeamId.value), JSON.stringify(history.value));
+      void mirrorLocalStorageKey(storageKey('rpg-session-notes-history', activeTeamId.value), JSON.stringify(history.value));
     } catch {
       // L'historique reste disponible tant que la page est ouverte.
     }
@@ -75,6 +81,7 @@ export function useSessionNotes() {
   function persistLinkedHistory() {
     try {
       localStorage.setItem(storageKey('rpg-linked-notes-history', activeTeamId.value), JSON.stringify(linkedHistory.value));
+      void mirrorLocalStorageKey(storageKey('rpg-linked-notes-history', activeTeamId.value), JSON.stringify(linkedHistory.value));
     } catch {
       // L'historique reste disponible tant que la page est ouverte.
     }

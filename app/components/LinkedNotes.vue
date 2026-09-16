@@ -3,6 +3,7 @@ import { computed, nextTick, onMounted, onUpdated, ref, watch } from 'vue';
 import { useRoute } from '#imports';
 import { usePlayerTeams } from '../composables/usePlayerTeams';
 import { useSessionNotes } from '../composables/useSessionNotes';
+import { hydrateLocalStorageKey, mirrorLocalStorageKey } from '../composables/useSyncedDocument';
 
 const route = useRoute();
 const { activeTeamId } = usePlayerTeams();
@@ -38,6 +39,7 @@ function loadNotes() {
 function persistNotes() {
   try {
     localStorage.setItem(storageKey(), JSON.stringify(storedNotes.value));
+    void mirrorLocalStorageKey(storageKey(), JSON.stringify(storedNotes.value));
   } catch {
     // La note reste visible pendant la session si le stockage est indisponible.
   }
@@ -128,7 +130,9 @@ async function refreshActions(scrollToAnchor = false) {
   }
 }
 
-onMounted(() => {
+onMounted(async () => {
+  const remote = await hydrateLocalStorageKey(storageKey());
+  if (remote) localStorage.setItem(storageKey(), remote);
   loadNotes();
   refreshActions(true);
 });

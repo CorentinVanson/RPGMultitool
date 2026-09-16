@@ -1,6 +1,7 @@
 import { getRouterParam, createError, defineEventHandler } from 'h3';
 import { marked } from 'marked';
 import { getCollection, sortByOrder } from '../../utils/content';
+import { readDocument } from '../../utils/database';
 
 const collections = ['arcs', 'locations', 'npcs', 'enemies', 'quests'] as const;
 
@@ -11,7 +12,8 @@ export default defineEventHandler(async (event) => {
     throw createError({ statusCode: 404, statusMessage: 'Collection introuvable' });
   }
 
-  const entries = sortByOrder(await getCollection(collection));
+  const stored = await readDocument(`content:${collection}`);
+  const entries = sortByOrder(stored ? JSON.parse(stored.payload) : await getCollection(collection));
 
   return Promise.all(entries.map(async (entry) => ({ ...entry, bodyHtml: await marked.parse(entry.body) })));
 });

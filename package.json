@@ -8,8 +8,11 @@
     "start": "node .output/server/index.mjs",
     "build": "node scripts/generate-content.mjs && nuxt build",
     "preview": "nuxt preview"
+    ,"db:seed": "node scripts/seed-database.mjs"
+    ,"db:seed:local": "node scripts/seed-database.mjs --local"
   },
   "dependencies": {
+    "@libsql/client": "^0.18.0",
     "gray-matter": "^4.0.3",
     "h3": "^1.15.11",
     "marked": "^15.0.7",

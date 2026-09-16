@@ -1,4 +1,5 @@
 import { onBeforeUnmount, onMounted, ref } from 'vue';
+import { hydrateLocalStorageKey, mirrorLocalStorageKey } from './useSyncedDocument';
 
 const STORAGE_KEY = 'rpg-character-status';
 const CHANNEL_NAME = 'rpg-character-status';
@@ -25,6 +26,7 @@ function publish() {
     // La synchronisation de la fenêtre reste disponible si le stockage est indisponible.
   }
   channel?.postMessage({ type: 'statuses', statuses: statuses.value });
+  void mirrorLocalStorageKey(STORAGE_KEY, JSON.stringify(statuses.value));
 }
 
 function initialize() {
@@ -46,7 +48,13 @@ export function characterStatusId(collection: 'npcs' | 'enemies', id: string): s
 }
 
 export function useCharacterStatus() {
-  onMounted(initialize);
+  onMounted(async () => {
+    const remote = await hydrateLocalStorageKey(STORAGE_KEY);
+    if (remote) {
+      try { statuses.value = JSON.parse(remote) as CharacterStatuses; } catch { /* cache locale conservé */ }
+    }
+    initialize();
+  });
   onBeforeUnmount(() => {
     // Le canal reste ouvert pendant la session pour servir les composants montés ensuite.
   });

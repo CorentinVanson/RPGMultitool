@@ -1,4 +1,5 @@
 import { effectScope, onBeforeUnmount, onMounted, ref, watch, type Ref } from 'vue';
+import { hydrateLocalStorageKey, mirrorLocalStorageKey } from './useSyncedDocument';
 
 export interface ProjectionActor {
   id: string;
@@ -55,10 +56,12 @@ let controllerStarted = false;
  * `start()` doit être appelé au montage côté client pour éviter tout écart d'hydratation.
  */
 export function useProjectionController() {
-  const start = () => {
+  const start = async () => {
     if (controllerStarted) return;
     controllerStarted = true;
 
+    const remote = await hydrateLocalStorageKey(STORAGE_KEY);
+    if (remote) localStorage.setItem(STORAGE_KEY, remote);
     controllerState.value = readStored();
     const channel = new BroadcastChannel(CHANNEL);
 
@@ -67,6 +70,7 @@ export function useProjectionController() {
       channel.postMessage({ type: 'state', state: snapshot });
       try {
         localStorage.setItem(STORAGE_KEY, JSON.stringify(snapshot));
+        void mirrorLocalStorageKey(STORAGE_KEY, JSON.stringify(snapshot));
       } catch {
         /* stockage indisponible : la diffusion par canal suffit */
       }
@@ -88,7 +92,10 @@ export function useProjectionReceiver(): Ref<ProjectionState> {
   let channel: BroadcastChannel | null = null;
 
   onMounted(() => {
-    state.value = readStored();
+    void hydrateLocalStorageKey(STORAGE_KEY).then((remote) => {
+      if (remote) localStorage.setItem(STORAGE_KEY, remote);
+      state.value = readStored();
+    });
     channel = new BroadcastChannel(CHANNEL);
     channel.onmessage = (event) => {
       if (event.data?.type === 'state') state.value = event.data.state as ProjectionState;

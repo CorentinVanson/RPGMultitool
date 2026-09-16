@@ -1,4 +1,5 @@
 import { computed, onMounted, ref } from 'vue';
+import { hydrateLocalStorageKey, mirrorLocalStorageKey } from './useSyncedDocument';
 
 export interface PlayerCharacter {
   id: string;
@@ -29,6 +30,7 @@ function persist() {
     localStorage.setItem(TEAMS_KEY, JSON.stringify(teams.value));
     if (activeTeamId.value) localStorage.setItem(ACTIVE_TEAM_KEY, activeTeamId.value);
     else localStorage.removeItem(ACTIVE_TEAM_KEY);
+    void mirrorLocalStorageKey(TEAMS_KEY, JSON.stringify({ teams: teams.value, activeTeamId: activeTeamId.value }));
   } catch {
     // L'equipe reste disponible tant que la page est ouverte.
   }
@@ -54,7 +56,17 @@ function initialize() {
 }
 
 export function usePlayerTeams() {
-  onMounted(initialize);
+  onMounted(async () => {
+    const remote = await hydrateLocalStorageKey(TEAMS_KEY);
+    if (remote) {
+      try {
+        const parsed = JSON.parse(remote) as { teams?: PlayerTeam[]; activeTeamId?: string | null };
+        localStorage.setItem(TEAMS_KEY, JSON.stringify(parsed.teams ?? []));
+        if (parsed.activeTeamId) localStorage.setItem(ACTIVE_TEAM_KEY, parsed.activeTeamId);
+      } catch { /* cache locale conservé */ }
+    }
+    initialize();
+  });
 
   const activeTeam = computed(() => teams.value.find((team) => team.id === activeTeamId.value) ?? null);
 

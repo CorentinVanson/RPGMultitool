@@ -1,4 +1,5 @@
 import { computed, onMounted, ref } from 'vue';
+import { hydrateLocalStorageKey, mirrorLocalStorageKey } from './useSyncedDocument';
 
 export interface CampoNpcCandidate {
   id: string;
@@ -163,11 +164,13 @@ const employeeXp = ref<Record<string, number>>({});
 let initialized = false;
 
 function persist() {
+  const snapshot = { builtIds: builtIds.value, assignments: assignments.value, day: day.value, gold: gold.value, population: population.value, incomeModifier: incomeModifier.value, visitorModifier: visitorModifier.value, employeeXp: employeeXp.value };
   try {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify({ builtIds: builtIds.value, assignments: assignments.value, day: day.value, gold: gold.value, population: population.value, incomeModifier: incomeModifier.value, visitorModifier: visitorModifier.value, employeeXp: employeeXp.value }));
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(snapshot));
   } catch {
     // L’état reste disponible tant que la page est ouverte.
   }
+  void mirrorLocalStorageKey(STORAGE_KEY, JSON.stringify(snapshot));
 }
 
 function initialize() {
@@ -216,7 +219,11 @@ function xpBonus(candidateId: string) {
 }
 
 export function useCampoFrontiera() {
-  onMounted(initialize);
+  onMounted(async () => {
+    const remote = await hydrateLocalStorageKey(STORAGE_KEY);
+    if (remote) { try { localStorage.setItem(STORAGE_KEY, remote); } catch { /* cache locale conservé */ } }
+    initialize();
+  });
 
   const builtConstructions = computed(() => constructions.filter((construction) => builtIds.value.includes(construction.id)));
   const constructionDiscount = computed(() => builtConstructions.value.reduce((total, construction) => total + (construction.constructionDiscount ?? 0), 0));

@@ -1,4 +1,5 @@
 import { onMounted, ref } from 'vue';
+import { hydrateLocalStorageKey, mirrorLocalStorageKey } from './useSyncedDocument';
 
 export type SceneType = 'libre' | 'narration' | 'conflit';
 export type SceneStatus = 'active' | 'reussie' | 'echouee';
@@ -246,6 +247,7 @@ const adversityStock = ref({ hours: 3, rank: 1, spent: 0 });
 let initialized = false;
 
 function persist() {
+  const snapshot = { scenes: scenes.value, activeSceneId: activeSceneId.value, adversityStock: adversityStock.value };
   try {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(scenes.value));
     if (activeSceneId.value) localStorage.setItem(ACTIVE_KEY, activeSceneId.value);
@@ -253,6 +255,7 @@ function persist() {
   } catch {
     // La scène reste disponible tant que la page est ouverte.
   }
+  void mirrorLocalStorageKey(STORAGE_KEY, JSON.stringify(snapshot));
 }
 
 function initialize() {
@@ -310,7 +313,18 @@ function initialize() {
 }
 
 export function useScenes() {
-  onMounted(initialize);
+  onMounted(async () => {
+    const remote = await hydrateLocalStorageKey(STORAGE_KEY);
+    if (remote) {
+      try {
+        const snapshot = JSON.parse(remote) as { scenes?: Scene[]; activeSceneId?: string | null; adversityStock?: typeof adversityStock.value };
+        if (snapshot.scenes) localStorage.setItem(STORAGE_KEY, JSON.stringify(snapshot.scenes));
+        if (snapshot.activeSceneId) localStorage.setItem(ACTIVE_KEY, snapshot.activeSceneId);
+        if (snapshot.adversityStock) localStorage.setItem(ADVERSITY_KEY, JSON.stringify(snapshot.adversityStock));
+      } catch { /* cache locale conservé */ }
+    }
+    initialize();
+  });
 
   function selectScene(id: string | null) {
     activeSceneId.value = id && scenes.value.some((scene) => scene.id === id) ? id : null;
@@ -409,6 +423,7 @@ export function useScenes() {
       spent: Math.max(0, Math.round(patch.spent ?? adversityStock.value.spent)),
     };
     try { localStorage.setItem(ADVERSITY_KEY, JSON.stringify(adversityStock.value)); } catch { /* stockage indisponible */ }
+    void mirrorLocalStorageKey(STORAGE_KEY, JSON.stringify({ scenes: scenes.value, activeSceneId: activeSceneId.value, adversityStock: adversityStock.value }));
   }
 
   function adversityTotal() {
