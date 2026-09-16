@@ -1,5 +1,5 @@
 import { createError, defineEventHandler, getQuery } from 'h3';
-import { ensureDatabase, getDatabase } from '../../utils/database';
+import { ensureDatabase, getDatabase } from '../utils/database';
 
 export default defineEventHandler(async (event) => {
   await ensureDatabase();

@@ -1,5 +1,5 @@
 import { createError, defineEventHandler, readBody } from 'h3';
-import { ensureDatabase, getDatabase } from '../../utils/database';
+import { ensureDatabase, getDatabase } from '../utils/database';
 
 interface SyncDocument {
   key: string;
