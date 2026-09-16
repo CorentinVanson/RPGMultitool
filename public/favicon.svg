@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title>RPGMultitool</title>
+  <rect width="64" height="64" rx="14" fill="#1c150f"/>
+  <circle cx="32" cy="32" r="21" fill="#2b2018" stroke="#b3813a" stroke-width="3"/>
+  <path d="M39.5 18.5 34 31l-12.5 5.5L27 24z" fill="#d9b46a" stroke="#f1e6d3" stroke-linejoin="round" stroke-width="2"/>
+  <path d="m34 31 5.5 14.5L27 38z" fill="#8d562d" stroke="#b3813a" stroke-linejoin="round" stroke-width="2"/>
+  <circle cx="32" cy="32" r="3.5" fill="#f1e6d3" stroke="#b3813a" stroke-width="2"/>
+</svg>

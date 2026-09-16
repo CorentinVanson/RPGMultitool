@@ -4,6 +4,14 @@ export default defineNuxtConfig({
   compatibilityDate: '2026-08-26',
   devtools: { enabled: false },
   modules: ['@vite-pwa/nuxt'],
+  app: {
+    head: {
+      title: 'RPGMultitool — Les Marches',
+      titleTemplate: '%s · RPGMultitool',
+      link: [{ rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }],
+      meta: [{ name: 'theme-color', content: '#1c150f' }],
+    },
+  },
 
   // Toutes les pages sont pré-rendues : le service worker peut ainsi les précacher au premier chargement.
   nitro: {
@@ -22,6 +30,7 @@ export default defineNuxtConfig({
       name: 'RPGMultitool',
       short_name: 'RPGMultitool',
       description: 'Outil de maîtrise pour la campagne Historia',
+      icons: [{ src: '/favicon.svg', sizes: 'any', type: 'image/svg+xml', purpose: 'any maskable' }],
       lang: 'fr',
       display: 'standalone',
       background_color: '#1c150f',
