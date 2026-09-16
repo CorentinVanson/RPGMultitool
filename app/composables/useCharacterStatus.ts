@@ -51,7 +51,10 @@ export function useCharacterStatus() {
   onMounted(async () => {
     const remote = await hydrateLocalStorageKey(STORAGE_KEY);
     if (remote) {
-      try { statuses.value = JSON.parse(remote) as CharacterStatuses; } catch { /* cache locale conservé */ }
+      try {
+        statuses.value = JSON.parse(remote) as CharacterStatuses;
+        localStorage.setItem(STORAGE_KEY, remote);
+      } catch { /* cache locale conservé */ }
     }
     initialize();
   });

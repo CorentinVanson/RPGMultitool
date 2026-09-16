@@ -8,7 +8,7 @@
     "start": "node .output/server/index.mjs",
     "build": "node scripts/generate-content.mjs && nuxt build",
     "preview": "nuxt preview"
-    ,"db:seed": "node scripts/seed-database.mjs"
+    ,"db:seed": "node --env-file-if-exists=.env.local scripts/seed-database.mjs"
     ,"db:seed:local": "node scripts/seed-database.mjs --local"
   },
   "dependencies": {

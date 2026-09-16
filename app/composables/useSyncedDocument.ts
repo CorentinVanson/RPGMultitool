@@ -10,7 +10,29 @@ interface SyncedDocument<T> {
 const DB_NAME = 'rpgmultitool';
 const STORE_NAME = 'documents';
 const queuedKeys = new Set<string>();
+const PENDING_KEY = 'rpg-sync-pending-keys';
 let syncListenerStarted = false;
+
+function readPendingKeys(): string[] {
+  try {
+    const value = JSON.parse(localStorage.getItem(PENDING_KEY) ?? '[]');
+    return Array.isArray(value) ? value.filter((key): key is string => typeof key === 'string') : [];
+  } catch {
+    return [];
+  }
+}
+
+function writePendingKeys(keys: string[]) {
+  try { localStorage.setItem(PENDING_KEY, JSON.stringify([...new Set(keys)])); } catch { /* IndexedDB reste disponible */ }
+}
+
+function queueKey(key: string) {
+  writePendingKeys([...readPendingKeys(), key]);
+}
+
+function dequeueKey(key: string) {
+  writePendingKeys(readPendingKeys().filter((pendingKey) => pendingKey !== key));
+}
 
 function openDatabase(): Promise<IDBDatabase> {
   return new Promise((resolve, reject) => {
@@ -60,8 +82,15 @@ async function syncKey<T>(key: string) {
   try {
     const local = await readLocal<T>(key);
     const remote = await pull<T>(key);
-    if (remote && (!local || remote.version > local.version)) await writeLocal(remote);
-    else if (local) await writeLocal(await push(local));
+    if (remote && (!local || remote.version > local.version)) {
+      await writeLocal(remote);
+      dequeueKey(key);
+    } else if (local) {
+      await writeLocal(await push(local));
+      dequeueKey(key);
+    } else {
+      dequeueKey(key);
+    }
   } catch {
     // Le cache IndexedDB reste la source disponible hors ligne.
   } finally {
@@ -72,7 +101,7 @@ async function syncKey<T>(key: string) {
 function startNetworkSync() {
   if (syncListenerStarted || typeof window === 'undefined') return;
   syncListenerStarted = true;
-  window.addEventListener('online', () => { for (const key of queuedKeys) void syncKey(key); });
+  window.addEventListener('online', () => { for (const key of readPendingKeys()) void syncKey(key); });
 }
 
 export function useSyncedDocument<T>(key: string, initialValue: T) {
@@ -98,9 +127,8 @@ export function useSyncedDocument<T>(key: string, initialValue: T) {
     const current = await readLocal<T>(key).catch(() => null);
     const document: SyncedDocument<T> = { key, version: current?.version ?? 0, payload: nextValue, updatedAt: new Date().toISOString() };
     await writeLocal(document).catch(() => undefined);
-    if (navigator.onLine) {
-      await push(document).then(writeLocal).catch(() => undefined);
-    }
+    queueKey(key);
+    if (navigator.onLine) await syncKey<T>(key);
   }
 
   return { value, ready, save, sync: () => syncKey<T>(key) };
@@ -112,7 +140,8 @@ export async function mirrorLocalStorageKey(key: string, payload: string) {
   const current = await readLocal<string>(key).catch(() => null);
   const document: SyncedDocument<string> = { key, version: current?.version ?? 0, payload, updatedAt: new Date().toISOString() };
   await writeLocal(document).catch(() => undefined);
-  if (navigator.onLine) await push(document).then(writeLocal).catch(() => undefined);
+  queueKey(key);
+  if (navigator.onLine) await syncKey<string>(key);
 }
 
 /** Gets the newest database copy while preserving localStorage as a compatibility fallback. */
@@ -126,9 +155,25 @@ export async function hydrateLocalStorageKey(key: string): Promise<string | null
     return remote.payload;
   }
   if (local) {
+    queueKey(key);
     const synced = await push(local).catch(() => null);
-    if (synced) await writeLocal(synced).catch(() => undefined);
+    if (synced) {
+      await writeLocal(synced).catch(() => undefined);
+      dequeueKey(key);
+    }
     return local.payload;
+  }
+  const legacyPayload = localStorage.getItem(key);
+  if (legacyPayload != null) {
+    const migrated: SyncedDocument<string> = { key, version: 0, payload: legacyPayload, updatedAt: new Date().toISOString() };
+    await writeLocal(migrated).catch(() => undefined);
+    queueKey(key);
+    const synced = await push(migrated).catch(() => null);
+    if (synced) {
+      await writeLocal(synced).catch(() => undefined);
+      dequeueKey(key);
+    }
+    return legacyPayload;
   }
   return null;
 }
