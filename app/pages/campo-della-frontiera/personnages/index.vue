@@ -1,7 +1,9 @@
 <script setup lang="ts">
+import { useCharacterStatus } from '../../../composables/useCharacterStatus';
 import { CAMPO_NPC_CANDIDATES, campoCandidateSlug } from '../../../composables/useCampoFrontiera';
 
 const candidates = CAMPO_NPC_CANDIDATES;
+const { isMarked } = useCharacterStatus();
 </script>
 
 <template>
@@ -21,7 +23,7 @@ const candidates = CAMPO_NPC_CANDIDATES;
         <header :class="$style.cardHeader">
           <div>
             <p :class="$style.job">{{ entry.construction }}</p>
-            <h2><NuxtLink :to="`/personnages/${campoCandidateSlug(entry.candidate.id)}`">{{ entry.candidate.name }}</NuxtLink></h2>
+            <h2 :class="isMarked(`npcs:${campoCandidateSlug(entry.candidate.id)}`) && $style.marked"><NuxtLink :to="`/personnages/${campoCandidateSlug(entry.candidate.id)}`">{{ entry.candidate.name }}</NuxtLink></h2>
             <p :class="$style.species">{{ entry.candidate.species }}</p>
           </div>
           <span :class="$style.growth">+{{ entry.candidate.growth }} prog.</span>
@@ -49,6 +51,7 @@ const candidates = CAMPO_NPC_CANDIDATES;
 .cardHeader { display: flex; justify-content: space-between; align-items: start; gap: .75rem; }
 .card h2 { margin: .2rem 0 0; font-size: 1.1rem; }
 .card h2 a { color: var(--text); }
+.marked { text-decoration: line-through; text-decoration-thickness: .1em; opacity: .72; }
 .species { margin: .2rem 0 0; font-style: italic; font-size: .85rem; }
 .growth { color: #b8d38b; font-size: .75rem; white-space: nowrap; }
 .card > p { margin: 0; font-size: .88rem; }

@@ -2,11 +2,13 @@
 import { computed, ref, watch } from 'vue';
 import { useRoute } from '#imports';
 import { characterEntries, entryName, useContentCollection } from '../composables/useContent';
+import { characterStatusId, useCharacterStatus } from '../composables/useCharacterStatus';
 
 const route = useRoute();
 const searchQuery = ref('');
 const { data: locations } = useContentCollection('locations');
 const { data: npcs } = useContentCollection('npcs');
+const { isMarked } = useCharacterStatus();
 
 function searchable(value: unknown): string {
   return String(value ?? '')
@@ -27,6 +29,7 @@ const searchResults = computed(() => {
     .filter((entry) => matchesSearch([entryName(entry), entry.data.role, entry.data.location, entry.data.summary], query))
     .map((entry) => ({
       id: `personnages:${entry.id}`,
+      characterId: entry.id,
       label: entryName(entry),
       meta: entry.data.role ?? 'Personnage',
       image: entry.data.image,
@@ -38,6 +41,7 @@ const searchResults = computed(() => {
     .filter((entry) => matchesSearch([entryName(entry), entry.data.type, entry.data.region, entry.data.summary], query))
     .map((entry) => ({
       id: `lieux:${entry.id}`,
+      characterId: '',
       label: entryName(entry),
       meta: [entry.data.type, entry.data.region].filter(Boolean).join(' — ') || 'Décor',
       image: entry.data.image,
@@ -86,7 +90,7 @@ watch(() => route.fullPath, () => { searchQuery.value = ''; });
         >
           <img v-if="result.image" :src="result.image" :alt="result.label" :class="$style.searchThumb">
           <span :class="$style.searchCopy">
-            <strong>{{ result.label }}</strong>
+            <strong :class="result.kind === 'Personnage' && isMarked(characterStatusId('npcs', result.characterId)) && $style.marked">{{ result.label }}</strong>
             <small>{{ result.kind }}<template v-if="result.meta"> — {{ result.meta }}</template></small>
           </span>
         </NuxtLink>
@@ -118,6 +122,7 @@ watch(() => route.fullPath, () => { searchQuery.value = ''; });
 .searchCopy strong, .searchCopy small { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .searchCopy small, .emptyResult { color: var(--muted); font-size: .78rem; }
 .emptyResult { margin: .35rem .45rem; }
+.marked { text-decoration: line-through; text-decoration-thickness: .1em; opacity: .72; }
 .main { max-width: 960px; margin: 0 auto; padding: 2rem; }
 .footer { text-align: center; padding: 2rem; color: var(--muted); font-size: .85rem; }
 

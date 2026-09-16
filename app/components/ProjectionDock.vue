@@ -3,11 +3,13 @@ import { computed, onMounted, ref, watch } from 'vue';
 import { useRoute } from '#imports';
 import type { ContentEntry } from '../types/content';
 import { CHARACTER_TAGS, characterEntries, entryName, sectionCollections, useContentCollection } from '../composables/useContent';
+import { useCharacterStatus } from '../composables/useCharacterStatus';
 import { DEFAULT_BACKGROUND, useProjectionController, type ProjectionActor } from '../composables/useProjection';
 import { useCampoFrontiera, CAMPO_CONSTRUCTIONS, campoCandidateSlug } from '../composables/useCampoFrontiera';
 
 const route = useRoute();
 const { state, start } = useProjectionController();
+const { isMarked } = useCharacterStatus();
 const camp = useCampoFrontiera();
 const open = ref(false);
 const showCatalog = ref(false);
@@ -132,8 +134,8 @@ const searchResultCount = computed(() => searchableCharacterActors.value.length 
 const currentEntry = computed(() => {
   const collection = sectionCollections[String(route.params.section ?? '')];
   const slug = String(route.params.slug ?? '');
-  if (!collection || collection === 'arcs' || !slug) return null;
-  const source = { locations: locations.value, npcs: npcs.value, enemies: enemies.value }[collection];
+  if (!collection || collection === 'arcs' || collection === 'quests' || !slug) return null;
+  const source = collection === 'locations' ? locations.value : collection === 'npcs' ? npcs.value : enemies.value;
   const entry = (source ?? []).find((item) => item.id === slug);
   return entry ? { collection, entry } : null;
 });
@@ -327,7 +329,7 @@ watch(isCatalogSearching, (value) => {
               v-for="actor in actorsHere"
               :key="actor.id"
               type="button"
-              :class="[$style.chip, isOnStage(actor) && $style.active]"
+              :class="[$style.chip, isOnStage(actor) && $style.active, isMarked(actor.id) && $style.marked]"
               @click="toggleActor(actor)"
             >
               <img :src="actor.image" :alt="actor.name" :class="$style.chipImage">{{ actor.name }}
@@ -339,7 +341,7 @@ watch(isCatalogSearching, (value) => {
         <template v-else-if="contextActor">
           <div :class="$style.row">
             <img :src="contextActor.image" :alt="contextActor.name" :class="$style.thumb">
-            <span>{{ contextActor.name }}</span>
+            <span :class="isMarked(contextActor.id) && $style.marked">{{ contextActor.name }}</span>
           </div>
           <div :class="$style.toolbar">
             <button type="button" :class="$style.primary" @click="toggleActor(contextActor)">
@@ -358,7 +360,7 @@ watch(isCatalogSearching, (value) => {
         <ol v-if="state.actors.length" :class="$style.stageList">
           <li v-for="(actor, index) in state.actors" :key="actor.id" :class="$style.stageItem">
             <img :src="actor.image" :alt="actor.name" :class="$style.thumb">
-            <span :class="$style.grow">{{ actor.name }}</span>
+            <span :class="[$style.grow, isMarked(actor.id) && $style.marked]">{{ actor.name }}</span>
             <button type="button" :class="[$style.mini, state.speakerActorId === actor.id && $style.speakerButton]" @click="setSpeaker(state.speakerActorId === actor.id ? null : actor)">{{ state.speakerActorId === actor.id ? 'Personne' : 'Parler' }}</button>
             <button type="button" :class="$style.mini" :disabled="index === 0" @click="moveActor(index, -1)">←</button>
             <button type="button" :class="$style.mini" :disabled="index === state.actors.length - 1" @click="moveActor(index, 1)">→</button>
@@ -383,7 +385,7 @@ watch(isCatalogSearching, (value) => {
                 v-for="actor in searchableCharacterActors"
                 :key="actor.id"
                 type="button"
-                :class="[$style.chip, isOnStage(actor) && $style.active, state.speakerActorId === actor.id && $style.speaker]"
+                :class="[$style.chip, isOnStage(actor) && $style.active, state.speakerActorId === actor.id && $style.speaker, isMarked(actor.id) && $style.marked]"
                 @click="toggleActor(actor)"
               >
                 <img :src="actor.image" :alt="actor.name" :class="$style.chipImage">{{ actor.name }}
@@ -445,7 +447,7 @@ watch(isCatalogSearching, (value) => {
                   v-for="actor in currentCharacterActors"
                   :key="actor.id"
                   type="button"
-                  :class="[$style.chip, isOnStage(actor) && $style.active, state.speakerActorId === actor.id && $style.speaker]"
+                  :class="[$style.chip, isOnStage(actor) && $style.active, state.speakerActorId === actor.id && $style.speaker, isMarked(actor.id) && $style.marked]"
                   @click="toggleActor(actor)"
                 >
                   <img :src="actor.image" :alt="actor.name" :class="$style.chipImage">{{ actor.name }}
@@ -506,6 +508,7 @@ watch(isCatalogSearching, (value) => {
 .chip:hover { border-color: var(--accent); }
 .chipImage { width: 1.6rem; height: 1.6rem; object-fit: cover; border-radius: 999px; }
 .speaker { border-color: var(--accent); color: var(--accent); box-shadow: 0 0 0 1px var(--accent) inset; }
+.marked { text-decoration: line-through; text-decoration-thickness: .1em; opacity: .72; }
 .speakerButton { color: var(--accent); border-color: var(--accent); }
 .stageList { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: .35rem; }
 .stageItem { display: flex; align-items: center; gap: .4rem; background: #1c150f; border: 1px solid #4a3a28; border-radius: 4px; padding: .3rem .45rem; font-size: .85rem; }

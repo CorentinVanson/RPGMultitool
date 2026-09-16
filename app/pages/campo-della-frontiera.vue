@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import { computed, onMounted, ref } from 'vue';
 import { useCampoFrontiera, CAMPO_CONSTRUCTIONS, campoCandidateSlug, type CampoConstruction } from '../composables/useCampoFrontiera';
+import { useCharacterStatus } from '../composables/useCharacterStatus';
 import { useProjectionController } from '../composables/useProjection';
 
 const { state, start } = useProjectionController();
+const { isMarked } = useCharacterStatus();
 const {
   builtIds, assignments, day, gold, population, builtConstructions, availableConstructions,
   dailyIncome, dailyVisitors, populationGrowth, constructionDiscount, constructionCost, isBuilt, build, demolish, assignNpc, advanceDay,
@@ -16,6 +18,7 @@ const incomeModifierAmount = ref('');
 const visitorsModifierAmount = ref('');
 const candidateFor = (construction: CampoConstruction, id: string | undefined) => construction.candidates.find((candidate) => candidate.id === id);
 const selectedCandidate = (construction: CampoConstruction) => candidateFor(construction, assignments.value[construction.id]);
+const isCandidateMarked = (candidateId: string | undefined) => Boolean(candidateId && isMarked(`npcs:${campoCandidateSlug(candidateId)}`));
 const availableIds = computed(() => new Set(availableConstructions.value.map((construction) => construction.id)));
 const treeLevels = computed(() => Array.from({ length: Math.max(...CAMPO_CONSTRUCTIONS.map((construction) => construction.level)) + 1 }, (_, level) => ({ level, constructions: CAMPO_CONSTRUCTIONS.filter((construction) => construction.level === level) })));
 
@@ -117,8 +120,8 @@ function resetAll() {
             <label :class="$style.assignment">Responsable
               <select :value="assignments[construction.id] ?? ''" @change="assignNpc(construction.id, ($event.target as HTMLSelectElement).value)"><option value="">Choisir parmi 3 PNJ</option><option v-for="candidate in construction.candidates" :key="candidate.id" :value="candidate.id">{{ candidate.name }}</option></select>
             </label>
-            <div v-if="selectedCandidate(construction)" :class="$style.profile"><NuxtLink :to="`/personnages/${campoCandidateSlug(selectedCandidate(construction)?.id ?? '')}`"><strong>{{ selectedCandidate(construction)?.name }}</strong></NuxtLink><span>Qualités : {{ selectedCandidate(construction)?.qualities }}</span><span>Défauts : {{ selectedCandidate(construction)?.flaws }}</span></div>
-            <div v-else :class="$style.candidates"><article v-for="candidate in construction.candidates" :key="candidate.id"><NuxtLink :to="`/personnages/${campoCandidateSlug(candidate.id)}`"><strong>{{ candidate.name }}</strong></NuxtLink><small>{{ candidate.qualities }}</small><small class="flaw">Point faible : {{ candidate.flaws }}</small><button type="button" :class="$style.choose" @click="assignNpc(construction.id, candidate.id)">Choisir</button></article></div>
+            <div v-if="selectedCandidate(construction)" :class="$style.profile"><NuxtLink :to="`/personnages/${campoCandidateSlug(selectedCandidate(construction)?.id ?? '')}`"><strong :class="isCandidateMarked(selectedCandidate(construction)?.id) && $style.marked">{{ selectedCandidate(construction)?.name }}</strong></NuxtLink><span>Qualités : {{ selectedCandidate(construction)?.qualities }}</span><span>Défauts : {{ selectedCandidate(construction)?.flaws }}</span></div>
+            <div v-else :class="$style.candidates"><article v-for="candidate in construction.candidates" :key="candidate.id"><NuxtLink :to="`/personnages/${campoCandidateSlug(candidate.id)}`"><strong :class="isCandidateMarked(candidate.id) && $style.marked">{{ candidate.name }}</strong></NuxtLink><small>{{ candidate.qualities }}</small><small class="flaw">Point faible : {{ candidate.flaws }}</small><button type="button" :class="$style.choose" @click="assignNpc(construction.id, candidate.id)">Choisir</button></article></div>
             <div v-if="selectedCandidate(construction)" :class="$style.xpRow">
               <span>{{ xpBonus(selectedCandidate(construction)?.id ?? '').levelName }}</span>
               <button type="button" :class="$style.xpButton" @click="rewardXp(selectedCandidate(construction)?.id ?? '')">+XP</button>
@@ -135,6 +138,7 @@ function resetAll() {
 
 <style module>
 .hero { display: flex; justify-content: space-between; align-items: end; gap: 1.5rem; padding: 1.25rem 0 2rem; border-bottom: 1px solid #4a3a28; } .hero h1 { margin: .25rem 0; } .hero p { max-width: 42rem; } .peopleLink { display: inline-block; margin-top: .75rem; color: var(--accent); }
+.marked { text-decoration: line-through; text-decoration-thickness: .1em; opacity: .72; }
 .eyebrow, .muted { color: var(--muted); } .eyebrow { margin: 0; text-transform: uppercase; letter-spacing: .08em; font-size: .8rem; }
 .project, .nextDay, .build { background: var(--accent); color: #1c150f; border: 1px solid var(--accent); border-radius: 4px; padding: .6rem .8rem; font: inherit; font-weight: bold; cursor: pointer; } .project, .nextDay { white-space: nowrap; }
 .dashboard { display: grid; grid-template-columns: repeat(4, 1fr) auto; gap: .75rem; margin: 1.5rem 0; } .resource { display: flex; flex-direction: column; gap: .15rem; background: var(--panel); border: 1px solid #4a3a28; border-radius: 4px; padding: .7rem .8rem; } .resource span { color: var(--muted); font-size: .75rem; text-transform: uppercase; } .resource strong { color: var(--accent); } .nextDay small { display: block; font-weight: normal; font-size: .7rem; }

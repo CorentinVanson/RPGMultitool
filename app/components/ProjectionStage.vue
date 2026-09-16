@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import { computed } from 'vue';
+import { useCharacterStatus } from '../composables/useCharacterStatus';
 import type { ProjectionState } from '../composables/useProjection';
 
 const props = defineProps<{ state: ProjectionState; compact?: boolean }>();
+const { isMarked } = useCharacterStatus();
 
 function actorColor(actor: { id: string; name: string; collection: string }): string {
   let hash = 0;
@@ -53,7 +55,7 @@ const showCampStats = computed(() => props.state.background?.id === 'campo-front
         <figure
           v-for="actor in farActors"
           :key="actor.id"
-          :class="[$style.actor, state.speakerActorId && !isSpeaker(actor) && $style.otherActorGreyed]"
+          :class="[$style.actor, isMarked(actor.id) && $style.markedActor, state.speakerActorId && !isSpeaker(actor) && $style.otherActorGreyed]"
         >
           <div :class="$style.portraitBackdrop" :style="{ '--actor-color': actorColor(actor) }">
             <img :src="actor.image" :alt="actor.name" :class="$style.portrait">
@@ -67,6 +69,7 @@ const showCampStats = computed(() => props.state.background?.id === 'campo-front
           :key="actor.id"
           :class="[
             $style.actor,
+            isMarked(actor.id) && $style.markedActor,
             isSpeaker(actor) && $style.speakerActor,
             state.speakerActorId && !isSpeaker(actor) && $style.otherActorGreyed,
           ]"
@@ -83,6 +86,7 @@ const showCampStats = computed(() => props.state.background?.id === 'campo-front
           :key="actor.id"
           :class="[
             $style.actor,
+            isMarked(actor.id) && $style.markedActor,
             isSpeaker(actor) && $style.speakerActor,
             state.speakerActorId && !isSpeaker(actor) && $style.otherActorGreyed,
           ]"
@@ -125,6 +129,7 @@ const showCampStats = computed(() => props.state.background?.id === 'campo-front
 .frontRow { position: relative; z-index: 2; }
 .actor { margin: 0; text-align: center; }
 .otherActorGreyed { filter: grayscale(1); opacity: .58; }
+.markedActor { text-decoration: line-through; text-decoration-thickness: .1em; opacity: .58; }
 .speakerActor { z-index: 5; transform: translateY(-5cqh) scale(1.08); }
 .speakerActor .portraitBackdrop { border-radius: 50%; padding: .4cqh; box-shadow: 0 0 1cqh var(--actor-color), 0 0 4cqh var(--actor-color), 0 0 7cqh var(--actor-color); }
 .portraitBackdrop { display: inline-flex; align-items: flex-end; line-height: 0; }
