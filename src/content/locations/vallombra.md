@@ -34,67 +34,157 @@ Plan illustré, orienté vers le nord. Les murs suivent la berge du Bastione ; l
 9. **Quai du Bastione** : débarcadère, hangars, barques de pêche et entrepôt de transit.
 10. **Fosses et jardins bas** : potagers, lavoirs et chemin discret vers les faubourgs.
 
-## Lieux communs et responsables
+## Lieux communs et bâtiments
+
+Chaque zone ci-dessous est un petit ensemble de bâtiments plutôt qu'un simple point sur la carte. Les personnes indiquées y travaillent régulièrement ; d'autres habitants peuvent y être rencontrés selon l'heure.
 
 ### 1. Porta Secca et corps de garde
 
-La porte ferme au coucher du soleil, sauf ordre direct de la podestat. Un registre note les arrivées, les départs, les cargaisons et les arrestations. Une poterne de service donne vers le quai, mais elle est condamnée depuis un ancien éboulement.
+La porte ferme au coucher du soleil, sauf ordre direct de la podestat. Une poterne de service donne vers le quai, mais elle est condamnée depuis un ancien éboulement.
 
-**Responsable :** [Ser Baldassare](/personnages/baldassare), capitaine de la garde. Les gardes lui obéissent ; les marchands tentent plutôt de négocier avec son greffier. **Services :** escorte, dépôt temporaire d'armes, consultation des rapports, arrestation légale. **Complication :** Baldassare voit la contrebande partout et peut transformer une simple enquête en opération militaire.
+#### Corps de garde
+
+Salle d'armes, dortoir de huit gardes, petite cour d'exercice et cachots propres mais froids. [Ser Baldassare](/personnages/baldassare) y commande les rondes et les arrestations. Ses gardes consignent les incidents dans un registre relié de cuir.
+
+#### Bureau des arrivées
+
+Une pièce étroite contient la balance des cargaisons, les laissez-passer et les registres de voyageurs. Un garde de faction y travaille avec le greffier du jour. Les PJ peuvent y obtenir une escorte ou vérifier un passage, mais toute consultation laisse une trace.
+
+#### Atelier du charpentier de porte
+
+Adossé au rempart, il abrite madriers, ferrures et outils d'urgence. [Mastro Berto](/personnages/mastro-berto) y répare les herses et les chariots sous les ordres de Nardo. Une poutre neuve porte une marque différente de celle du reste de la porte.
 
 ### 2. Place du Marché
 
-On y trouve céréales, huile, fruits des coteaux, poisson du Bastione, cordages, tissus, outils et repas chauds. Une balance publique limite les fraudes, sans les empêcher. Les jours de foire, la place déborde jusque dans le Guscio.
+La place rassemble les étals sous une halle, une fontaine, une balance publique et plusieurs échoppes fixes.
 
-**Responsable :** [Bianca Salmastra](/personnages/bianca-salmastra), peseuse publique nommée par le Conseil. **PNJ présents :** des marchands locaux, un crieur et des porteurs ; aucun ne détient seul l'autorité. **Services :** provisions, équipement courant, recrutement de guides, diffusion d'un message. **Rumeur récurrente :** une cargaison est toujours déchargée au quai avant d'être déclarée aux Tinaie.
+#### Halle aux denrées
+
+Les vendeurs de céréales, d'huile, de fruits et de poisson y louent des tables. [Bianca Salmastra](/personnages/bianca-salmastra) contrôle la balance et tranche les litiges de poids. Elle remarque les tonneaux trop réguliers et les marchandises arrivées avant l'ouverture officielle.
+
+#### Échoppe des remèdes
+
+Un comptoir de bois sec propose plantes, bandages et préparations simples. [Savia Mirea](/personnages/savia-mirea) y tient ses réserves et connaît les plantes de la Riarsa. Elle peut signaler un poison sans identifier son fabricant.
+
+#### Bureau du crieur
+
+Une alcôve derrière la fontaine conserve les annonces, les objets trouvés et les messages payés. Le crieur y reçoit ses instructions de Bianca ; les enfants du Guscio y déposent parfois un objet en échange d'une petite pièce.
 
 ### 3. Maison du Conseil
 
-Bâtiment austère à deux étages : salle d'audience au rez-de-chaussée, bureaux au premier, archives et coffre au sous-sol. La porte des archives est ouverte les jours ouvrables, mais les dossiers fiscaux et les sceaux diplomatiques nécessitent l'autorisation de Serafina.
+#### Salle d'audience
 
-**Responsable :** [Contessa Serafina Dal Moro](/personnages/serafina-dal-moro), podestat. **Services :** audience politique, contrats, autorisations de voyage, financement discret d'une mission, accès à la milice. **Complication :** les comptes des Tinaie comportent des irrégularités ; les révéler publiquement peut affaiblir Vallombra avant de la sauver.
+La salle du rez-de-chaussée accueille plaintes, contrats et délégations. [Contessa Serafina Dal Moro](/personnages/serafina-dal-moro) y reçoit les PJ lorsqu'elle veut que la garde et les marchands sachent qu'elle les soutient.
+
+#### Bureaux et salle des sceaux
+
+Les conseillers, copistes et messagers y travaillent autour d'une grande table. [Matteo Riva](/personnages/matteo-riva) y coordonne les réponses politiques et conserve les sceaux de Vallombra. Il sait quelles familles ont demandé une faveur, mais pas toujours laquelle a réellement été accordée.
+
+#### Archives et coffre fiscal
+
+Le sous-sol contient les registres des taxes, les plans des murs et les inventaires des Tinaie. Serafina seule autorise l'accès complet ; Baldassare garde la clé lors des crises. Une niche derrière les registres anciens permet de cacher un document de petite taille.
 
 ### 4. Les Tinaie
 
-Les celliers occupent une rangée de bâtiments frais et semi-enterrés. Chaque entrepôt possède une petite salle de dégustation, une réserve et un bureau. Les cuves sont marquées par famille, millésime et destination. La nuit, des rondes privées complètent la garde civile.
+#### Cellier Moro
 
-**Responsable opérationnelle :** [Nerina Vinaccia](/personnages/nerina-vinaccia), comptable des celliers du Tralcio, sous la surveillance administrative de Serafina. **Services :** achat de vin ou d'huile, transport scellé, travail journalier, expertise d'une cargaison. **Indices possibles :** cire brisée, registre recopié, odeur de sable brûlé ou barrique déplacée sans trace de chariot. **Danger :** les employés savent qu'une dénonciation peut leur faire perdre leur logement.
+Grand cellier semi-enterré, passerelles de bois, citerne et arrière-salle des ouvriers. [Nilo](/personnages/nilo) y déplace les tonneaux et connaît le passage de service. C'est le lieu de l'incendie de la Foire aux Larmes.
+
+#### Bureaux du Tralcio
+
+Les comptables y vérifient les sceaux, les volumes et les destinations. [Nerina Vinaccia](/personnages/nerina-vinaccia) supervise les registres et peut repérer une cargaison recopiée après coup. Les employés craignent de perdre leur logement s'ils parlent des irrégularités.
+
+#### Entrepôt de transit
+
+Les marchandises qui partent vers Gratigna y attendent sous grille : vin, huile, cordages et caisses scellées. Une ronde privée passe deux fois par nuit. Une barrique déplacée sans trace de chariot révèle l'existence d'un accès secondaire.
 
 ### 5. La Piccola Curia
 
-La chapelle sert aux offices, aux veillées funèbres, aux soins simples et à la conservation des registres de décès. Son cimetière est fermé par une grille ; une crypte ancienne est murée derrière la sacristie.
+#### Chapelle et sacristie
 
-**Responsable :** [Madre Iolanda](/personnages/iolanda), prêtresse de la Chiesa delle Ossa et de la Dottrina Classica. **Services :** bénédiction, premiers soins, rites funéraires, lecture d'inscriptions religieuses et protection d'un lieu. **Complication :** Iolanda soupçonne une activité hérétique liée à Fra Cosma, mais ne révélera ses preuves qu'à des alliés qu'elle juge fiables.
+La chapelle sert aux offices, aux veillées et aux soins simples. [Madre Iolanda](/personnages/iolanda) dirige les rites de la Chiesa delle Ossa ; [Sorella Vesta](/personnages/sorella-vesta) l'assiste auprès des familles endeuillées et des voyageurs blessés.
+
+#### Maison de soin
+
+Deux pièces attenantes contiennent paillasses, eau propre et herbes séchées. Savia Mirea y apporte ses préparations lorsque Iolanda le demande. Les soins sont gratuits pour les habitants, mais les dons entretiennent les réserves.
+
+#### Cimetière clos et crypte murée
+
+La grille du cimetière est fermée après la dernière cloche. Iolanda conserve la clé de la crypte murée, tandis que Sœur Alba tient le registre des veillées. Des traces de poussière récente apparaissent parfois devant le mur intérieur.
 
 ### 6. Maison des voyageurs
 
-L'auberge accueille bateliers, voyageurs de Gratigna, marchands et aventuriers. L'écurie peut loger six montures ; le relais transmet les lettres vers Gratigna deux fois par semaine. Les chambres du fond donnent sur un escalier de service qui rejoint une ruelle du Guscio.
+#### Auberge et salle commune
 
-**Responsable :** [Terenzio Sifflet](/personnages/terenzio-sifflet), aubergiste et maître du relais. **Services :** lit, repas, écurie, messagerie, salle privée pour une réunion. **Jeu social :** c'est le meilleur lieu pour mélanger les visiteurs, les gardes en repos et les ouvriers des Tinaie. Une chambre peut être fouillée sans attirer l'attention si les PJ paient le personnel ou créent une diversion.
+[Terenzio Sifflet](/personnages/terenzio-sifflet) tient le comptoir, les chambres et la salle privée. Les bateliers, les gardes en repos et les ouvriers des Tinaie s'y croisent sans se mélanger complètement.
+
+#### Écurie et remise
+
+Six montures peuvent y dormir ; la remise stocke selles, cordes et pièces de chariot. Mastro Berto y répare les roues et les mangeoires. Une cloison mal ajustée donne sur l'escalier de service du Guscio.
+
+#### Relais des messagers
+
+Une petite pièce arrière trie les lettres vers Gratigna et les villages du Bastione. Terenzio en garde le registre, mais Renzo paie parfois un messager pour retarder une enveloppe d'une journée.
 
 ### 7. Les Hautes Maisons
 
-Le quartier regroupe le palais Dal Moro, les maisons des négociants et quelques jardins clos. Les portes sont gardées par des domestiques ; les rues sont calmes le jour et presque désertes après la fermeture de la porte.
+#### Palais Dal Moro
 
-**Responsable politique :** Serafina, depuis le palais Dal Moro. **Services :** accès aux notables, réception officielle, négociation de dettes et consultation de correspondances avec Gratigna. **Complication :** la loyauté affichée des familles marchandes est proportionnelle à leurs profits.
+Le palais rassemble les appartements de [Serafina](/personnages/serafina-dal-moro), une salle de réception et un cabinet où sont négociées les dettes. Deux domestiques surveillent les accès, mais la podestat peut faire entrer les PJ par le jardin.
+
+#### Maisons des négociants
+
+Ces demeures possèdent caves privées, bureaux et petites salles de réception. [Ilaria Conti](/personnages/ilaria-conti) y est reçue lorsqu'elle vient parler commerce ; sa présence suffit à diviser les familles entre le profit immédiat et l'autonomie de Vallombra.
+
+#### Jardins clos et pavillon des lettres
+
+Les jardins servent aux conversations qui ne doivent pas être entendues depuis la rue. Le pavillon conserve les correspondances avec Gratigna. Un domestique peut y cacher une lettre, mais il ne peut pas en effacer la cire sans éveiller les soupçons.
 
 ### 8. Il Guscio
 
-Le vieux quartier est un lacis de ruelles, d'ateliers, de logements superposés et de caves. Les murs y sont plus anciens que la ville fortifiée ; certaines caves communiquent avec des conduits oubliés. Les habitants s'entraident, mais se méfient de la garde.
+Le vieux quartier est un lacis de ruelles, d'ateliers, de logements superposés et de caves. Les murs y sont plus anciens que la ville fortifiée ; certaines caves communiquent avec des conduits oubliés.
 
-**Responsable officieux :** [Renzo "la Taupe"](/personnages/renzo), informateur local lié au Circolo dei Sussurri et intermédiaire du quartier. **Services :** rumeurs, contact discret, itinéraire de fuite, informations sur les cargaisons et les visiteurs. **Prix :** argent, protection ou service rendu ; Renzo préfère être payé en deux fois. **Complication :** il vend parfois la même information à deux clients.
+#### Boutique de Renzo
+
+[Renzo "la Taupe"](/personnages/renzo) y vend des objets récupérés et reçoit ses informateurs. La cave possède deux sorties : une vers une ruelle et une vers un conduit condamné. C'est le meilleur endroit pour obtenir une rumeur, à condition d'accepter son prix.
+
+#### Lavoir couvert et atelier de couture
+
+[Ada Lavandière](/personnages/ada-lavandaia) travaille au lavoir et connaît les silhouettes qui traversent le quartier avant l'aube. Les couturières occupent la pièce sèche au-dessus et réparent les vêtements des familles pauvres comme ceux des messagers pressés.
+
+#### Maison des Saules, orphelinat du Guscio
+
+Ancien atelier de vannerie reconverti en maison d'accueil : dortoir à l'étage, cuisine commune, salle d'étude et petite cour protégée par un auvent. [Maestra Nives](/personnages/maestra-nives) dirige l'orphelinat avec l'aide de [Pina](/personnages/pina) et [Sandro](/personnages/sandro), tandis que [Timo](/personnages/timo) y passe encore régulièrement.
+
+La maison accueille les enfants sans famille connue, les enfants déplacés par les crues et ceux dont le foyer ne peut momentanément plus les nourrir. Nives tient un registre précis des arrivées et refuse de remettre un enfant à un adulte sans témoin. Les enfants connaissent les bruits du quartier, mais ne sont pas des sources à exploiter sans leur protection.
 
 ### 9. Quai du Bastione
 
-Le quai reçoit les barques de pêche, les barges de vin et les petites embarcations venant des villages en amont. Un hangar communal conserve les cordages, les agrès et les marchandises saisies. La berge est assez sombre pour permettre une rencontre après la tombée de la nuit.
+#### Débarcadère et poste de pesée
 
-**Responsable :** [Nardo Digue](/personnages/nardo-digue), contremaître du Conseil ; les bateliers locaux travaillent sous ses ordres. Baldassare contrôle les saisies et les armes. **Services :** passage fluvial, transport de cargaison, location d'une barque, réparation légère. **Complication :** un manifeste incomplet suffit à bloquer une cargaison pendant plusieurs jours.
+[Nardo Digue](/personnages/nardo-digue) organise les créneaux des barques, la réparation des amarres et l'ordre de déchargement. Le poste de pesée compare les manifestes aux cargaisons ; Bianca intervient lorsqu'un négociant conteste le poids.
+
+#### Hangar communal
+
+Le hangar contient cordages, agrès, outils de réparation et marchandises saisies. Baldassare en conserve la clé pour les armes et les scellés. Une poutre creuse peut dissimuler un petit paquet sans gêner les travaux.
+
+#### Cabane des pêcheurs
+
+Les pêcheurs y rangent filets, paniers et lampes. [Marta Corneclaire](/personnages/marta-corneclaire) y échange parfois des légumes contre du poisson pour les jardins bas. La cabane offre un abri discret, mais tout déplacement nocturne est visible depuis la rive opposée.
 
 ### 10. Fosses et jardins bas
 
-Cette bande de terrain humide fournit légumes, eau de lavage et roseaux. Elle est animée à l'aube, puis presque vide. Les murs extérieurs y sont moins élevés et les traces se lisent bien dans la boue.
+#### Parcelles communes et cabane des outils
 
-**Responsable officieuse :** [Marta Corneclaire](/personnages/marta-corneclaire), médiatrice des jardins bas ; les parcelles dépendent de familles du bourg et du Conseil. **Services :** eau, légumes, roseaux, passage discret vers les faubourgs. **Indices possibles :** empreintes, objets jetés, messages cachés dans les bottes de roseaux. C'est aussi le meilleur endroit pour entrer ou sortir sans passer par la Porta Secca, au risque d'une patrouille.
+[Marta Corneclaire](/personnages/marta-corneclaire) répartit l'eau, arbitre les limites et conserve les pelles, paniers et roseaux dans la cabane commune. Elle reconnaît les traces dans la boue et sait quelle famille a travaillé chaque parcelle.
+
+#### Lavoirs bas
+
+Les bassins servent au linge, au rinçage des filets et à la préparation des légumes. [Ada Lavandière](/personnages/ada-lavandaia) y travaille certains jours et remarque les visiteurs qui ne connaissent pas les horaires. Un message peut être caché dans un paquet de linge, mais l'eau le détruira vite.
+
+#### Passage du mur et abri des roseaux
+
+Un ancien passage de service mène aux faubourgs derrière un rideau de roseaux. Marta en connaît l'entrée ; Nardo peut confirmer l'ancien usage du conduit. C'est le moyen le plus discret de sortir de Vallombra, mais aussi le premier endroit fouillé après une disparition.
 
 ## Services rapides
 
