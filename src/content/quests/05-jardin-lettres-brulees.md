@@ -2,6 +2,7 @@
 title: "Le jardin des lettres brûlées"
 order: 5
 summary: "Découvrir qui manipule un domestique pour effacer les correspondances de Serafina avec Gratigna."
+timing: "Arc III"
 locations: ["Palais Dal Moro", "Pavillon des lettres", "Hautes Maisons"]
 characters: ["serafina-dal-moro", "matteo-riva", "ilaria-conti"]
 ---

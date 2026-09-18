@@ -2,6 +2,7 @@
 title: "L'eau amère des jardins bas"
 order: 3
 summary: "Identifier la source d'une contamination avant qu'elle ne prive Vallombra de ses jardins et de ses réserves."
+timing: "Entre deux missions"
 locations: ["Fosses et jardins bas", "Quai du Bastione", "Place du Marché"]
 characters: ["marta-corneclaire", "savia-mirea", "nardo-digue"]
 ---

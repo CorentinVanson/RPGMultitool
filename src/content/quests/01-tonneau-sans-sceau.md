@@ -2,6 +2,7 @@
 title: "Le tonneau sans sceau"
 order: 1
 summary: "Retrouver un tonneau de lettres commerciales avant qu'un scandale ne fasse basculer trois familles de Vallombra."
+timing: "Arc I"
 locations: ["Les Tinaie", "Quai du Bastione", "Maison du Conseil"]
 characters: ["nerina-vinaccia", "nardo-digue", "bianca-salmastra"]
 ---

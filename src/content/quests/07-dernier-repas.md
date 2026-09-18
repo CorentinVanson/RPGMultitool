@@ -2,6 +2,7 @@
 title: "Le dernier repas de la Maison des voyageurs"
 order: 7
 summary: "Protéger un messager blessé dont le message peut sauver un convoi de nourriture."
+timing: "Avant un déplacement"
 locations: ["Maison des voyageurs", "Écurie", "Porta Secca"]
 characters: ["terenzio-sifflet", "baldassare", "mastro-berto"]
 ---

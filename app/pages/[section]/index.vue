@@ -18,6 +18,7 @@ const filteredEntries = computed(() => activeTag.value === 'Tous' ? characterLis
 <template>
   <section>
     <h1>{{ headings[section] }}</h1>
+    <p v-if="section === 'campagne'"><NuxtLink to="/quetes">Voir les quêtes secondaires</NuxtLink></p>
     <div v-if="section === 'personnages'" :class="$style.filters" aria-label="Filtrer les personnages">
       <span :class="$style.filterLabel">Afficher</span>
       <button type="button" :class="[$style.filter, activeTag === 'Tous' && $style.active]" @click="activeTag = 'Tous'">Tous <small>{{ characterList.length }}</small></button>
@@ -27,6 +28,8 @@ const filteredEntries = computed(() => activeTag.value === 'Tous' ? characterLis
     <ol v-if="section === 'quetes'" :class="$style.questList">
       <li v-for="entry in filteredEntries" :key="entry.id">
         <NuxtLink :to="`/${section}/${entry.id}`">{{ entry.data.title ?? entry.id }}</NuxtLink>
+        <p v-if="entry.data.summary" :class="$style.questSummary">{{ entry.data.summary }}</p>
+        <small v-if="entry.data.timing" :class="$style.questTiming">Moment conseillé : {{ entry.data.timing }}</small>
       </li>
     </ol>
     <ContentGrid v-else :entries="filteredEntries" :section="section" />
@@ -46,4 +49,6 @@ const filteredEntries = computed(() => activeTag.value === 'Tous' ? characterLis
 .questList li { counter-increment: quests; border-bottom: 1px solid #4a3a28; }
 .questList li::before { display: inline-block; width: 2.5rem; color: var(--muted); content: counter(quests, decimal-leading-zero); }
 .questList a { display: inline-block; padding: .8rem 0; font-size: 1.05rem; }
+.questSummary { margin: -.45rem 0 .25rem 2.5rem; color: var(--muted); font-size: .9rem; line-height: 1.4; }
+.questTiming { display: block; margin: 0 0 .8rem 2.5rem; color: var(--accent); font-size: .8rem; }
 </style>

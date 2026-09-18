@@ -2,6 +2,7 @@
 title: "Les filets du Bastione"
 order: 6
 summary: "Résoudre la disparition de barques et découvrir ce que cache une ancienne chaîne de barrage."
+timing: "N'importe quand"
 locations: ["Quai du Bastione", "Cabane des pêcheurs", "Fosses et jardins bas"]
 characters: ["nardo-digue", "marta-corneclaire", "renzo"]
 ---

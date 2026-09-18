@@ -2,6 +2,7 @@
 title: "La Maison des Saules ne dort plus"
 order: 4
 summary: "Protéger la Maison des Saules lorsqu'un fragment de registre attire un intermédiaire dangereux."
+timing: "Après une scène au Guscio"
 locations: ["Maison des Saules", "Il Guscio", "Boutique de Renzo", "Maison du Conseil"]
 characters: ["lina", "maestra-nives", "pina", "sandro", "renzo", "serafina-dal-moro"]
 ---

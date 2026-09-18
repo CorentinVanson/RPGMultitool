@@ -2,6 +2,7 @@
 title: "La cloche qui sonne seule"
 order: 2
 summary: "Comprendre pourquoi la cloche de la Piccola Curia avertit les bateliers chaque nuit."
+timing: "Arc I ou II"
 locations: ["La Piccola Curia", "Quai du Bastione"]
 characters: ["sorella-vesta", "iolanda", "serafina-dal-moro"]
 ---
