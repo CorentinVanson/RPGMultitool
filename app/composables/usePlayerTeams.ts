@@ -5,10 +5,23 @@ export interface PlayerCharacter {
   id: string;
   name: string;
   species: string;
+  family?: string;
   className: string;
   level: string;
   background: string;
   stats: Record<string, string>;
+  image?: string;
+}
+
+export interface TeamNpc {
+  id: string;
+  name: string;
+  family: string;
+  species: string;
+  role: string;
+  description: string;
+  image?: string;
+  createdAt: string;
 }
 
 export interface PlayerTeam {
@@ -16,6 +29,7 @@ export interface PlayerTeam {
   name: string;
   characterIds: string[];
   characters: PlayerCharacter[];
+  customNpcs: TeamNpc[];
   createdAt: string;
 }
 
@@ -46,6 +60,7 @@ function initialize() {
       ...team,
       characterIds: team.characterIds ?? [],
       characters: team.characters ?? [],
+      customNpcs: team.customNpcs ?? [],
     })) as PlayerTeam[];
     const storedActiveId = localStorage.getItem(ACTIVE_TEAM_KEY);
     activeTeamId.value = teams.value.some((team) => team.id === storedActiveId) ? storedActiveId : null;
@@ -83,6 +98,7 @@ export function usePlayerTeams() {
       name: cleanName,
       characterIds: [],
       characters: [],
+      customNpcs: [],
       createdAt: new Date().toISOString(),
     };
     teams.value = [...teams.value, team];
@@ -123,5 +139,21 @@ export function usePlayerTeams() {
     persist();
   }
 
-  return { teams, activeTeamId, activeTeam, selectTeam, addTeam, renameTeam, deleteTeam, addCharacter, deleteCharacter };
+  function addNpc(teamId: string, npc: Omit<TeamNpc, 'id' | 'createdAt'>) {
+    const newNpc: TeamNpc = { ...npc, id: `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`, createdAt: new Date().toISOString() };
+    teams.value = teams.value.map((team) => team.id === teamId
+      ? { ...team, customNpcs: [...team.customNpcs, newNpc] }
+      : team);
+    persist();
+    return newNpc;
+  }
+
+  function deleteNpc(teamId: string, npcId: string) {
+    teams.value = teams.value.map((team) => team.id === teamId
+      ? { ...team, customNpcs: team.customNpcs.filter((npc) => npc.id !== npcId) }
+      : team);
+    persist();
+  }
+
+  return { teams, activeTeamId, activeTeam, selectTeam, addTeam, renameTeam, deleteTeam, addCharacter, deleteCharacter, addNpc, deleteNpc };
 }

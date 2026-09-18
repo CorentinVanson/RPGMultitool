@@ -8,6 +8,8 @@ export interface ProjectionActor {
   collection: 'npcs' | 'enemies';
 }
 
+export const DEFAULT_ACTOR_IMAGE = '/images/default-character.svg';
+
 export interface ProjectionBackground {
   id: string;
   name: string;

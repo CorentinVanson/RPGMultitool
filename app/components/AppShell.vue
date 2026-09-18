@@ -65,9 +65,11 @@ watch(() => route.fullPath, () => { searchQuery.value = ''; });
       <NuxtLink to="/personnages">Personnages</NuxtLink>
       <NuxtLink to="/ennemis">Ennemis</NuxtLink>
       <NuxtLink to="/campagne">Campagne</NuxtLink>
+      <NuxtLink to="/equipe">Équipe</NuxtLink>
       <NuxtLink to="/campo-della-frontiera">Campo</NuxtLink>
       <NuxtLink to="/scene">Scène</NuxtLink>
       <NuxtLink to="/creation-personnage">Personnage</NuxtLink>
+      <NuxtLink to="/creation-npc">Créer un PNJ</NuxtLink>
     </nav>
     <form :class="$style.search" role="search" @submit.prevent>
       <input

@@ -4,17 +4,21 @@ import { useRoute } from '#imports';
 import type { ContentEntry } from '../types/content';
 import { CHARACTER_TAGS, characterEntries, entryName, sectionCollections, useContentCollection } from '../composables/useContent';
 import { useCharacterStatus } from '../composables/useCharacterStatus';
-import { DEFAULT_BACKGROUND, useProjectionController, type ProjectionActor } from '../composables/useProjection';
+import { DEFAULT_ACTOR_IMAGE, DEFAULT_BACKGROUND, useProjectionController, type ProjectionActor } from '../composables/useProjection';
+import { usePlayerTeams } from '../composables/usePlayerTeams';
 import { useCampoFrontiera, CAMPO_CONSTRUCTIONS, campoCandidateSlug } from '../composables/useCampoFrontiera';
 
 const route = useRoute();
 const { state, start } = useProjectionController();
 const { isMarked } = useCharacterStatus();
 const camp = useCampoFrontiera();
+const { activeTeam } = usePlayerTeams();
+const projectionTags = [...CHARACTER_TAGS, 'Personnages joueurs'] as const;
+type ProjectionTag = typeof projectionTags[number];
 const open = ref(false);
 const showCatalog = ref(false);
 const catalogTab = ref<'characters' | 'locations'>('characters');
-const activeCharacterTag = ref<typeof CHARACTER_TAGS[number]>('Personnage principal');
+const activeCharacterTag = ref<ProjectionTag>('Personnage principal');
 const catalogSearch = ref('');
 const isCatalogSearching = computed(() => Boolean(searchable(catalogSearch.value).trim()));
 
@@ -27,6 +31,27 @@ const { data: npcs } = useContentCollection('npcs');
 const { data: enemies } = useContentCollection('enemies');
 
 const withImage = (entries: ContentEntry[] | null | undefined) => (entries ?? []).filter((entry) => Boolean(entry.data.image));
+const teamPlayerActors = computed<ProjectionActor[]>(() => {
+  const team = activeTeam.value;
+  if (!team) return [];
+  return team.characters.map((character) => ({
+    id: `team-player:${team.id}:${character.id}`,
+    name: character.name,
+    image: character.image || DEFAULT_ACTOR_IMAGE,
+    collection: 'npcs' as const,
+  }));
+});
+const teamNpcActors = computed<ProjectionActor[]>(() => {
+  const team = activeTeam.value;
+  if (!team) return [];
+  return team.customNpcs.map((npc) => ({
+    id: `team-npc:${team.id}:${npc.id}`,
+    name: npc.name,
+    image: npc.image || DEFAULT_ACTOR_IMAGE,
+    collection: 'npcs' as const,
+  }));
+});
+const teamActors = computed(() => [...teamPlayerActors.value, ...teamNpcActors.value]);
 
 function searchable(value: unknown): string {
   return String(value ?? '')
@@ -81,17 +106,20 @@ const campEmployeeActors = computed<ProjectionActor[]>(() => {
   }
   return Array.from(seen.values());
 });
-const characterActorsByTag = computed<Record<typeof CHARACTER_TAGS[number], ProjectionActor[]>>(() => {
-  const groups: Record<typeof CHARACTER_TAGS[number], ProjectionActor[]> = {
+const characterActorsByTag = computed<Record<ProjectionTag, ProjectionActor[]>>(() => {
+  const groups: Record<ProjectionTag, ProjectionActor[]> = {
     'Personnage principal': [],
     'Employé du camp': [],
     'Personnage secondaire': [],
+    'Personnages joueurs': [],
   };
   for (const entry of withImage(characterEntries(npcs.value ?? []))) {
     const tag = entry.data.tags?.find((item: string) => CHARACTER_TAGS.includes(item as typeof CHARACTER_TAGS[number])) as typeof CHARACTER_TAGS[number] | undefined;
     if (!tag) continue;
     groups[tag].push(toActor(entry, 'npcs'));
   }
+  groups['Personnage secondaire'].push(...teamNpcActors.value);
+  groups['Personnages joueurs'].push(...teamPlayerActors.value);
   const employeeIds = new Set(groups['Employé du camp'].map((actor) => actor.id));
   for (const actor of campEmployeeActors.value) {
     if (employeeIds.has(actor.id)) continue;
@@ -110,6 +138,11 @@ const searchableCharacterActors = computed<ProjectionActor[]>(() => {
   for (const entry of withImage(characterEntries(npcs.value ?? []))) {
     if (!matchesSearch([entryName(entry), entry.data.role, entry.data.location, entry.data.summary], catalogSearch.value)) continue;
     const actor = toActor(entry, 'npcs');
+    actors.push(actor);
+    seen.add(actor.id);
+  }
+  for (const actor of teamActors.value) {
+    if (!matchesSearch([actor.name], catalogSearch.value)) continue;
     actors.push(actor);
     seen.add(actor.id);
   }
@@ -409,6 +442,21 @@ watch(isCatalogSearching, (value) => {
           </template>
 
           <template v-else>
+            <template v-if="teamActors.length">
+              <h4 :class="$style.subtitle">Équipe active</h4>
+              <p :class="$style.hint">Joueurs et PNJ propres à {{ activeTeam?.name }}.</p>
+              <div :class="$style.chips">
+                <button
+                  v-for="actor in teamActors"
+                  :key="actor.id"
+                  type="button"
+                  :class="[$style.chip, isOnStage(actor) && $style.active, state.speakerActorId === actor.id && $style.speaker]"
+                  @click="toggleActor(actor)"
+                >
+                  <img :src="actor.image" :alt="actor.name" :class="$style.chipImage">{{ actor.name }}
+                </button>
+              </div>
+            </template>
             <div :class="$style.tabs" role="tablist" aria-label="Catalogue de projection">
               <button type="button" :class="[$style.tab, catalogTab === 'characters' && $style.active]" :aria-selected="catalogTab === 'characters'" role="tab" @click="catalogTab = 'characters'">Personnages</button>
               <button type="button" :class="[$style.tab, catalogTab === 'locations' && $style.active]" :aria-selected="catalogTab === 'locations'" role="tab" @click="catalogTab = 'locations'">Décors</button>
@@ -434,7 +482,7 @@ watch(isCatalogSearching, (value) => {
                 <span :class="$style.filterLabel">Catégorie</span>
                 <div :class="$style.filters" aria-label="Catégories de personnages">
                   <button
-                    v-for="tag in CHARACTER_TAGS"
+                    v-for="tag in projectionTags"
                     :key="tag"
                     type="button"
                     :class="[$style.filter, activeCharacterTag === tag && $style.active]"

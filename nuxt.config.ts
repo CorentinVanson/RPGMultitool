@@ -4,6 +4,11 @@ export default defineNuxtConfig({
   compatibilityDate: '2026-08-26',
   devtools: { enabled: false },
   modules: ['@vite-pwa/nuxt'],
+  vite: {
+    server: {
+      watch: process.platform === 'win32' ? { usePolling: true, interval: 250 } : undefined,
+    },
+  },
   app: {
     head: {
       title: 'RPGMultitool — Les Marches',
