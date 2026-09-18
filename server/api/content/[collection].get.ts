@@ -12,8 +12,9 @@ export default defineEventHandler(async (event) => {
     throw createError({ statusCode: 404, statusMessage: 'Collection introuvable' });
   }
 
-  const stored = await readDocument(`content:${collection}`);
-  const entries = sortByOrder(stored ? JSON.parse(stored.payload) : await getCollection(collection));
+  const localEntries = await getCollection(collection);
+  const stored = process.env.NODE_ENV === 'production' ? await readDocument(`content:${collection}`) : null;
+  const entries = sortByOrder(stored ? JSON.parse(stored.payload) : localEntries);
 
   return Promise.all(entries.map(async (entry) => ({ ...entry, bodyHtml: await marked.parse(entry.body) })));
 });
