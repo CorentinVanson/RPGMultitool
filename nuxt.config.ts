@@ -23,7 +23,7 @@ export default defineNuxtConfig({
     prerender: {
       crawlLinks: true,
       routes: [
-        '/', '/projection', '/campo-della-frontiera', '/candidatures-campo', '/scene', '/creation-personnage',
+        '/', '/projection', '/campo-della-frontiera', '/candidatures-campo', '/scene', '/creation-personnage', '/debug-bdd',
       ],
       failOnError: false,
     },

@@ -70,6 +70,7 @@ watch(() => route.fullPath, () => { searchQuery.value = ''; });
       <NuxtLink to="/scene">Scène</NuxtLink>
       <NuxtLink to="/creation-personnage">Personnage</NuxtLink>
       <NuxtLink to="/creation-npc">Créer un PNJ</NuxtLink>
+      <NuxtLink to="/debug-bdd">Debug BDD</NuxtLink>
     </nav>
     <form :class="$style.search" role="search" @submit.prevent>
       <input
