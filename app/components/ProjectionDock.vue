@@ -7,6 +7,7 @@ import { useCharacterStatus } from '../composables/useCharacterStatus';
 import { DEFAULT_ACTOR_IMAGE, DEFAULT_BACKGROUND, useProjectionController, type ProjectionActor } from '../composables/useProjection';
 import { usePlayerTeams } from '../composables/usePlayerTeams';
 import { useCampoFrontiera, CAMPO_CONSTRUCTIONS, campoCandidateSlug } from '../composables/useCampoFrontiera';
+import { useClickOutside } from '../composables/useClickOutside';
 
 const route = useRoute();
 const { state, start } = useProjectionController();
@@ -16,11 +17,14 @@ const { activeTeam } = usePlayerTeams();
 const projectionTags = [...CHARACTER_TAGS, 'Personnages joueurs'] as const;
 type ProjectionTag = typeof projectionTags[number];
 const open = ref(false);
+const rootElement = ref<HTMLElement | null>(null);
 const showCatalog = ref(false);
 const catalogTab = ref<'characters' | 'locations'>('characters');
 const activeCharacterTag = ref<ProjectionTag>('Personnage principal');
 const catalogSearch = ref('');
 const isCatalogSearching = computed(() => Boolean(searchable(catalogSearch.value).trim()));
+
+useClickOutside(rootElement, () => { open.value = false; });
 
 onMounted(start);
 
@@ -297,7 +301,7 @@ watch(isCatalogSearching, (value) => {
 </script>
 
 <template>
-  <div>
+  <div ref="rootElement">
     <div :class="[$style.fabRow, open && $style.dockOpen]">
       <button type="button" :class="$style.preview" title="Aperçu de l’écran de projection" @click="open = true">
         <ProjectionStage :state="state" compact />

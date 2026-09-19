@@ -1,14 +1,18 @@
 <script setup lang="ts">
 import { computed, nextTick, ref, watch } from 'vue';
 import { useSessionNotes } from '../composables/useSessionNotes';
+import { useClickOutside } from '../composables/useClickOutside';
 
 const { notes, history, linkedHistory, activeTeam, saveNote, updateNote, deleteNote, clearHistory } = useSessionNotes();
 const open = ref(false);
+const rootElement = ref<HTMLElement | null>(null);
 const historyElement = ref<HTMLElement | null>(null);
 const editingId = ref<string | null>(null);
 const editingText = ref('');
 const hasNotes = computed(() => Boolean(notes.value.trim() || history.value.length || linkedHistory.value.length));
 const orderedHistory = computed(() => [...history.value, ...linkedHistory.value].sort((left, right) => left.createdAt.localeCompare(right.createdAt)));
+
+useClickOutside(rootElement, () => { open.value = false; });
 
 function shortText(value: string, limit = 80): string {
   return value.length > limit ? `${value.slice(0, limit - 1).trimEnd()}…` : value;
@@ -56,7 +60,7 @@ watch([open, history], scrollHistoryToBottom, { deep: true });
 </script>
 
 <template>
-  <div :class="[$style.wrapper, open && $style.open]">
+  <div ref="rootElement" :class="[$style.wrapper, open && $style.open]">
     <button type="button" :class="$style.fab" :aria-expanded="open" @click="open = !open">
       📝 Notes<span v-if="hasNotes" :class="$style.badge">{{ history.length }}</span>
     </button>

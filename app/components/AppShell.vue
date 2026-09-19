@@ -105,6 +105,7 @@ watch(() => route.fullPath, () => { searchQuery.value = ''; });
   <main :class="$style.main"><LinkedNotes><slot /></LinkedNotes></main>
   <SessionNotesPanel />
   <ProjectionDock />
+  <MusicDock />
   <footer :class="$style.footer">Outil de maîtrise pour la campagne Historia — usage personnel, non affilié à l’éditeur.</footer>
 </template>
 

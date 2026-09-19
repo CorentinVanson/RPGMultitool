@@ -58,6 +58,11 @@ export default defineNuxtConfig({
           handler: 'CacheFirst',
           options: { cacheName: 'rpg-images', expiration: { maxEntries: 200 } },
         },
+        {
+          urlPattern: ({ url }) => url.pathname.startsWith('/audio/'),
+          handler: 'CacheFirst',
+          options: { cacheName: 'rpg-audio', expiration: { maxEntries: 60 } },
+        },
       ],
     },
     client: { installPrompt: true },

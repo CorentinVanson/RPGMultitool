@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, nextTick, onMounted, onUpdated, ref, watch } from 'vue';
+import { computed, nextTick, onBeforeUnmount, onMounted, onUpdated, ref, watch } from 'vue';
 import { useRoute } from '#imports';
 import { usePlayerTeams } from '../composables/usePlayerTeams';
 import { useSessionNotes } from '../composables/useSessionNotes';
@@ -9,6 +9,7 @@ const route = useRoute();
 const { activeTeamId } = usePlayerTeams();
 const { linkedHistory, saveLinkedNote, deleteNote } = useSessionNotes();
 const content = ref<HTMLElement | null>(null);
+const editorElement = ref<HTMLElement | null>(null);
 const activeTarget = ref<string | null>(null);
 const activeNoteId = ref<string | null>(null);
 const draft = ref('');
@@ -135,7 +136,9 @@ onMounted(async () => {
   if (remote) localStorage.setItem(storageKey(), remote);
   loadNotes();
   refreshActions(true);
+  document.addEventListener('mousedown', handleDocumentClick);
 });
+onBeforeUnmount(() => document.removeEventListener('mousedown', handleDocumentClick));
 onUpdated(refreshActions);
 watch([() => route.path, activeTeamId], () => {
   loadNotes();
@@ -143,12 +146,18 @@ watch([() => route.path, activeTeamId], () => {
   activeNoteId.value = null;
   refreshActions(true);
 });
+
+function handleDocumentClick(event: MouseEvent) {
+  if (!activeTarget.value || !(event.target instanceof HTMLElement)) return;
+  if (event.target.closest('[data-linked-note-action]')) return;
+  if (editorElement.value && !editorElement.value.contains(event.target)) closeNote();
+}
 </script>
 
 <template>
   <div :class="$style.root">
     <div ref="content"><slot /></div>
-    <aside v-if="activeTarget" :class="$style.editor" aria-label="Note liée">
+    <aside v-if="activeTarget" ref="editorElement" :class="$style.editor" aria-label="Note liée">
       <header :class="$style.editorHeader">
         <strong>{{ activeNoteId ? 'Modifier la note liée' : 'Notes liées à ce texte' }}</strong>
         <button type="button" :class="$style.close" title="Fermer" @click="closeNote">✕</button>
