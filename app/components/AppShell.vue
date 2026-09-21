@@ -106,6 +106,7 @@ watch(() => route.fullPath, () => { searchQuery.value = ''; });
   <SessionNotesPanel />
   <ProjectionDock />
   <MusicDock />
+  <LinkPreview />
   <footer :class="$style.footer">Outil de maîtrise pour la campagne Historia — usage personnel, non affilié à l’éditeur.</footer>
 </template>
 
