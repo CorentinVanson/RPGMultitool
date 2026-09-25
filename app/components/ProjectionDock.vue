@@ -234,7 +234,17 @@ function toggleContext() {
 }
 
 function openProjection() {
-  window.open('/projection', 'rpg-projection', 'popup=yes,width=1280,height=720')?.focus();
+  // Certaines installations Chrome (notamment sous Windows, via stratégie d'entreprise) bloquent
+  // silencieusement les fenêtres « popup » sans erreur console, mais autorisent un nouvel onglet.
+  let win = window.open('/projection', 'rpg-projection', 'popup=yes,width=1280,height=720');
+  if (!win || win.closed) {
+    win = window.open('/projection', 'rpg-projection');
+  }
+  if (win) {
+    win.focus();
+  } else {
+    window.alert('La fenêtre de projection n’a pas pu s’ouvrir : vérifiez que les popups sont autorisés pour ce site dans votre navigateur.');
+  }
 }
 
 function setBackground(entry: ContentEntry) {
