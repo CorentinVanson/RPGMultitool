@@ -14,8 +14,24 @@ export interface ProjectionBackground {
   id: string;
   name: string;
   image: string;
+  fit?: 'cover' | 'contain';
   planNodeIds?: string[];
 }
+
+export const PROJECTION_MAPS = {
+  vallombra: {
+    id: 'map-vallombra',
+    name: 'Plan de Vallombra',
+    image: '/images/locations/vallombra-map.svg',
+    fit: 'contain',
+  },
+  world: {
+    id: 'map-vesteria',
+    name: 'Carte du monde',
+    image: '/images/map.svg',
+    fit: 'contain',
+  },
+} satisfies Record<string, ProjectionBackground>;
 
 export interface ProjectionState {
   background: ProjectionBackground | null;

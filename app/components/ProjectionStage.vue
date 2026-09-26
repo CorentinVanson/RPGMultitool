@@ -36,9 +36,16 @@ const farActors = computed(() => {
   return remainingActors.value.slice(remainingActors.value.length - farCount);
 });
 const hasBackRow = computed(() => backActors.value.length > 0 || farActors.value.length > 0);
-const backgroundStyle = computed(() => (props.state.background && props.state.background.id !== 'campo-frontiera-plan'
-  ? { backgroundImage: `url("${props.state.background.image}")` }
-  : {}));
+const backgroundStyle = computed(() => {
+  const background = props.state.background;
+  if (!background || background.id === 'campo-frontiera-plan') return {};
+  return {
+    backgroundImage: `url("${background.image}")`,
+    backgroundSize: background.fit ?? 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+  };
+});
 const showCampStats = computed(() => props.state.background?.id === 'campo-frontiera-plan' && Boolean(props.state.campStatsCaption));
 </script>
 

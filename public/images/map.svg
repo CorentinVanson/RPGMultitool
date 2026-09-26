@@ -6,10 +6,10 @@
 
   <!-- Mer au nord-ouest -->
   <path d="M0,0 L260,0 L180,90 L0,140 Z" fill="#7fa8c9"/>
-  <text x="60" y="60" font-size="16" fill="#274a63">Mer</text>
+  <text x="60" y="75" font-size="16" fill="#274a63">Mer</text>
 
   <!-- Rivière (affluent du Bastione) -->
-  <path d="M180,90 C260,150 300,220 340,300 C370,360 380,420 360,470" stroke="#5f8fb8" stroke-width="8" fill="none"/>
+  <path d="M180,90 C260,150 300,220 340,300 C310,320 245,350 260,350 C275,350 313,365 313,380 C313,405 285,445 250,470" stroke="#5f8fb8" stroke-width="8" fill="none"/>
 
   <!-- Montagnes (Castri, nord) -->
   <polygon points="380,20 410,70 350,70" fill="#8a8a78"/>
@@ -22,7 +22,7 @@
   <text x="800" y="140" font-size="16" fill="#3a4a2a" text-anchor="middle">Fossa Verde</text>
 
   <!-- Riarsa (désert, sud) -->
-  <text x="450" y="560" font-size="20" fill="#7a5a2a" text-anchor="middle">LA RIARSA</text>
+  <text x="450" y="575" font-size="20" fill="#7a5a2a" text-anchor="middle">LA RIARSA</text>
 
   <!-- Route principale -->
   <path d="M300,260 L340,300 L330,380 L360,470" stroke="#7a5a2a" stroke-width="3" stroke-dasharray="6,6" fill="none"/>

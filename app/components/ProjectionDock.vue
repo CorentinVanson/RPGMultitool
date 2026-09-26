@@ -4,7 +4,7 @@ import { useRoute } from '#imports';
 import type { ContentEntry } from '../types/content';
 import { CHARACTER_TAGS, characterEntries, entryName, sectionCollections, useContentCollection } from '../composables/useContent';
 import { useCharacterStatus } from '../composables/useCharacterStatus';
-import { DEFAULT_ACTOR_IMAGE, DEFAULT_BACKGROUND, useProjectionController, type ProjectionActor } from '../composables/useProjection';
+import { DEFAULT_ACTOR_IMAGE, DEFAULT_BACKGROUND, PROJECTION_MAPS, useProjectionController, type ProjectionActor } from '../composables/useProjection';
 import { usePlayerTeams } from '../composables/usePlayerTeams';
 import { useCampoFrontiera, CAMPO_CONSTRUCTIONS, campoCandidateSlug } from '../composables/useCampoFrontiera';
 import { useClickOutside } from '../composables/useClickOutside';
@@ -88,7 +88,11 @@ const toActor = (entry: ContentEntry, collection: 'npcs' | 'enemies'): Projectio
   collection,
 });
 
-const availableLocations = computed(() => withImage(locations.value));
+const mapEntries: ContentEntry[] = Object.values(PROJECTION_MAPS).map((map) => ({
+  id: map.id,
+  data: { name: map.name, image: map.image, fit: map.fit, type: 'Carte', summary: map.name },
+}));
+const availableLocations = computed(() => [...withImage(locations.value), ...mapEntries]);
 const searchableLocations = computed(() => availableLocations.value.filter((entry) => matchesSearch([
   entryName(entry),
   entry.data.type,
@@ -249,7 +253,12 @@ function openProjection() {
 }
 
 function setBackground(entry: ContentEntry) {
-  state.value.background = { id: entry.id, name: entryName(entry), image: String(entry.data.image) };
+  state.value.background = {
+    id: entry.id,
+    name: entryName(entry),
+    image: String(entry.data.image),
+    ...(entry.data.fit === 'contain' ? { fit: 'contain' as const } : {}),
+  };
 }
 
 function resetDefaultScreen() {

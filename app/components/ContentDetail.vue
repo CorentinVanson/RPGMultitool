@@ -2,6 +2,7 @@
 import { computed } from 'vue';
 import { useContentCollection } from '../composables/useContent';
 import { characterStatusId, useCharacterStatus } from '../composables/useCharacterStatus';
+import { PROJECTION_MAPS, useProjectionController } from '../composables/useProjection';
 import type { ContentEntry } from '../types/content';
 import type { ContentDetail as ContentDetailEntry } from '../types/content';
 
@@ -11,12 +12,18 @@ const { data: quests } = useContentCollection('quests');
 const { data: npcs } = useContentCollection('npcs');
 const { data: enemies } = useContentCollection('enemies');
 const { isMarked, toggleMarked } = useCharacterStatus();
+const { state: projectionState } = useProjectionController();
 const isCharacter = computed(() => props.section === 'personnages' || props.section === 'ennemis');
 const statusId = computed(() => characterStatusId(props.section === 'ennemis' ? 'enemies' : 'npcs', props.entry.id));
 const isMarkedCharacter = computed(() => isCharacter.value && isMarked(statusId.value));
 const relatedQuests = computed(() => props.section === 'personnages'
   ? (quests.value ?? []).filter((quest) => quest.data.characters?.includes(props.entry.id))
   : []);
+const hasVallombraPlan = computed(() => props.section === 'lieux' && props.entry.id === 'vallombra');
+
+function projectVallombraPlan() {
+  projectionState.value.background = { ...PROJECTION_MAPS.vallombra };
+}
 type CharacterLink = { name: string; slug: string; path: string; statusId: string };
 
 function escapeRegExp(value: string): string {
@@ -98,6 +105,10 @@ const renderedBody = computed(() => {
       <thead><tr><th v-for="key in statKeys" :key="key">{{ key.toUpperCase() }}</th></tr></thead>
       <tbody><tr><td v-for="key in statKeys" :key="key">{{ entry.data.stats[key] }}</td></tr></tbody>
     </table>
+    <div v-if="hasVallombraPlan" :class="$style.mapProjection">
+      <strong>Plan de Vallombra</strong>
+      <button type="button" @click="projectVallombraPlan">Projeter ce plan</button>
+    </div>
     <div :class="$style.markdown" v-html="renderedBody" />
   </article>
 </template>
@@ -114,5 +125,7 @@ td, th { border: 1px solid #4a3a28; padding: .4rem .6rem; text-align: left; }
 .marked { text-decoration: line-through; text-decoration-thickness: .12em; opacity: .72; }
 .statusToggle { display: inline-flex; align-items: center; gap: .45rem; margin: .25rem 0 1rem; color: var(--muted); cursor: pointer; }
 .statusToggle input { accent-color: var(--accent); }
+.mapProjection { display: flex; align-items: center; justify-content: space-between; gap: .75rem; margin: 1rem 0; padding: .75rem 1rem; border: 1px solid #4a3a28; border-left: 3px solid var(--accent); border-radius: 4px; background: var(--panel); }
+.mapProjection button { background: var(--accent); color: #1c150f; border: 1px solid var(--accent); border-radius: 4px; padding: .45rem .7rem; font: inherit; font-size: .85rem; font-weight: bold; cursor: pointer; }
 .markdown :global(.character-marked) { text-decoration: line-through; text-decoration-thickness: .1em; opacity: .72; }
 </style>

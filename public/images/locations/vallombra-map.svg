@@ -14,6 +14,10 @@
     <style>
       .label { font: 700 20px Georgia, serif; fill: #342b22; text-anchor: middle; }
       .small { font: 600 15px Georgia, serif; fill: #493c2d; text-anchor: middle; }
+      .legend-text { text-anchor: start; }
+      .legend-title { font: 700 14px Georgia, serif; fill: #493c2d; text-anchor: start; }
+      .legend-item { font: 600 12px Georgia, serif; fill: #493c2d; text-anchor: start; }
+      .road-label { font: 600 10px Georgia, serif; fill: #493c2d; text-anchor: start; }
       .number { font: 700 20px Georgia, serif; fill: #fff8e8; text-anchor: middle; dominant-baseline: central; }
       .building { fill: #bd7950; stroke: #633f31; stroke-width: 3; }
       .road { fill: none; stroke: #b9905a; stroke-width: 38; stroke-linecap: round; }
@@ -30,7 +34,7 @@
   <path d="M570 800 C575 690 585 635 610 575 S650 480 700 425 S790 350 920 315" class="road-line"/>
   <path d="M1010 325 C1080 300 1120 280 1200 260" class="road"/>
   <path d="M1010 325 C1080 300 1120 280 1200 260" class="road-line"/>
-  <text x="1040" y="290" class="small" transform="rotate(-12 1040 290)">route de Gratigna</text>
+  <text x="1110" y="300" class="road-label" transform="rotate(-12 1110 300)">route de Gratigna</text>
   <text x="540" y="735" class="small" transform="rotate(-68 540 735)">route de la Riarsa</text>
 
   <path d="M420 150 L1030 150 L1080 215 L1080 570 L940 650 L530 650 L400 550 L400 230Z" fill="#caa875" stroke="#563e2e" stroke-width="18" filter="url(#shadow)"/>
@@ -38,20 +42,18 @@
   <path d="M425 375 L1058 375 M735 165 L735 625 M530 175 L530 370 M920 375 L920 625" stroke="#a27b51" stroke-width="7" opacity=".75"/>
   <path d="M485 300 L1015 300 M485 455 L1015 455" stroke="#c49a63" stroke-width="16" opacity=".65"/>
 
-  <g class="building" filter="url(#shadow)"><rect x="450" y="205" width="125" height="80" rx="5"/><rect x="605" y="205" width="105" height="80" rx="5"/><rect x="770" y="205" width="160" height="80" rx="5"/><rect x="950" y="205" width="85" height="80" rx="5"/></g>
-  <g class="building" filter="url(#shadow)"><rect x="465" y="395" width="145" height="75" rx="5"/><rect x="650" y="395" width="135" height="75" rx="5"/><rect x="825" y="395" width="125" height="75" rx="5"/><rect x="975" y="395" width="65" height="75" rx="5"/></g>
-  <g class="building" filter="url(#shadow)"><rect x="455" y="505" width="110" height="85" rx="5"/><rect x="595" y="505" width="120" height="85" rx="5"/><rect x="750" y="505" width="145" height="85" rx="5"/></g>
+  <g class="building" filter="url(#shadow)"><rect x="450" y="205" width="125" height="80" rx="5"/><rect x="605" y="205" width="105" height="80" rx="5"/><rect x="735" y="205" width="120" height="80" rx="5"/></g>
+  <g class="building" filter="url(#shadow)"><rect x="455" y="505" width="110" height="85" rx="5"/><rect x="595" y="505" width="120" height="85" rx="5"/><rect x="750" y="505" width="145" height="85" rx="5"/><rect x="920" y="505" width="120" height="85" rx="5"/></g>
 
-  <g fill="#805044" stroke="#4d332c" stroke-width="3"><circle cx="485" cy="245" r="19"/><circle cx="650" cy="245" r="19"/><circle cx="820" cy="245" r="19"/><circle cx="990" cy="245" r="19"/><circle cx="520" cy="435" r="19"/><circle cx="715" cy="435" r="19"/><circle cx="885" cy="435" r="19"/><circle cx="1008" cy="435" r="19"/><circle cx="505" cy="545" r="19"/><circle cx="655" cy="545" r="19"/><circle cx="820" cy="545" r="19"/></g>
-  <g><text x="485" y="245" class="number">7</text><text x="650" y="245" class="number">6</text><text x="820" y="245" class="number">5</text><text x="990" y="245" class="number">4</text><text x="520" y="435" class="number">2</text><text x="715" y="435" class="number">3</text><text x="885" y="435" class="number">8</text><text x="1008" y="435" class="number">9</text><text x="505" y="545" class="number">1</text><text x="655" y="545" class="number">10</text></g>
+  <g filter="url(#shadow)"><rect x="245" y="405" width="185" height="54" rx="4" fill="#9b6848" stroke="#563e2e" stroke-width="5"/><path d="M265 411V453 M290 411V453 M315 411V453 M340 411V453 M365 411V453 M390 411V453" stroke="#d2a06b" stroke-width="3" opacity=".8"/></g>
+  <rect x="1009" y="275" width="100" height="60" rx="5" class="building" filter="url(#shadow)"/>
+  <g fill="#805044" stroke="#4d332c" stroke-width="3"><circle cx="485" cy="245" r="19"/><circle cx="650" cy="245" r="19"/><circle cx="1059" cy="305" r="19"/><circle cx="795" cy="245" r="19"/><circle cx="980" cy="547" r="19"/><circle cx="735" cy="415" r="19"/><circle cx="330" cy="432" r="19"/><circle cx="505" cy="545" r="19"/><circle cx="655" cy="545" r="19"/><circle cx="820" cy="545" r="19"/></g>
+  <g><text x="485" y="245" class="number">7</text><text x="650" y="245" class="number">4</text><text x="1059" y="305" class="number">1</text><text x="795" y="245" class="number">5</text><text x="980" y="547" class="number">6</text><text x="735" y="415" class="number">2</text><text x="330" y="432" class="number">9</text><text x="505" y="545" class="number">3</text><text x="655" y="545" class="number">10</text><text x="820" y="545" class="number">8</text></g>
 
   <text x="720" y="115" class="label">Vallombra</text>
   <text x="720" y="138" class="small">bourg fortifié des Marches de Gratigna</text>
-  <text x="450" y="350" class="small">Il Guscio</text>
-  <text x="825" y="350" class="small">place du Marché</text>
-  <text x="735" y="690" class="small">jardins bas et faubourgs</text>
 
   <g transform="translate(1080 65)"><path d="M0 42 L0 0 L-10 15 M0 0 L10 15" fill="none" stroke="#493c2d" stroke-width="4"/><text x="0" y="65" class="small">N</text></g>
-  <g transform="translate(48 690)"><rect width="300" height="74" rx="8" fill="#f6ecd5" stroke="#72553b" stroke-width="3"/><text x="18" y="27" class="small" text-anchor="start">1-10 : lieux principaux</text><circle cx="24" cy="51" r="9" fill="#805044"/><text x="45" y="57" class="small" text-anchor="start">bâtiment remarquable</text></g>
+  <g transform="translate(30 580)"><rect width="400" height="205" rx="8" fill="#f6ecd5" stroke="#72553b" stroke-width="3"/><text x="14" y="23" class="legend-title">Lieux de Vallombra</text><text x="14" y="49" class="legend-item">1. Porta Secca et corps de garde</text><text x="14" y="76" class="legend-item">2. Place du Marché</text><text x="14" y="103" class="legend-item">3. Maison du Conseil</text><text x="14" y="130" class="legend-item">4. Les Tinaie</text><text x="14" y="157" class="legend-item">5. La Piccola Curia</text><text x="210" y="76" class="legend-item">6. Maison des voyageurs</text><text x="210" y="103" class="legend-item">7. Les Hautes Maisons</text><text x="210" y="130" class="legend-item">8. Il Guscio</text><text x="210" y="157" class="legend-item">9. Quai du Bastione</text><text x="210" y="184" class="legend-item">10. Fosses et jardins bas</text></g>
   <text x="1030" y="744" class="small">Illustration de campagne</text>
 </svg>
