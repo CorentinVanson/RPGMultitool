@@ -109,6 +109,7 @@ Serafina engage les PJ comme intermédiaires. Elle ne veut pas que l'enquête so
 | [Ilaria Conti](/personnages/ilaria-conti) | Rival politique, adversaire économique | Extrême : c'est une lutte pour la survie |
 | [Aldo Vestraro](/personnages/aldo-vestraro) | Supérieur politique nominal, père rival | Modérée : respectueux mais distant |
 | Matteo Riva (Conseiller) | Allié direct, elle le contrôle par la peur | Modérée : méfiance mutuelle |
+| [Taddeo Passero](/personnages/taddeo-passero) | Intendant de confiance, prêté aux PJ pour coordonner les travaux du Campo | Basse : elle compte sur sa loyauté et son tact |
 
 ## Notes MJ
 

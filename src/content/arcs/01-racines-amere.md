@@ -41,7 +41,7 @@ Confrontation finale de l'arc : selon les preuves r\u00e9colt\u00e9es, les PJ pe
 
 ## Base de campagne : le Campo della Frontiera
 
-Des leur arrivee, les PJ recoivent de Serafina la cle et la lettre de mission du [Campo della Frontiera](/lieux/campo-della-frontiera), un ancien camp militaire abandonne situe en territoire vallombrien, a proximite de la frontiere de Gratigna. Ils devront le remettre en etat au fil de la campagne ; cette base devient un refuge, un poste d'observation et, si elle est bien developpee, une cible possible pour l'assaut final.
+Des leur arrivee, les PJ recoivent de Serafina la cle et la lettre de mission du [Campo della Frontiera](/lieux/campo-della-frontiera), un ancien camp militaire abandonne situe en territoire vallombrien, a proximite de la frontiere de Gratigna. Elle leur presente aussi son intendant, [Taddeo Passero](/personnages/taddeo-passero), qu'elle prete au groupe pour organiser et superviser les travaux de remise en etat. Taddeo coordonne les equipes et les materiaux ; les ouvriers du camp restent responsables des taches manuelles. La base devient un refuge, un poste d'observation et, si elle est bien developpee, une cible possible pour l'assaut final.
 
 ## Dossier de maitrise
 
@@ -80,6 +80,12 @@ La saulaie offre une scene nocturne tendue : bruit d'eau, silhouettes entre les 
 Elle veut sauver Vallombra sans donner a Gratigna une raison d'intervenir. Elle parle en phrases courtes et ne promet jamais ce qu'elle ne peut payer.
 
 > « Une ville ne meurt pas quand ses murs tombent. Elle meurt quand ses habitants cessent de croire que demain leur appartient. »
+
+#### [Taddeo Passero](/personnages/taddeo-passero)
+
+Intendant de Serafina, il accueille les PJ a la foire aupres de sa patronne. Sociable et plein d'esprit, il se met a leur disposition pour planifier et superviser les travaux du Campo ; pour tout geste artisanal ou toute inscription, il s'appuie sur les ouvriers et aides du camp.
+
+> « Serafina vous confie les cles. Moi, je vais tacher que personne ne construise la toiture avant les murs. »
 
 #### [Renzo « la Taupe »](/personnages/renzo)
 
@@ -171,12 +177,15 @@ Ces fiches sont concues pour 4 heures et donnent, pour chaque scene, les PNJ pre
 
 [Serafina Dal Moro](/personnages/serafina-dal-moro) les observe depuis le balcon de la Maison du Conseil pendant cette scene.
 
+Son intendant, [Taddeo Passero](/personnages/taddeo-passero), se tient aupres d'elle. Il se presente avec naturel aux PJ, glisse une plaisanterie sur l'agitation de la foire et leur demande ce qu'ils savent deja du Campo. C'est leur premiere rencontre avec lui, avant meme qu'ils ne recoivent officiellement les cles du camp.
+
 **0:25-0:40 — Mission.** Serafina prend les PJ a part dans une salle attenante. Elle donne un briefing complet et concret, a lire ou paraphraser point par point :
 - **Les faits** : depuis un mois, trois incidents distincts — un tonneau perce dans le cellier Riva, un petit incendie maitrise dans un entrepot de transit, une cargaison volee sur la route de Gratigna il y a dix jours.
 - **L'enjeu** : la recolte doit partir vers Gratigna dans trois semaines. Si les pertes continuent a ce rythme, Vallombra ne pourra pas payer ses taxes a Gratigna cette annee, ce qui renforcerait la mainmise du Prince Aldo Vestraro et de la Compagnia del Tralcio sur la cite.
 - **Ses soupcons** : elle pense a la Compagnia del Tralcio (interet economique evident), mais refuse d'accuser sans preuve solide — un faux pas diplomatique avec Gratigna serait pire que les pertes actuelles. Elle ajoute, plus bas : « Et je ne suis pas certaine que tout le monde, au Conseil, souhaite vraiment que cela s'arrete vite » (graine discrete pour Matteo Riva, sans le nommer).
 - **Pourquoi les PJ** : la garde de Baldassare est trop visible et trop connue pour enqueter discretement ; elle a besoin d'etrangers a la ville.
 - **Contrat** : 25 po d'avance par PJ, 75 po supplementaires si la recolte est sauvee (la moitie si elle est seulement partiellement sauvee — cf. section Preuves et recompenses). Acces libre aux archives fiscales des Tinaie sur simple demande a son greffier.
+- **Intendant prete au camp** : Serafina presente Taddeo comme son intendant et le met temporairement a la disposition des PJ pour organiser la remise en etat du Campo. Il planifiera les priorites, repartira les equipes et suivra les stocks ; il ne fera pas lui-meme les travaux d'artisanat. Il rejoint les PJ avec les cles et commence par inventorier ce qui manque.
 - **Consigne** : lui rapporter a elle seule, ne rien accuser publiquement sans preuve corroboree deux fois.
 
 Replique : « Je ne vous demande pas de defendre mon nom. Je vous demande de sauver le vin de ceux qui n'ont que lui. »
