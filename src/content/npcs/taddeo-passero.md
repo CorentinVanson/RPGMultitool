@@ -4,7 +4,7 @@ role: "Intendant de Serafina, prêté au Campo della Frontiera"
 familia: "Picia — passero (aviano)"
 location: "Vallombra et Campo della Frontiera"
 faction: "Conseil de Vallombra"
-image: "/images/default-character.svg"
+image: "/images/npcs/taddeo-passero.png"
 tags:
   - "Employé du camp"
 summary: "Intendant sociable et débrouillard, chargé par Serafina de coordonner la remise en état du Campo."
