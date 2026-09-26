@@ -1,9 +1,9 @@
 ---
-name: "Sisto Corbeau"
+name: "Sisto Castor"
 role: "Tanneur candidat du Campo"
-familia: "Corbea — corvo (aviano)"
+familia: "Rodentia — castoro (theria)"
 location: "Vallombra"
-image: "/images/npcs/sisto-corbeau.png"
+image: "/images/npcs/sisto-castor.png"
 tags:
   - "Employé du camp"
 summary: "Artisan inventif qui cherche à économiser l’eau et à moderniser le travail du cuir."

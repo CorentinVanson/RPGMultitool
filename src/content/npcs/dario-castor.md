@@ -1,9 +1,9 @@
 ---
-name: "Dario Corbeau"
+name: "Dario Castor"
 role: "Mécanicien candidat de la forge"
-familia: "Corbea — corvo (aviano)"
+familia: "Rodentia — castoro (theria)"
 location: "Vallombra"
-image: "/images/npcs/dario-corbeau.png"
+image: "/images/npcs/dario-castor.png"
 tags:
   - "Employé du camp"
 summary: "Inventeur distrait qui transforme les mécanismes abandonnés en solutions inattendues."

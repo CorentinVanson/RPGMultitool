@@ -106,7 +106,8 @@ const campEmployeeActors = computed<ProjectionActor[]>(() => {
     if (!candidate) continue;
     const slug = campoCandidateSlug(candidate.id);
     const actorId = `npcs:${slug}`;
-    seen.set(candidate.id, { id: actorId, name: candidate.name, image: `/images/npcs/${slug}.png`, collection: 'npcs' });
+    const image = npcs.value?.find((entry) => entry.id === slug)?.data.image;
+    seen.set(candidate.id, { id: actorId, name: candidate.name, image: typeof image === 'string' && image ? image : `/images/npcs/${slug}.png`, collection: 'npcs' });
   }
   return Array.from(seen.values());
 });

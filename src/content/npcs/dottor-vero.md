@@ -1,7 +1,7 @@
 ---
 name: "Dottor Vero"
 role: "Artificier candidat du Campo"
-familia: "Corbea — corvo (aviano)"
+familia: "Rodentia — scoiattolo (theria)"
 location: "Vallombra"
 image: "/images/npcs/dottor-vero.png"
 tags:
