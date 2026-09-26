@@ -25,17 +25,20 @@ function projectVallombraPlan() {
   projectionState.value.background = { ...PROJECTION_MAPS.vallombra };
 }
 type CharacterLink = { name: string; slug: string; path: string; statusId: string };
+const characterTitles = new Set(['anziano', 'capitano', 'contessa', 'dottor', 'dottoressa', 'fra', 'frère', 'frere', 'madre', 'maestra', 'mastro', 'principe', 'ser', 'sœur', 'soeur']);
 
 function escapeRegExp(value: string): string {
   return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
 
 function characterLinks(entries: ContentEntry[] | null | undefined, collection: 'npcs' | 'enemies'): CharacterLink[] {
-  return (entries ?? []).flatMap((entry) => {
+  const candidates = (entries ?? []).flatMap((entry) => {
     const name = String(entry.data.name ?? '').trim();
     if (!name) return [];
-    const firstName = name.split(/\s+/)[0]?.replace(/["«]/g, '') ?? '';
-    const names = Array.from(new Set([name, firstName])).filter((item) => item.length >= 3);
+    const parts = name.split(/\s+/);
+    const withoutTitle = characterTitles.has((parts[0] ?? '').toLocaleLowerCase('fr')) ? parts.slice(1).join(' ') : name;
+    const firstName = withoutTitle.split(/\s+/)[0]?.replace(/["«]/g, '') ?? '';
+    const names = Array.from(new Set([name, withoutTitle, firstName])).filter((item) => item.length >= 3);
     return names.map((item) => ({
       name: item,
       slug: entry.id,
@@ -43,6 +46,14 @@ function characterLinks(entries: ContentEntry[] | null | undefined, collection: 
       statusId: characterStatusId(collection, entry.id),
     }));
   });
+  const slugsByName = new Map<string, Set<string>>();
+  for (const candidate of candidates) {
+    const key = candidate.name.toLocaleLowerCase('fr');
+    const slugs = slugsByName.get(key) ?? new Set<string>();
+    slugs.add(candidate.slug);
+    slugsByName.set(key, slugs);
+  }
+  return candidates.filter((candidate) => slugsByName.get(candidate.name.toLocaleLowerCase('fr'))?.size === 1);
 }
 
 const allCharacterLinks = computed(() => characterLinks(npcs.value, 'npcs').concat(characterLinks(enemies.value, 'enemies'))

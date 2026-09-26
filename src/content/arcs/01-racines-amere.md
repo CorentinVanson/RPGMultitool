@@ -1,107 +1,107 @@
 ---
-title: "Arc I — Les Racines Am\u00e8res"
+title: "Arc I — Les Racines Amères"
 order: 1
-sessions: "Sessions 1 \u00e0 6"
-summary: "Une enquete sur des sabotages viticoles revele une lutte d'influence entre Vallombra, Gratigna et la Compagnia del Tralcio, tandis qu'une menace plus ancienne se reveille dans les saulaies."
+sessions: "Sessions 1 à 6"
+summary: "Une enquête sur des sabotages viticoles révèle une lutte d'influence entre Vallombra, Gratigna et la Compagnia del Tralcio, tandis qu'une menace plus ancienne se réveille dans les saulaies."
 ---
 
-## Pr\u00e9misse
+## Prémisse
 
-Depuis un mois, les celliers de Vallombra (le Tinaie) subissent des sabotages : tonneaux perc\u00e9s, incendies mineurs, cargaisons vol\u00e9es en chemin vers Gratigna. La Contessa Serafina Dal Moro engage les PJ pour faire cesser ces troubles avant que la r\u00e9colte de l'ann\u00e9e ne soit compromise.
+Depuis un mois, les celliers de Vallombra (le Tinaie) subissent des sabotages : tonneaux percés, incendies mineurs, cargaisons volées en chemin vers Gratigna. La Contessa Serafina Dal Moro engage les PJ pour faire cesser ces troubles avant que la récolte de l'année ne soit compromise.
 
-## Objectifs p\u00e9dagogiques de l'arc
+## Objectifs pédagogiques de l'arc
 
-Introduire le hub (Vallombra), les factions (Conseil de Vallombra, consorzio del Tralcio adossé à la Compagnia del Compasso, Casato Vestraro) et un premier avant-go\u00fbt du mystère de l'Ossario (via le Villaggio dei Salici), tout en variant les styles de jeu : enqu\u00ete, combat, politique.
+Introduire le hub (Vallombra), les factions (Conseil de Vallombra, consorzio del Tralcio adossé à la Compagnia del Compasso, Casato Vestraro) et un premier avant-goût du mystère de l'Ossario (via le Villaggio dei Salici), tout en variant les styles de jeu : enquête, combat, politique.
 
-## D\u00e9roul\u00e9 sugg\u00e9r\u00e9 (6 sessions)
+## Déroulé suggéré (6 sessions)
 
 ### Session 1 — Foire aux Larmes
-Introduction, foire de Vallombra, premier sabotage en direct (incendie d'un cellier). Enqu\u00ete de sc\u00e8ne de crime, premiers indices (marque \u00e0 la cire de la Compagnia del Tralcio... ou un pi\u00e8ge grossier pour incriminer \u00e0 tort la guilde).
+Introduction, foire de Vallombra, premier sabotage en direct (incendie d'un cellier). Enquête de scène de crime, premiers indices (marque à la cire de la Compagnia del Tralcio... ou un piège grossier pour incriminer à tort la guilde).
 
 ### Session 2 — Les Langues du Guscio
-Enqu\u00ete sociale dans le Guscio via Renzo \"la Taupe\". Rencontre avec des t\u00e9moins peu fiables. **Embranchement A** : les PJ soup\u00e7onnent la Compagnia del Tralcio. **Embranchement B** : ils soup\u00e7onnent des rivaux locaux ou des bandits ind\u00e9pendants.
+Enquête sociale dans le Guscio via Renzo « la Taupe ». Rencontre avec des témoins peu fiables. **Embranchement A** : les PJ soupçonnent la Compagnia del Tralcio. **Embranchement B** : ils soupçonnent des rivaux locaux ou des bandits indépendants.
 
 ### Session 3 — Escarmouche sur la route de Gratigna
-Combat : une cargaison de vin est attaqu\u00e9e en chemin par des *Bandito della Fossa Verde* men\u00e9s par un *Randagio Veterano*. Capturer un bandit m\u00e8ne \u00e0 un indice pointant vers la Miniera Abbandonata (lien avec les Randagi) ou vers un commanditaire en ville.
+Combat : une cargaison de vin est attaquée en chemin par des *Bandito della Fossa Verde* menés par un *Randagio Veterano*. Capturer un bandit mène à un indice pointant vers la Miniera Abbandonata (lien avec les Randagi) ou vers un commanditaire en ville.
 
-### Session 4 — Audience \u00e0 Gratigna
-Sc\u00e8ne politique \u00e0 la cour du Principe Aldo Vestraro : les PJ doivent obtenir son soutien (troupes, fonds, ou simplement sa neutralit\u00e9). Premi\u00e8re rencontre avec Ilaria Conti, qui nie toute implication avec un aplomb suspect.
+### Session 4 — Audience à Gratigna
+Scène politique à la cour du Principe [Aldo Vestraro](/personnages/aldo-vestraro) : les PJ doivent obtenir son soutien (troupes, fonds, ou simplement sa neutralité). Première rencontre avec [Ilaria Conti](/personnages/ilaria-conti), qui nie toute implication avec un aplomb suspect.
 
 ### Session 5 — Le Sang dans les Saules
-Enqu\u00ete + horreur l\u00e9g\u00e8re : les PJ suivent une piste jusqu'au Villaggio dei Salici, o\u00f9 des disparitions inqui\u00e8tent l'Anziano Pietro. D\u00e9couverte d'empreintes \u00e0 trois griffes et d'un fragment d'ossement grav\u00e9 de symboles inconnus (premier lien vers l'Arc II, ind\u00e9pendant du sabotage).
+Enquête + horreur légère : les PJ suivent une piste jusqu'au Villaggio dei Salici, où des disparitions inquiètent l'[Anziano Pietro](/personnages/anziano-pietro). Découverte d'empreintes à trois griffes et d'un fragment d'ossement gravé de symboles inconnus (premier lien vers l'Arc II, indépendant du sabotage).
 
-### Session 6 — Le Proc\u00e8s du Tralcio
-Confrontation finale de l'arc : selon les preuves r\u00e9colt\u00e9es, les PJ peuvent d\u00e9masquer Ilaria Conti (proc\u00e8s public ou n\u00e9gociation priv\u00e9e), disculper la guilde et d\u00e9signer un autre coupable (un rival de Serafina au sein m\u00eame du Conseil de Vallombra), ou choisir de couvrir l'affaire contre un service futur.
+### Session 6 — Le Procès du Tralcio
+Confrontation finale de l'arc : selon les preuves récoltées, les PJ peuvent démasquer [Ilaria Conti](/personnages/ilaria-conti) (procès public ou négociation privée), disculper la guilde et désigner un autre coupable (un rival de Serafina au sein même du Conseil de Vallombra), ou choisir de couvrir l'affaire contre un service futur.
 
-## Embranchements et cons\u00e9quences \u00e0 long terme
+## Embranchements et conséquences à long terme
 
-- **Ilaria d\u00e9masqu\u00e9e publiquement** \u2192 ennemie jur\u00e9e en Arc III, la Compagnia del Tralcio se retourne contre Vallombra.
-- **Affaire \u00e9touff\u00e9e / n\u00e9goci\u00e9e** \u2192 Ilaria devient une alli\u00e9e \u00e9conomique r\u00e9ticente en Arc III, mais Serafina se m\u00e9fie davantage des PJ.
-- **Piste du Villaggio dei Salici approfondie** \u2192 d\u00e9marrage anticip\u00e9 de l'Arc II, les PJ arrivent \u00e0 l'Ossario Sepolto avec plus d'indices (avantage narratif et m\u00e9canique : un indice suppl\u00e9mentaire offert par Madre Iolanda).
+- **[Ilaria](/personnages/ilaria-conti) démasquée publiquement** → ennemie jurée en Arc III, la Compagnia del Tralcio se retourne contre Vallombra.
+- **Affaire étouffée / négociée** → [Ilaria](/personnages/ilaria-conti) devient une alliée économique réticente en Arc III, mais Serafina se méfie davantage des PJ.
+- **Piste du Villaggio dei Salici approfondie** → démarrage anticipé de l'Arc II, les PJ arrivent à l'Ossario Sepolto avec plus d'indices (avantage narratif et mécanique : un indice supplémentaire offert par Madre Iolanda).
 
 ## Base de campagne : le Campo della Frontiera
 
-Des leur arrivee, les PJ recoivent de Serafina la cle et la lettre de mission du [Campo della Frontiera](/lieux/campo-della-frontiera), un ancien camp militaire abandonne situe en territoire vallombrien, a proximite de la frontiere de Gratigna. Elle leur presente aussi son intendant, [Taddeo Passero](/personnages/taddeo-passero), qu'elle prete au groupe pour organiser et superviser les travaux de remise en etat. Taddeo coordonne les equipes et les materiaux ; les ouvriers du camp restent responsables des taches manuelles. La base devient un refuge, un poste d'observation et, si elle est bien developpee, une cible possible pour l'assaut final.
+Dès leur arrivée, les PJ reçoivent de [Serafina Dal Moro](/personnages/serafina-dal-moro) la clé et la lettre de mission du [Campo della Frontiera](/lieux/campo-della-frontiera), un ancien camp militaire abandonné situé en territoire vallombrien, à proximité de la frontière de Gratigna. Elle leur présente aussi son intendant, [Taddeo Passero](/personnages/taddeo-passero), qu'elle prête au groupe pour organiser et superviser les travaux de remise en état. Taddeo coordonne les équipes et les matériaux ; les ouvriers du camp restent responsables des tâches manuelles. La base devient un refuge, un poste d'observation et, si elle est bien développée, une cible possible pour l'assaut final.
 
-## Dossier de maitrise
+## Dossier de maîtrise
 
-### Verite de l'affaire
+### Vérité de l'affaire
 
-[Ilaria Conti](/personnages/ilaria-conti) a fait recruter trois ouvriers ruines par l'intermediaire de Meco, un courtier de Gratigna. Ils ont recu des plans des celliers, des sceaux contrefaits et une consigne : abimer juste assez de vin pour provoquer la panique, puis voler les cargaisons isolees. Ilaria veut acheter les domaines a bas prix et faire porter la faute a la Compagnia ou aux bandits de la Fossa Verde.
+[Ilaria Conti](/personnages/ilaria-conti) a fait recruter trois ouvriers ruinés par l'intermédiaire de Meco, un courtier de Gratigna. Ils ont reçu des plans des celliers, des sceaux contrefaits et une consigne : abîmer juste assez de vin pour provoquer la panique, puis voler les cargaisons isolées. [Ilaria](/personnages/ilaria-conti) veut acheter les domaines à bas prix et faire porter la faute à la Compagnia ou aux bandits de la Fossa Verde.
 
-Le sceau de cire trouve pendant la foire est un faux volontairement grossier. La preuve la plus solide est le registre de paiements cache dans l'[ancienne douane](/lieux/ancienne-douane) de la route de [Gratigna](/lieux/gratigna), complete par le temoignage d'un ouvrier survivant.
+Le sceau de cire trouvé pendant la foire est un faux volontairement grossier. La preuve la plus solide est le registre de paiements cache dans l'[ancienne douane](/lieux/ancienne-douane) de la route de [Gratigna](/lieux/gratigna), complété par le témoignage d'un ouvrier survivant.
 
-Les disparitions du [Villaggio dei Salici](/lieux/villaggio-dei-salici) sont une affaire differente : des eclaireurs de l'Ordine delle Ossa Sopite cherchent des victimes. Cette piste annonce l'Arc II sans etre necessaire pour resoudre le sabotage.
+Les disparitions du [Villaggio dei Salici](/lieux/villaggio-dei-salici) sont une affaire différente : des éclaireurs de l'Ordine delle Ossa Sopite cherchent des victimes. Cette piste annonce l'Arc II sans être nécessaire pour résoudre le sabotage.
 
 ### Horloge de crise
 
-A chaque journee sans progres decisif, ajouter une etape. A 2, un negociant annule sa commande ; a 4, une cargaison brule et [Baldassare](/personnages/baldassare) impose un couvre-feu ; a 6, [Serafina](/personnages/serafina-dal-moro) perd le controle du Conseil et [Ilaria](/personnages/ilaria-conti) propose officiellement son aide.
+À chaque journée sans progrès décisif, ajouter une étape. À 2, un négociant annule sa commande ; à 4, une cargaison brûle et [Baldassare](/personnages/baldassare) impose un couvre-feu ; à 6, [Serafina](/personnages/serafina-dal-moro) perd le contrôle du Conseil et [Ilaria](/personnages/ilaria-conti) propose officiellement son aide.
 
-Les PJ gagnent une etape quand ils sauvent une cargaison, arretent un saboteur ou obtiennent une preuve independante. Un echec de scene ne doit donc jamais bloquer l'arc.
+Les PJ gagnent une étape quand ils sauvent une cargaison, arrêtent un saboteur ou obtiennent une preuve indépendante. Un échec de scène ne doit donc jamais bloquer l'arc.
 
 ### Lieux importants
 
 #### Le [Tinaie](/lieux/tinaie), celliers de [Vallombra](/lieux/vallombra)
 
-Passerelles en bois, odeur de mout et caves separees par des grilles. La scene de la session 1 se deroule dans le cellier Moro. Indices : meche imbibee d'huile de lampe, semelle ferree, cire rouge et tonneau perce depuis l'interieur.
+Passerelles en bois, odeur de mout et caves séparées par des grilles. La scène de la session 1 se déroule dans le cellier Moro. Indices : meche imbibée d'huile de lampe, semelle ferree, cire rouge et tonneau perce depuis l'interieur.
 
 #### La route de [Gratigna](/lieux/gratigna) et l'[ancienne douane](/lieux/ancienne-douane)
 
-Un troncon encaisse ou les convois ralentissent. La [douane](/lieux/ancienne-douane) abandonnee contient le registre des paiements et sert de repaire temporaire aux bandits. Les PJ peuvent y arriver par filature, apres l'attaque d'une cargaison ou grace a [Renzo](/personnages/renzo).
+Un tronçon encaisse ou les convois ralentissent. La [douane](/lieux/ancienne-douane) abandonnée contient le registre des paiements et sert de repaire temporaire aux bandits. Les PJ peuvent y arriver par filature, après l'attaque d'une cargaison ou grâce à [Renzo](/personnages/renzo).
 
 #### Le [Villaggio dei Salici](/lieux/villaggio-dei-salici)
 
-La saulaie offre une scene nocturne tendue : bruit d'eau, silhouettes entre les troncs et empreintes a trois griffes. Les disparitions y sont liees a l'Arc II.
+La saulaie offre une scène nocturne tendue : bruit d'eau, silhouettes entre les troncs et empreintes à trois griffes. Les disparitions y sont liées à l'Arc II.
 
 ### Personnages et conversations
 
 #### [Serafina Dal Moro](/personnages/serafina-dal-moro)
 
-Elle veut sauver Vallombra sans donner a Gratigna une raison d'intervenir. Elle parle en phrases courtes et ne promet jamais ce qu'elle ne peut payer.
+Elle veut sauver Vallombra sans donner à Gratigna une raison d'intervenir. Elle parle en phrases courtes et ne promet jamais ce qu'elle ne peut payer.
 
 > « Une ville ne meurt pas quand ses murs tombent. Elle meurt quand ses habitants cessent de croire que demain leur appartient. »
 
 #### [Taddeo Passero](/personnages/taddeo-passero)
 
-Intendant de Serafina, il accueille les PJ a la foire aupres de sa patronne. Sociable et plein d'esprit, il se met a leur disposition pour planifier et superviser les travaux du Campo ; pour tout geste artisanal ou toute inscription, il s'appuie sur les ouvriers et aides du camp.
+Intendant de Serafina, il accueille les PJ à la foire aupres de sa patronne. Sociable et plein d'esprit, il se met à leur disposition pour planifier et superviser les travaux du Campo ; pour tout geste artisanal ou toute inscription, il s'appuie sur les ouvriers et aides du camp.
 
 > « Serafina vous confie les cles. Moi, je vais tacher que personne ne construise la toiture avant les murs. »
 
 #### [Renzo « la Taupe »](/personnages/renzo)
 
-Il connait Meco mais craint le [Sicario](/ennemis/sicario-del-tralcio). Si les PJ le protegent d'un collecteur de dettes ou lui rendent sa sacoche, il revele le nom du courtier et l'existence de la douane.
+Il connait Meco mais craint le [Sicario](/ennemis/sicario-del-tralcio). Si les PJ le protegent d'un collecteur de dettes ou lui rendent sa sacoche, il révèle le nom du courtier et l'existence de la douane.
 
 > « Une rumeur, c'est comme un tonneau : percez-la au mauvais endroit et vous perdez tout le contenu. »
 
 #### [Ilaria Conti](/personnages/ilaria-conti)
 
-Elle recoit les PJ avec une politesse parfaite, accuse les rivaux de Vallombra puis propose un pret qui placerait les celliers sous le controle de sa guilde.
+Elle reçoit les PJ avec une politesse parfaite, accuse les rivaux de Vallombra puis propose un prêt qui placerait les celliers sous le contrôle de sa guilde.
 
 > « Vous cherchez un monstre parce qu'un monstre est plus simple qu'un contrat. Laissez-moi vous offrir un contrat. »
 
-#### Aldo Vestraro
+#### [Aldo Vestraro](/personnages/aldo-vestraro)
 
-Il peut fournir une escorte, un delai fiscal ou une audience publique, mais exige une contrepartie : reconnaitre l'autorite de [Gratigna](/lieux/gratigna), livrer les preuves a sa cour ou preserver la reputation d'[Ilaria](/personnages/ilaria-conti).
+Il peut fournir une escorte, un délai fiscal ou une audience publique, mais exige une contrepartie : reconnaitre l'autorité de [Gratigna](/lieux/gratigna), livrer les preuves à sa cour ou preserver la réputation d'[Ilaria](/personnages/ilaria-conti).
 
 > « La justice est une belle porte. La politique decide qui possede la cle. »
 
@@ -109,43 +109,43 @@ Il peut fournir une escorte, un delai fiscal ou une audience publique, mais exig
 
 Doyen du [Villaggio dei Salici](/lieux/villaggio-dei-salici), il n'est pas superstitieux mais sait compter les disparus. Il demande aux PJ de retrouver sa petite-fille Livia.
 
-> « Je ne vous demande pas de croire aux os qui chantent. Regardez les empreintes et dites-moi qui les a laissees. »
+> « Je ne vous demande pas de croire aux os qui chantent. Regardez les empreintes et dites-moi qui les a laissées. »
 
-### Deroule session par session
+### Déroule session par session
 
 #### Session 1 — Foire aux Larmes
 
-Les PJ sont invites a la foire par Serafina. La fumee monte du Tinaie : un incendie demarre dans le cellier Moro. Ils sauvent les ouvriers, stoppent le feu et poursuivent une silhouette masquee qui abandonne une fiole d'huile et un sceau de cire a la feuille de vigne.
+Les PJ sont invités à la foire par Serafina. La fumée monte du Tinaie : un incendie démarre dans le cellier Moro. Ils sauvent les ouvriers, stoppent le feu et poursuivent une silhouette masquée qui abandonne une fiole d'huile et un sceau de cire à la feuille de vigne.
 
-La fouille revele que la cire est trop recente, que la meche est huilee et que le tonneau a ete perce depuis l'interieur. Un ouvrier blesse affirme que l'incendiaire connaissait les passages de service. Au moins deux indices doivent mener au Guscio ; la cire seule est un faux indice.
+La fouille révèle que la cire est trop recente, que la meche est huilee et que le tonneau a ete perce depuis l'interieur. Un ouvrier blesse affirme que l'incendiaire connaissait les passages de service. Au moins deux indices doivent mener au Guscio ; la cire seule est un faux indice.
 
 #### Session 2 — Les Langues du Guscio
 
 Renzo organise trois rencontres : une lavandiere qui a vu un messager, un enfant qui a trouve le jeton de douane et un ancien contrebandier qui reconnait l'huile. Chaque temoin melange un fait et une rumeur.
 
-Si les PJ aident Renzo, il donne le nom de Meco. S'ils accusent trop vite la Compagnia, Ilaria envoie un Sicario intimider un temoin. S'ils suivent les bandits, ceux-ci revelent que les tonneaux etaient deja marques avant leur attaque.
+Si les PJ aident Renzo, il donne le nom de Meco. S'ils accusent trop vite la Compagnia, [Ilaria](/personnages/ilaria-conti) envoie un Sicario intimider un témoin. S'ils suivent les bandits, ceux-ci révèlent que les tonneaux étaient déjà marqués avant leur attaque.
 
 #### Session 3 — Escarmouche sur la route
 
-Serafina confie aux PJ une cargaison-appat. Trois a cinq Banditi della Fossa Verde attaquent depuis les talus, menes par un Randagio Veterano. Les chariots renverses et les jarres inflammables rendent le terrain mobile.
+Serafina confie aux PJ une cargaison-appat. Trois à cinq Banditi della Fossa Verde attaquent depuis les talus, menés par un Randagio Veterano. Les chariots renverses et les jarres inflammables rendent le terrain mobile.
 
 Un bandit capture avoue avoir ete paye pour voler, pas pour incendier. Le paiement venait d'un aviano encapuchonne portant un jeton de l'ancienne douane. Traiter les Randagi avec respect ouvre une future alliance avec Orsina Vetraia.
 
-#### Session 4 — Audience a Gratigna
+#### Session 4 — Audience à Gratigna
 
-Aldo ecoute le rapport, Ilaria presente son offre de secours, puis le Prince exige une preuve ou une contrepartie. Les PJ peuvent obtenir un laissez-passer, une escorte de quatre gardes ou trois jours de delai fiscal.
+[Aldo](/personnages/aldo-vestraro) écoute le rapport, [Ilaria](/personnages/ilaria-conti) présente son offre de secours, puis le Prince exige une preuve ou une contrepartie. Les PJ peuvent obtenir un laissez-passer, une escorte de quatre gardes ou trois jours de délai fiscal.
 
-Ilaria ment sur sa rencontre avec Meco. Elle se trahit en corrigeant Aldo sur le montant exact d'un paiement qui n'a pas encore ete mentionne.
+[Ilaria](/personnages/ilaria-conti) ment sur sa rencontre avec Meco. Elle se trahit en corrigeant [Aldo](/personnages/aldo-vestraro) sur le montant exact d'un paiement qui n'a pas encore été mentionné.
 
 #### Session 5 — Le Sang dans les Saules
 
-Livia a disparu la nuit precedente. Les traces conduisent a une corde coupee, une odeur de sable brule et un camp abandonne. A la nuit tombee, deux Sciacalli delle Sabbie et un eclaireur squelette tentent de deplacer Livia vers la riviere.
+Livia a disparu la nuit precedente. Les traces conduisent à une corde coupee, une odeur de sable brule et un camp abandonne. A la nuit tombée, deux Sciacalli delle Sabbie et un eclaireur squelette tentent de deplacer Livia vers la riviere.
 
 Les PJ n'ont pas besoin de vaincre tout le groupe : l'objectif est de sauver Livia et de recuperer le fragment d'ossement grave. Madre Iolanda peut confirmer qu'il ne vient d'aucun rite local.
 
-#### Session 6 — Le Proces du Tralcio
+#### Session 6 — Le Procès du Tralcio
 
-Au marche couvert, les PJ presentent trois preuves parmi le registre, le temoignage de l'ouvrier, la declaration d'un bandit, le sceau falsifie et le mensonge d'Ilaria. Ilaria propose alors d'indemniser les victimes contre un monopole de trois ans.
+Au marché couvert, les PJ présentent trois preuves parmi le registre, le témoignage de l'ouvrier, la déclaration d'un bandit, le sceau falsifié et le mensonge d'[Ilaria](/personnages/ilaria-conti). [Ilaria](/personnages/ilaria-conti) propose alors d'indemniser les victimes contre un monopole de trois ans.
 
 Si elle est acculee, son Sicario tente de bruler le registre et de fuir par les etals. Une capture vivante donne la derniere preuve. Terminer par le fragment d'ossement confie aux PJ.
 
@@ -153,14 +153,14 @@ Si elle est acculee, son Sicario tente de bruler le registre et de fuir par les 
 
 Les indices forts sont le registre, l'ouvrier et le bandit ; la cire et les rumeurs sont des indices faibles. Ne bloquez jamais l'enquete derriere un seul jet. Serafina paie 75 pieces d'or par PJ si la recolte est sauvee, la moitie si elle est partiellement perdue. Les PJ gagnent aussi l'acces aux archives de Vallombra et la confiance d'une faction choisie.
 
-- Ilaria demasquee : ennemie juree en Arc III, la Compagnia se retourne contre Vallombra.
-- Affaire negociee : Ilaria devient une alliee economique reticente, mais Serafina se mefie.
+- [Ilaria](/personnages/ilaria-conti) démasquée : ennemie jurée en Arc III, la Compagnia se retourne contre Vallombra.
+- Affaire négociée : [Ilaria](/personnages/ilaria-conti) devient une alliée économique réticente, mais Serafina se méfie.
 - Livia sauvee et le fragment recupere : les PJ commencent l'Arc II avec une piste supplementaire.
 - Echec : la Compagnia obtient un monopole temporaire et Matteo Riva gagne de l'influence.
 
-## Fiches de session pretes a jouer
+## Fiches de session prêtes a jouer
 
-Ces fiches sont concues pour 4 heures et donnent, pour chaque scene, les PNJ precis a incarner, les mecanismes concrets (DD, consequences chiffrees) et l'issue de chaque choix, afin que le MJ n'ait qu'a improviser la reaction des joueurs, pas le contenu de la scene. Les durees sont indicatives : si une scene prend du retard, supprimer la transition prevue plutot que la scene de conclusion.
+Ces fiches sont concues pour 4 heures et donnent, pour chaque scène, les PNJ précis a incarner, les mécanismes concrets (DD, consequences chiffrees) et l'issue de chaque choix, afin que le MJ n'ait qu'a improviser la reaction des joueurs, pas le contenu de la scène. Les durees sont indicatives : si une scène prend du retard, supprimer la transition prevue plutot que la scène de conclusion.
 
 ### Session 1 — Foire aux Larmes (4 h)
 
@@ -175,13 +175,13 @@ Ces fiches sont concues pour 4 heures et donnent, pour chaque scene, les PNJ pre
 | [Timo](/personnages/timo) | Se faufile entre les jambes de la foule | Tente une bourse (Escamotage +5 contre Perception passive) ou, si repere, propose de la « rendre » contre une piece | Premier contact avec un enfant du Guscio, utile pour la session 2 |
 | Un marchand de figues, Toran (theria Ruminsa) | Etal pres de la fontaine | Anecdote locale : la garde a double ses rondes depuis un mois « a cause des sabotages du Tinaie » | Confirme aux PJ que l'affaire dure depuis un moment avant meme que Serafina ne les engage |
 
-[Serafina Dal Moro](/personnages/serafina-dal-moro) les observe depuis le balcon de la Maison du Conseil pendant cette scene.
+[Serafina Dal Moro](/personnages/serafina-dal-moro) les observe depuis le balcon de la Maison du Conseil pendant cette scène.
 
 Son intendant, [Taddeo Passero](/personnages/taddeo-passero), se tient aupres d'elle. Il se presente avec naturel aux PJ, glisse une plaisanterie sur l'agitation de la foire et leur demande ce qu'ils savent deja du Campo. C'est leur premiere rencontre avec lui, avant meme qu'ils ne recoivent officiellement les cles du camp.
 
 **0:25-0:40 — Mission.** Serafina prend les PJ a part dans une salle attenante. Elle donne un briefing complet et concret, a lire ou paraphraser point par point :
 - **Les faits** : depuis un mois, trois incidents distincts — un tonneau perce dans le cellier Riva, un petit incendie maitrise dans un entrepot de transit, une cargaison volee sur la route de Gratigna il y a dix jours.
-- **L'enjeu** : la recolte doit partir vers Gratigna dans trois semaines. Si les pertes continuent a ce rythme, Vallombra ne pourra pas payer ses taxes a Gratigna cette annee, ce qui renforcerait la mainmise du Prince Aldo Vestraro et de la Compagnia del Tralcio sur la cite.
+- **L'enjeu** : la récolte doit partir vers Gratigna dans trois semaines. Si les pertes continuent à ce rythme, Vallombra ne pourra pas payer ses taxes à Gratigna cette année, ce qui renforcerait la mainmise du Prince [Aldo Vestraro](/personnages/aldo-vestraro) et de la Compagnia del Tralcio sur la cité.
 - **Ses soupcons** : elle pense a la Compagnia del Tralcio (interet economique evident), mais refuse d'accuser sans preuve solide — un faux pas diplomatique avec Gratigna serait pire que les pertes actuelles. Elle ajoute, plus bas : « Et je ne suis pas certaine que tout le monde, au Conseil, souhaite vraiment que cela s'arrete vite » (graine discrete pour Matteo Riva, sans le nommer).
 - **Pourquoi les PJ** : la garde de Baldassare est trop visible et trop connue pour enqueter discretement ; elle a besoin d'etrangers a la ville.
 - **Contrat** : 25 po d'avance par PJ, 75 po supplementaires si la recolte est sauvee (la moitie si elle est seulement partiellement sauvee — cf. section Preuves et recompenses). Acces libre aux archives fiscales des Tinaie sur simple demande a son greffier.
@@ -216,7 +216,7 @@ Replique : « Je ne vous demande pas de defendre mon nom. Je vous demande de sau
 
 ### Session 2 — Les Langues du Guscio (4 h)
 
-**Objectif MJ :** donner trois versions partielles de la verite par trois temoins concrets, et faire choisir aux PJ qui ils protegent.
+**Objectif MJ :** donner trois versions partielles de la verite par trois témoins concrets, et faire choisir aux PJ qui ils protegent.
 
 **0:00-0:20 — Retour au Guscio.** Lire : « Ici, les murs sont assez proches pour que les secrets passent d'une fenetre a l'autre. » [Renzo](/personnages/renzo) recoit les PJ dans son « magasin de curiosites » et pose son prix avant de parler : 10 po, une faveur, ou regler son probleme du moment — **Gianni**, un garde corrompu qui rackette systematiquement les petits commerces du Guscio (dont la lavandiere Ada, voir plus bas). Regler Gianni (intimidation, DD 14 ; pot-de-vin rembourse ; ou rapport direct a Baldassare qui le sanctionne aussitot) satisfait a la fois Renzo et l'acces a Ada : c'est le fil qui relie les deux scenes suivantes.
 
@@ -250,29 +250,29 @@ Replique : « Je ne vous demande pas de defendre mon nom. Je vous demande de sau
 
 **3:20-3:45 — Fouille du chariot adverse.** Les PJ trouvent un jeton de l'ancienne douane identique a celui de Timo, une corde goudronnee de meme facture que celle utilisee au Tinaie, et un morceau de registre dechire portant trois initiales illisibles (« I.C. » partiellement brule — un indice qui ne prendra son sens qu'en session 4). Le registre complet reste cache a l'ancienne douane.
 
-**3:45-4:00 — Cloture.** Un messager de [Serafina](/personnages/serafina-dal-moro) rattrape les PJ sur la route : ils sont convoques a [Gratigna](/lieux/gratigna). [Baldassare](/personnages/baldassare) confirme que la Compagnia del Tralcio a deja demande une audience au Prince avant meme qu'eux n'y arrivent — signe qu'Ilaria Conti prend les devants.
+**3:45-4:00 — Cloture.** Un messager de [Serafina](/personnages/serafina-dal-moro) rattrape les PJ sur la route : ils sont convoques a [Gratigna](/lieux/gratigna). [Baldassare](/personnages/baldassare) confirme que la Compagnia del Tralcio a deja demande une audience au Prince avant meme qu'eux n'y arrivent — signe que [Ilaria Conti](/personnages/ilaria-conti) prend les devants.
 
 **Informations MJ :** Orsina n'est commanditaire de rien, seulement opportuniste ; Meco paie des intermediaires jetables pour ne jamais etre directement expose ; le registre complet de la douane reste la preuve forte a recuperer, en session 4 ou 5 selon l'initiative des PJ.
 
-### Session 4 — Audience a Gratigna (4 h)
+### Session 4 — Audience à Gratigna (4 h)
 
 **Objectif MJ :** transformer les indices en enjeu politique concret et montrer les trois issues possibles sans en privilegier une.
 
-**0:00-0:30 — Entree a la cour.** Decrire le contraste : marbre poli, jardins d'agrement, gardes en tenue d'apparat, la ou Vallombra sent le bois et le moisi. [Aldo Vestraro](/personnages/aldo-vestraro) fait attendre les PJ une demi-heure pendant qu'Ilaria Conti est recue immediatement — une humiliation calculee. Laisser les PJ choisir un allie de circonstance parmi trois PNJ de cour proposes par un chambellan : un greffier bavard (donne acces aux archives fiscales de Gratigna), un capitaine d'escorte (donne un avis militaire sur les Randagi et les bandits), ou un conseiller mineur rival d'Ilaria (donne une rumeur non confirmee sur les dettes de la Compagnia).
+**0:00-0:30 — Entree a la cour.** Decrire le contraste : marbre poli, jardins d'agrement, gardes en tenue d'apparat, la ou Vallombra sent le bois et le moisi. [Aldo Vestraro](/personnages/aldo-vestraro) fait attendre les PJ une demi-heure pendant que [Ilaria Conti](/personnages/ilaria-conti) est recue immediatement — une humiliation calculee. Laisser les PJ choisir un allie de circonstance parmi trois PNJ de cour proposes par un chambellan : un greffier bavard (donne acces aux archives fiscales de Gratigna), un capitaine d'escorte (donne un avis militaire sur les Randagi et les bandits), ou un conseiller mineur rival d'[Ilaria](/personnages/ilaria-conti) (donne une rumeur non confirmee sur les dettes de la Compagnia).
 
-**0:30-1:15 — Rapport aux audiences.** Les PJ presentent leurs indices un par un. Pour chacun, Aldo pose une question precise avant de l'accepter comme pertinent : qui gagne concretement de cette crise ? qui a paye les hommes de main ? pourquoi des bandits plutot que des soldats reguliers ? Ne jamais demander de jet si les joueurs argumentent clairement eux-memes ; reserver un test de Persuasion (DD 15) uniquement si l'argument est faible ou incomplet.
+**0:30-1:15 — Rapport aux audiences.** Les PJ presentent leurs indices un par un. Pour chacun, [Aldo](/personnages/aldo-vestraro) pose une question precise avant de l'accepter comme pertinent : qui gagne concretement de cette crise ? qui a paye les hommes de main ? pourquoi des bandits plutot que des soldats reguliers ? Ne jamais demander de jet si les joueurs argumentent clairement eux-memes ; reserver un test de Persuasion (DD 15) uniquement si l'argument est faible ou incomplet.
 
 **1:15-2:00 — Offre d'[Ilaria Conti](/personnages/ilaria-conti).** Elle propose publiquement de financer entierement la recolte de cette annee contre un monopole d'achat de trois ans sur le vin de Vallombra. Replique : « Vous cherchez un monstre parce qu'un monstre est plus simple qu'un contrat. Laissez-moi vous offrir un contrat. » Elle nie categoriquement connaitre un dénommé Meco.
 
-**2:00-2:30 — Contradiction.** Si les PJ mentionnent un paiement recu par un intermediaire (session 2 ou 3) sans en preciser le montant, Ilaria corrige spontanement le chiffre exact — une erreur qui trahit qu'elle connait le detail de la transaction. Aldo ne releve la contradiction que si un PJ la souligne explicitement (Perspicacité, DD 13, pour la remarquer soi-meme sans l'aide du texte). Un succes social (Persuasion ou Intimidation, DD 16) ou la production ecrite du fragment de registre (session 3) suffit alors a la mettre publiquement sous pression, sans encore la faire condamner.
+**2:00-2:30 — Contradiction.** Si les PJ mentionnent un paiement recu par un intermediaire (session 2 ou 3) sans en preciser le montant, [Ilaria](/personnages/ilaria-conti) corrige spontanement le chiffre exact — une erreur qui trahit qu'elle connait le detail de la transaction. [Aldo](/personnages/aldo-vestraro) ne releve la contradiction que si un PJ la souligne explicitement (Perspicacité, DD 13, pour la remarquer soi-meme sans l'aide du texte). Un succes social (Persuasion ou Intimidation, DD 16) ou la production ecrite du fragment de registre (session 3) suffit alors a la mettre publiquement sous pression, sans encore la faire condamner.
 
-**2:30-3:20 — Negociation.** En echange de leur silence temporaire ou de leur cooperation, les PJ peuvent obtenir de Gratigna un seul des trois avantages suivants : un laissez-passer diplomatique, une escorte permanente de quatre gardes pour Vallombra, ou trois jours de delai sur la taxe annuelle. Chaque faveur a un cout precis : reconnaitre publiquement l'autorite de Gratigna sur le different, remettre toutes les preuves collectees a la cour (donc ne plus pouvoir s'en servir librement en session 6), ou s'engager a proteger la reputation d'Ilaria devant le Conseil de Vallombra.
+**2:30-3:20 — Negociation.** En echange de leur silence temporaire ou de leur cooperation, les PJ peuvent obtenir de Gratigna un seul des trois avantages suivants : un laissez-passer diplomatique, une escorte permanente de quatre gardes pour Vallombra, ou trois jours de delai sur la taxe annuelle. Chaque faveur a un cout precis : reconnaitre publiquement l'autorite de Gratigna sur le different, remettre toutes les preuves collectees a la cour (donc ne plus pouvoir s'en servir librement en session 6), ou s'engager a proteger la reputation d'[Ilaria](/personnages/ilaria-conti) devant le Conseil de Vallombra.
 
 **3:20-3:45 — Incident.** Un serviteur essouffle apporte une nouvelle : Ada, le temoin du Guscio, a ete approchee par un inconnu pres de son lavoir (tentative d'intimidation, pas d'enlevement) pendant que les PJ etaient a la cour. Cela rappelle que l'enquete continue en leur absence et donne une raison concrete de repartir immediatement pour Vallombra.
 
 **3:45-4:00 — Cloture.** Aldo remet le laissez-passer choisi ou refuse officiellement tout soutien si les PJ n'ont rien obtenu de concret. [Serafina](/personnages/serafina-dal-moro) envoie un message urgent en meme temps : les disparitions du [Villaggio dei Salici](/lieux/villaggio-dei-salici) touchent maintenant Livia, la petite-fille de l'Anziano Pietro, disparue la nuit precedente.
 
-**Informations MJ :** Aldo veut avant tout la stabilite economique de la region et ne prendra jamais parti par principe ; Ilaria joue la montre en esperant que la recolte echoue d'elle-meme ; le monopole qu'elle propose est parfaitement legal mais ruinerait l'autonomie economique de Vallombra pour une generation.
+**Informations MJ :** [Aldo Vestraro](/personnages/aldo-vestraro) veut avant tout la stabilite economique de la region et ne prendra jamais parti par principe ; [Ilaria](/personnages/ilaria-conti) joue la montre en esperant que la recolte echoue d'elle-meme ; le monopole qu'elle propose est parfaitement legal mais ruinerait l'autonomie economique de Vallombra pour une generation.
 
 ### Session 5 — Le Sang dans les Saules (4 h)
 
@@ -280,7 +280,7 @@ Replique : « Je ne vous demande pas de defendre mon nom. Je vous demande de sau
 
 **0:00-0:35 — Accueil de [Pietro](/personnages/anziano-pietro).** Lire : « Le village ne fait pas de bruit. Meme les metiers se sont tus. » Pietro explique factuellement les faits : quatre disparitions en trois semaines, toutes nocturnes, toutes pres de la saulaie ; sa petite-fille Livia a disparu la nuit precedente en allant chercher de l'eau. Il demande explicitement de la retrouver avant la nuit suivante, sans exiger que les PJ « croient » a quoi que ce soit de surnaturel.
 
-**0:35-1:20 — Enquete au village.** Trois habitants a interroger, chacun avec un indice precis et aucun lien avec Ilaria Conti :
+**0:35-1:20 — Enquete au village.** Trois habitants a interroger, chacun avec un indice precis et aucun lien avec [Ilaria Conti](/personnages/ilaria-conti) :
 - **La mere de Livia**, effondree, montre une corde coupee net (pas dechiree) trouvee pres du puits.
 - **Un pecheur**, Origeno, a vu une lueur pale sur l'eau vers minuit et sent encore une odeur de sable brule sur ses filets.
 - **Une tisserande**, Nadia, a retrouve une lanterne abandonnee, encore chaude, a la lisiere des saules.
@@ -291,7 +291,7 @@ Replique : « Je ne vous demande pas de defendre mon nom. Je vous demande de sau
 
 **3:00-3:30 — Retour et temoignage.** Livia, choquee mais indemne, decrit des silhouettes portant des masques d'os et une priere murmuree dans une langue inconnue. Pietro offre aux PJ un repas et un abri pour la nuit. [Madre Iolanda](/personnages/iolanda), consultee en privé si les PJ pensent a l'interroger, reconnait sur l'ossement un symbole lie a des rites qu'elle croyait eteints depuis des generations — sans en dire davantage pour l'instant (elle garde un secret personnel sur ce culte, reserve pour l'Arc II).
 
-**3:30-4:00 — Cloture.** Un cavalier arrive de Vallombra : Ilaria Conti a demande une audience publique devant le Conseil, et celui-ci se divise sur l'opportunite de l'accepter. Le fragment d'ossement reste en possession des PJ.
+**3:30-4:00 — Cloture.** Un cavalier arrive de Vallombra : [Ilaria Conti](/personnages/ilaria-conti) a demande une audience publique devant le Conseil, et celui-ci se divise sur l'opportunite de l'accepter. Le fragment d'ossement reste en possession des PJ.
 
 **Informations MJ :** cette menace (des eclaireurs de l'Ordine delle Ossa Sopite en reperage) est completement independante des sabotages du vin ; l'ossement est le premier fil narratif de l'Arc II ; sauver Livia offre un indice supplementaire (le symbole identifie par Iolanda), mais son eventuel echec ne bloque jamais la progression de la campagne.
 
@@ -299,16 +299,16 @@ Replique : « Je ne vous demande pas de defendre mon nom. Je vous demande de sau
 
 **Objectif MJ :** faire payer concretement les choix anterieurs des PJ, sans imposer une seule fin possible.
 
-**0:00-0:30 — Preparation.** [Serafina](/personnages/serafina-dal-moro) recapitule avec les PJ la liste exacte des preuves en leur possession (registre partiel, temoignage de Nilo, aveu du bandit, sceau falsifie, contradiction d'Ilaria sur le paiement) et leur demande d'en choisir trois a presenter en priorite. [Baldassare](/personnages/baldassare) securise les entrees du marche couvert ; [Renzo](/personnages/renzo), si on le sollicite, peut indiquer ou se planque le Sicario del Tralcio en ville.
+**0:00-0:30 — Preparation.** [Serafina](/personnages/serafina-dal-moro) recapitule avec les PJ la liste exacte des preuves en leur possession (registre partiel, temoignage de Nilo, aveu du bandit, sceau falsifie, contradiction d'[Ilaria](/personnages/ilaria-conti) sur le paiement) et leur demande d'en choisir trois a presenter en priorite. [Baldassare](/personnages/baldassare) securise les entrees du marche couvert ; [Renzo](/personnages/renzo), si on le sollicite, peut indiquer ou se planque le Sicario del Tralcio en ville.
 
 **0:30-1:30 — Audience publique.** Chaque PJ presente une preuve a tour de role. Pour chaque element avance, [Ilaria Conti](/personnages/ilaria-conti) repond avec aplomb, tandis que [Matteo Riva](/personnages/matteo-riva) tente discretement de deplacer la faute vers les Randagi della Fossa Verde en insistant sur le seul temoignage du bandit capture (Perspicacité, DD 15, pour remarquer qu'il connait des details du dossier qu'il ne devrait pas avoir consultes seul). Preuves fortes qui pesent reellement dans le verdict : le registre, le temoignage de Nilo, l'aveu du bandit. Preuves faibles qui ne font que soutenir : le sceau de cire, les rumeurs du Guscio.
 
-**1:30-2:15 — Interrogatoire d'Ilaria.** Elle reconnait ouvertement avoir propose de financer la recolte, mais nie fermement avoir commandite les sabotages. La faille a exploiter reste la contradiction sur le montant du paiement (session 4) : la souligner de nouveau devant le Conseil (Persuasion ou Intimidation, DD 16) la met en difficulte reelle. Replique : « Un monopole n'est pas une menace. C'est une solution que vos scrupules rendent necessaire. »
+**1:30-2:15 — Interrogatoire d'[Ilaria](/personnages/ilaria-conti).** Elle reconnait ouvertement avoir propose de financer la recolte, mais nie fermement avoir commandite les sabotages. La faille a exploiter reste la contradiction sur le montant du paiement (session 4) : la souligner de nouveau devant le Conseil (Persuasion ou Intimidation, DD 16) la met en difficulte reelle. Replique : « Un monopole n'est pas une menace. C'est une solution que vos scrupules rendent necessaire. »
 
-**2:15-3:00 — Trois issues possibles.** Selon le rapport de force etabli : **condamnation** (preuves fortes majoritaires) — saisie des biens locaux d'Ilaria et rupture commerciale entre la Compagnia et Vallombra ; **negociation** (preuves melangees ou PJ conciliants) — indemnisation immediate des victimes contre le monopole de trois ans finalement accorde ; **echec** (preuves insuffisantes ou Matteo Riva credible) — Ilaria obtient le controle economique tout en promettant publiquement de retablir l'ordre, ce qui renforce l'influence de Matteo Riva au Conseil.
+**2:15-3:00 — Trois issues possibles.** Selon le rapport de force etabli : **condamnation** (preuves fortes majoritaires) — saisie des biens locaux d'[Ilaria](/personnages/ilaria-conti) et rupture commerciale entre la Compagnia et Vallombra ; **negociation** (preuves melangees ou PJ conciliants) — indemnisation immediate des victimes contre le monopole de trois ans finalement accorde ; **echec** (preuves insuffisantes ou [Matteo Riva](/personnages/matteo-riva) credible) — [Ilaria](/personnages/ilaria-conti) obtient le controle economique tout en promettant publiquement de retablir l'ordre, ce qui renforce l'influence de [Matteo Riva](/personnages/matteo-riva) au Conseil.
 
-**3:00-3:35 — Derniere action du Sicario.** Si Ilaria est manifestement acculee, son [Sicario del Tralcio](/ennemis/sicario-del-tralcio) personnel tente de bruler le registre restant et de fuir par les etals du marche couvert (utiliser les etals renverses, les cordes de tente et la foule paniquee comme obstacles de terrain). Sa capture vivante fournit la toute derniere preuve manquante ; sa fuite reussie laisse une dette narrative (un ennemi libre et vengeur pour l'Arc III).
+**3:00-3:35 — Derniere action du Sicario.** Si [Ilaria](/personnages/ilaria-conti) est manifestement acculee, son [Sicario del Tralcio](/ennemis/sicario-del-tralcio) personnel tente de bruler le registre restant et de fuir par les etals du marche couvert (utiliser les etals renverses, les cordes de tente et la foule paniquee comme obstacles de terrain). Sa capture vivante fournit la toute derniere preuve manquante ; sa fuite reussie laisse une dette narrative (un ennemi libre et vengeur pour l'Arc III).
 
-**3:35-4:00 — Epilogue.** Detailler le prix concret du verdict choisi : evolution du prix du vin a Vallombra, niveau de confiance de Serafina envers les PJ, statut des Randagi (allies discrets ou toujours parias), soutien effectif ou non d'Aldo Vestraro. Verser 75 po par PJ si la recolte est finalement sauvee, la moitie si elle n'est que partiellement sauvee. Terminer la session sur le fragment d'ossement toujours en possession des PJ et l'annonce que Madre Iolanda souhaite maintenant leur parler en prive de « quelque chose qu'elle aurait du dire plus tot ».
+**3:35-4:00 — Epilogue.** Detailler le prix concret du verdict choisi : evolution du prix du vin a Vallombra, niveau de confiance de [Serafina](/personnages/serafina-dal-moro) envers les PJ, statut des Randagi (allies discrets ou toujours parias), soutien effectif ou non d'[Aldo Vestraro](/personnages/aldo-vestraro). Verser 75 po par PJ si la recolte est finalement sauvee, la moitie si elle n'est que partiellement sauvee. Terminer la session sur le fragment d'ossement toujours en possession des PJ et l'annonce que [Madre Iolanda](/personnages/iolanda) souhaite maintenant leur parler en prive de « quelque chose qu'elle aurait du dire plus tot ».
 
-**Informations MJ :** Matteo Riva a amplifie les rumeurs contre Ilaria par ambition personnelle mais n'a jamais commandite les sabotages ; Ilaria peut devenir une alliee economique reticente si l'issue est negociee ; la decision finale des PJ determine directement la position politique et economique de Vallombra au debut de l'Arc III.
+**Informations MJ :** [Matteo Riva](/personnages/matteo-riva) a amplifie les rumeurs contre [Ilaria](/personnages/ilaria-conti) par ambition personnelle mais n'a jamais commandite les sabotages ; [Ilaria](/personnages/ilaria-conti) peut devenir une alliee economique reticente si l'issue est negociee ; la decision finale des PJ determine directement la position politique et economique de Vallombra au debut de l'Arc III.
