@@ -4,5 +4,23 @@
     "name": "1 Hour Of Ambient Fantasy Music Tranquil Atmospheric Ambience Enchanted Forest",
     "situation": "Chill",
     "source": "/audio/chill/1%20hour%20of%20Ambient%20Fantasy%20Music%20Tranquil%20Atmospheric%20Ambience%20Enchanted%20Forest.mp3"
+  },
+  {
+    "id": "chill/Cozy Fantasy Tavern Ambience Relaxing Music by the Fireplace.mp3",
+    "name": "Cozy Fantasy Tavern Ambience Relaxing Music By The Fireplace",
+    "situation": "Chill",
+    "source": "/audio/chill/Cozy%20Fantasy%20Tavern%20Ambience%20Relaxing%20Music%20by%20the%20Fireplace.mp3"
+  },
+  {
+    "id": "chill/Medieval Market Ambience 1 hour Fantasy Ambience.mp3",
+    "name": "Medieval Market Ambience 1 Hour Fantasy Ambience",
+    "situation": "Chill",
+    "source": "/audio/chill/Medieval%20Market%20Ambience%201%20hour%20Fantasy%20Ambience.mp3"
+  },
+  {
+    "id": "combat/1 Hour of Combat Music The Master (Mix).mp3",
+    "name": "1 Hour Of Combat Music The Master (Mix)",
+    "situation": "Combat",
+    "source": "/audio/combat/1%20Hour%20of%20Combat%20Music%20The%20Master%20(Mix).mp3"
   }
 ]
