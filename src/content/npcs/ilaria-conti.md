@@ -34,7 +34,7 @@ summary: "Femme d'affaires impitoyable qui contrôle le commerce du vin régiona
 - **Anneau de Protection +1**
 - **Potion de Charme** (x3, cachée)
 - **Correspondance codée** (lettres avec Meco et d'autres courtiers)
-- **Sceaux faux** (cire rouge de Compagnia, reproduction de qualité)
+- **Empreintes de cire contrefaites** (reproductions de qualité de la marque commerciale rouge du consorzio del Tralcio, filiale de la Compagnia del Compasso)
 
 ### Actions et capacités
 - **Négociation redoutable** : Avantage au test pour persuader ou intimider. Peut refaire un test de Charisme échoué une fois par jour.

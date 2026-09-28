@@ -16,7 +16,7 @@ Introduire le hub (Vallombra), les factions (Conseil de Vallombra, consorzio del
 ## Déroulé suggéré (6 sessions)
 
 ### Session 1 — Foire aux Larmes
-Introduction, foire de Vallombra, premier sabotage en direct (incendie d'un cellier). Enquête de scène de crime, premiers indices (marque à la cire de la Compagnia del Tralcio... ou un piège grossier pour incriminer à tort la guilde).
+Introduction, foire de Vallombra, premier sabotage en direct (incendie d'un cellier). Enquête de scène de crime, premiers indices (fausse marque commerciale du consorzio del Tralcio... ou un piège grossier pour incriminer à tort la guilde).
 
 ### Session 2 — Les Langues du Guscio
 Enquête sociale dans le Guscio via Renzo « la Taupe ». Rencontre avec des témoins peu fiables. **Embranchement A** : les PJ soupçonnent la Compagnia del Tralcio. **Embranchement B** : ils soupçonnent des rivaux locaux ou des bandits indépendants.
@@ -47,9 +47,17 @@ Dès leur arrivée, les PJ reçoivent de [Serafina Dal Moro](/personnages/serafi
 
 ### Vérité de l'affaire
 
-[Ilaria Conti](/personnages/ilaria-conti) a fait recruter trois ouvriers ruinés par l'intermédiaire de Meco, un courtier de Gratigna. Ils ont reçu des plans des celliers, des sceaux contrefaits et une consigne : abîmer juste assez de vin pour provoquer la panique, puis voler les cargaisons isolées. [Ilaria](/personnages/ilaria-conti) veut acheter les domaines à bas prix et faire porter la faute à la Compagnia ou aux bandits de la Fossa Verde.
+[Ilaria Conti](/personnages/ilaria-conti) a fait recruter trois ouvriers ruinés par l'intermédiaire de [Meco](/personnages/meco), un courtier de Gratigna. Ils ont reçu des plans des celliers, des empreintes de cire imitant la marque commerciale du consorzio del Tralcio et une consigne : abîmer juste assez de vin pour provoquer la panique, puis voler les cargaisons isolées. [Ilaria](/personnages/ilaria-conti) veut acheter les domaines à bas prix et faire porter la faute à la Compagnia ou aux bandits de la Fossa Verde.
 
-Le sceau de cire trouvé pendant la foire est un faux volontairement grossier. La preuve la plus solide est le registre de paiements cache dans l'[ancienne douane](/lieux/ancienne-douane) de la route de [Gratigna](/lieux/gratigna), complété par le témoignage d'un ouvrier survivant.
+Le sceau de cire trouvé pendant la foire est une imitation volontairement grossière de la marque commerciale du consorzio del Tralcio, filiale locale de la Compagnia del Compasso ; il ne prouve donc pas l'implication de la guilde. La preuve la plus solide est le registre de paiements caché dans l'[ancienne douane](/lieux/ancienne-douane) de la route de [Gratigna](/lieux/gratigna), complété par le témoignage d'un ouvrier survivant.
+
+### Sceaux, marques et jetons
+
+- **Sceau de Vallombra** : sceau administratif rouge de la podestate et du Conseil. Il authentifie les ordres, registres et courriers de [Serafina](/personnages/serafina-dal-moro) ; il n'a aucun rapport avec l'incendie.
+- **Sceau de Gratigna** : sceau administratif de la cour d'[Aldo Vestraro](/personnages/aldo-vestraro). Il certifie une autorisation ou un document fiscal de Gratigna, pas un paiement de Meco.
+- **Marque du consorzio del Tralcio** : marque commerciale de la filiale vinicole rattachée à la Compagnia del Compasso, généralement imprimée dans la cire rouge avec une feuille de vigne. Celle trouvée au cellier est une contrefaçon destinée à accuser la guilde ; les faux de [Meco](/personnages/meco) sont de meilleure qualité et peuvent tromper au premier regard.
+- **Jeton de l'ancienne douane** : jeton de laiton frappé par le poste douanier de la route de Gratigna. Ce n'est pas un sceau de faction : il servait à reconnaître les convoyeurs, courtiers ou messagers autorisés à utiliser la douane. [Meco](/personnages/meco) en a détourné plusieurs pour organiser ses rendez-vous.
+- **Sceau du Tralcio sur la dague** : si le [Sicario](/ennemis/sicario-del-tralcio) en porte un, il s'agit d'une marque d'identification de la filiale et non d'une preuve que la Compagnia a ordonné l'incendie. Une lettre codée ou le registre restent nécessaires.
 
 Les disparitions du [Villaggio dei Salici](/lieux/villaggio-dei-salici) sont une affaire différente : des éclaireurs de l'Ordine delle Ossa Sopite cherchent des victimes. Cette piste annonce l'Arc II sans être nécessaire pour résoudre le sabotage.
 
@@ -89,7 +97,7 @@ Intendant de Serafina, il accueille les PJ à la foire aupres de sa patronne. So
 
 #### [Renzo « la Taupe »](/personnages/renzo)
 
-Il connait Meco mais craint le [Sicario](/ennemis/sicario-del-tralcio). Si les PJ le protegent d'un collecteur de dettes ou lui rendent sa sacoche, il révèle le nom du courtier et l'existence de la douane.
+Il connaît [Meco](/personnages/meco) mais craint le [Sicario](/ennemis/sicario-del-tralcio). Si les PJ le protègent d'un collecteur de dettes ou lui rendent sa sacoche, il révèle le nom du courtier et l'existence de la douane.
 
 > « Une rumeur, c'est comme un tonneau : percez-la au mauvais endroit et vous perdez tout le contenu. »
 
@@ -173,7 +181,7 @@ Ces fiches sont concues pour 4 heures et donnent, pour chaque scène, les PNJ pr
 | [Bianca Salmastra](/personnages/bianca-salmastra) | Balance publique, place du Marche | Elle remarque a voix haute qu'une serie de tonneaux des Tinaie pesent tous exactement pareil, « comme si personne ne les avait vraiment pesés » | Indice optionnel : ces tonneaux sont ceux prepares pour un vol facile (foreshadowing de la verite de l'affaire, sans la reveler) |
 | [Nilo](/personnages/nilo) | Devant le cellier Moro, un chariot de tonneaux a decharger | Il salue les PJ s'ils l'ont deja croise, ou se presente simplement ; mentionne qu'il doit finir le registre du soir avant la fermeture | Plante le personnage qui sera pris au piege dans l'incendie qui suit |
 | [Timo](/personnages/timo) | Se faufile entre les jambes de la foule | Tente une bourse (Escamotage +5 contre Perception passive) ou, si repere, propose de la « rendre » contre une piece | Premier contact avec un enfant du Guscio, utile pour la session 2 |
-| Un marchand de figues, Toran (theria Ruminsa) | Etal pres de la fontaine | Anecdote locale : la garde a double ses rondes depuis un mois « a cause des sabotages du Tinaie » | Confirme aux PJ que l'affaire dure depuis un moment avant meme que Serafina ne les engage |
+| [Toran](/personnages/toran), marchand de figues (theria Ruminsa) | Etal pres de la fontaine | Anecdote locale : la garde a double ses rondes depuis un mois « a cause des sabotages du Tinaie » | Confirme aux PJ que l'affaire dure depuis un moment avant meme que Serafina ne les engage |
 
 [Serafina Dal Moro](/personnages/serafina-dal-moro) les observe depuis le balcon de la Maison du Conseil pendant cette scène.
 
@@ -205,7 +213,7 @@ Replique : « Je ne vous demande pas de defendre mon nom. Je vous demande de sau
 - **Meche imbibee d'huile de lampe** : visible d'emblee pres du foyer.
 - **Semelle ferree** dans la cendre, empreinte de botte cloutee de fabrication citadine (Perception, DD 12).
 - **Tonneau perce depuis l'interieur**, ce qui exclut un accident exterieur (Investigation, DD 13, ou confirmation immediate si Nilo est present).
-- **Sceau de cire a la feuille de vigne**, trop recent et trop propre pour etre authentique (Investigation ou Metier, DD 14 ; [Baldassare](/personnages/baldassare) peut confirmer gratuitement si les PJ le lui montrent).
+- **Fausse marque du consorzio del Tralcio**, en cire rouge à feuille de vigne, trop récente et trop propre pour être authentique (Investigation ou Métier, DD 14 ; [Baldassare](/personnages/baldassare) peut confirmer gratuitement si les PJ le lui montrent). Elle imite une marque commerciale, pas le sceau administratif de Vallombra ou de Gratigna.
 - **Registre du cellier** : les pertes concernent exclusivement les vins les plus chers, jamais les cuvees ordinaires — signe d'une intention economique plutot que d'un simple vandalisme.
 
 **3:10-3:40 — Debrief.** [Baldassare](/personnages/baldassare) veut arreter immediatement des membres de la Compagnia del Tralcio sur la base du sceau. [Serafina](/personnages/serafina-dal-moro) refuse toute accusation publique sans une seconde preuve independante et conseille de chercher [Renzo](/personnages/renzo) « la Taupe » dans le Guscio, qui sait toujours qui a paye qui. Si les PJ accusent quand meme publiquement la Compagnia a ce stade, faire arriver dans l'heure un messager annoncant qu'un temoin cle (a determiner selon la session 2, ce sera Ada) a disparu ou a ete intimide — consequence differee mais visible.
@@ -220,7 +228,7 @@ Replique : « Je ne vous demande pas de defendre mon nom. Je vous demande de sau
 
 **0:00-0:20 — Retour au Guscio.** Lire : « Ici, les murs sont assez proches pour que les secrets passent d'une fenetre a l'autre. » [Renzo](/personnages/renzo) recoit les PJ dans son « magasin de curiosites » et pose son prix avant de parler : 10 po, une faveur, ou regler son probleme du moment — **Gianni**, un garde corrompu qui rackette systematiquement les petits commerces du Guscio (dont la lavandiere Ada, voir plus bas). Regler Gianni (intimidation, DD 14 ; pot-de-vin rembourse ; ou rapport direct a Baldassare qui le sanctionne aussitot) satisfait a la fois Renzo et l'acces a Ada : c'est le fil qui relie les deux scenes suivantes.
 
-**0:20-1:05 — La lavandiere.** [Ada](/personnages/ada-lavandaia) tient les lavoirs bas du Guscio. Elle a vu, trois nuits avant l'incendie, un messager presse traverser son lavoir avant l'aube, une boucle de ceinture en cuivre visible sous sa cape — un detail qui recoupe directement le temoignage de Nilo. Elle ne parle que si Gianni a ete ecarte (voir ci-dessus). Elle affirme aussi, sincerement mais a tort, que ce messager appartenait aux Randagi della Fossa Verde (prejuge de quartier) : ce faux indice peut orienter les PJ vers [Orsina Vetraia](/personnages/orsina-vetraia) avant qu'ils ne decouvrent la verite en session 3 — a jouer comme une fausse piste honnete, jamais comme un mensonge volontaire.
+**0:20-1:05 — La lavandiere.** [Ada](/personnages/ada-lavandaia) tient les lavoirs bas du Guscio. Elle a vu, trois nuits avant l'incendie, un messager presse traverser son lavoir avant l'aube, une boucle de ceinture en cuivre visible sous sa cape — un detail qui recoupe directement le temoignage de Nilo. Elle ne parle que si [Gianni](/personnages/gianni) a ete ecarte (voir ci-dessus). Elle affirme aussi, sincerement mais a tort, que ce messager appartenait aux Randagi della Fossa Verde (prejuge de quartier) : ce faux indice peut orienter les PJ vers [Orsina Vetraia](/personnages/orsina-vetraia) avant qu'ils ne decouvrent la verite en session 3 — a jouer comme une fausse piste honnete, jamais comme un mensonge volontaire.
 
 **1:05-1:40 — Le garcon au jeton.** [Timo](/personnages/timo) a trouve pres du quai un jeton de laiton frappe du sceau de l'ancienne douane de la route de Gratigna. Il ne le montre qu'apres une promesse de protection *tenue*, pas seulement prononcee. Pendant l'echange, un intermediaire de Meco tente de l'intimider dans une ruelle voisine : jouer une poursuite courte (2 succes avant 1 echec) a travers des porches bas et un etal renverse ; les PJ interviennent avant que Timo ne soit blesse. L'intermediaire n'a lui-meme jamais vu Meco en personne et fuit des qu'il est mis en difficulte.
 
@@ -281,9 +289,9 @@ Replique : « Je ne vous demande pas de defendre mon nom. Je vous demande de sau
 **0:00-0:35 — Accueil de [Pietro](/personnages/anziano-pietro).** Lire : « Le village ne fait pas de bruit. Meme les metiers se sont tus. » Pietro explique factuellement les faits : quatre disparitions en trois semaines, toutes nocturnes, toutes pres de la saulaie ; sa petite-fille Livia a disparu la nuit precedente en allant chercher de l'eau. Il demande explicitement de la retrouver avant la nuit suivante, sans exiger que les PJ « croient » a quoi que ce soit de surnaturel.
 
 **0:35-1:20 — Enquete au village.** Trois habitants a interroger, chacun avec un indice precis et aucun lien avec [Ilaria Conti](/personnages/ilaria-conti) :
-- **La mere de Livia**, effondree, montre une corde coupee net (pas dechiree) trouvee pres du puits.
-- **Un pecheur**, Origeno, a vu une lueur pale sur l'eau vers minuit et sent encore une odeur de sable brule sur ses filets.
-- **Une tisserande**, Nadia, a retrouve une lanterne abandonnee, encore chaude, a la lisiere des saules.
+- [Rina Pierreferme](/personnages/rina-pierreferme), la mère de Livia, effondrée, montre une corde coupée net (pas déchirée) trouvée près du puits.
+- [Origeno](/personnages/origeno), pêcheur, a vu une lueur pâle sur l'eau vers minuit et sent encore une odeur de sable brûlé sur ses filets.
+- [Nadia](/personnages/nadia), tisserande, a retrouvé une lanterne abandonnée, encore chaude, à la lisière des saules.
 
 **1:20-2:00 — Pistage.** Des traces a trois griffes traversent la boue depuis le puits jusqu'a un bras mort de la riviere (Survie, DD 14, pour les suivre sans les perdre dans les roseaux). Les PJ trouvent un campement vide recemment abandonne, un fragment d'ossement grave de symboles inconnus, et des marques au sol indiquant que plusieurs corps ou captifs ont ete trainés vers l'eau.
 
